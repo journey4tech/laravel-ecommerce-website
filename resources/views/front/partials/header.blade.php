@@ -298,32 +298,29 @@
         <!--End mobile-menu -->
         <ul id="nav" class="hidden-xs">
           
-          
-          <li class="level0 parent drop-menu"><a href="grid.html"><span>Home </span> 
+          @foreach ($menus as $menu)
+          <li class="level0 parent drop-menu"><a href="grid.html"><span>{{ $menu->name }} </span> 
             <!--<span class="category-label-hot">Hot</span> --> 
             </a>
+            @if (count($menu->categories) > 0)
             <ul class="level1">
-              <li class="level1 first parent"><a href="http://htmldemo.magikcommerce.com/ecommerce/polo-html-template/Variation1/green/grid"><span>Submenu</span></a>
-                <ul class="level2">
-                  <li class="level2 first"><a href="index.html#"><span>Menu1</span></a></li>
-                  <li class="level2 nav-1-1-2"><a href="index.html#"><span>Menu1</span></a></li>
-                  <li class="level2 nav-1-1-3"><a href="index.html#"><span>Menu2</span></a></li>
-                  <li class="level2 nav-1-1-4"><a href="index.html#"><span>Menu3</span></a></li>
-                  <li class="level2 nav-1-1-5 last"><a href="index.html#"><span>Menu4</span></a></li>
-                </ul>
-              </li>
-              <li class="level1 first parent"><a href="index.html#"><span>Submenu</span></a>
-                <ul class="level2">
-                  <li class="level2 first"><a href="index.html#"><span>Menu1</span></a></li>
-                  <li class="level2 nav-1-1-2"><a href="index.html#"><span>Menu1</span></a></li>
-                  <li class="level2 nav-1-1-3"><a href="index.html#"><span>Menu2</span></a></li>
-                  <li class="level2 nav-1-1-4"><a href="index.html#"><span>Menu3</span></a></li>
-                  <li class="level2 nav-1-1-5 last"><a href="index.html#"><span>Menu4</span></a></li>
-                </ul>
-              </li>
-              <li class="level1 parent"><a href="index.html#"><span>Submenu</span></a> </li>
-            </ul>
-          </li>
+                @foreach ($menu->categories as $category)
+                <li class="level1 first parent"><a href="http://htmldemo.magikcommerce.com/ecommerce/polo-html-template/Variation1/green/grid"><span>{{ $category->name }}</span></a>
+                  @if (count($category->sub_category) > 0)
+                  <ul class="level2">
+                    @foreach ($category->sub_category as $sub_category)
+                    <li class="level2 first"><a href="index.html#"><span>{{ $sub_category->name }}</span></a></li>
+                    @endforeach
+                  </ul>
+                  @endif
+                </li>
+                @endforeach
+               
+              </ul>
+            @endif
+          </li> 
+          @endforeach
+         
          
         </ul>
       </div>

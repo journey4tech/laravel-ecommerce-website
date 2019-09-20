@@ -24,7 +24,7 @@ class HomeController extends Controller
         try {
 
             $today= date("y-m-d");
-            $menus=Menu::all();
+            $menus=Menu::with('categories')->get();
             $slider=Slider::all();
             $dailyDeals = DailyDeals::with('product')->active()->orderBy('priority','DESC')->get();
             $popular_categories = PopularCategory::with(['category','category.products'=>function($q){
@@ -38,9 +38,9 @@ class HomeController extends Controller
             $feature_c =SubCategory::where('status',1)->limit(4)->get();
             $ads=Ads::all();
             $carts_count=Cart::count();
-            return view('front.home.home',
-            compact('all_products','menus','slider','dailyDeals','categories','popular_categories','ads','feature_c','recommended_products','carts_count','new_arrival','most_view'));
-
+             return view('front.home.home',
+             compact('all_products','menus','slider','dailyDeals','categories','popular_categories','ads','feature_c','recommended_products','carts_count','new_arrival','most_view'));
+           
         } catch (\Exception $e) {
             return $e->getMessage();
 

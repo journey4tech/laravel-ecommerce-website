@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Product;
 // Models
 use App\Models\Category;
-use App\Models\Product;
+use App\Models\SubCategory;
+use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model
 {
@@ -16,6 +17,7 @@ class Menu extends Model
         // return $this->belongsToMany(self::class,'categories','id','menu_id');
         return $this->hasMany(Category::class);
       }
+      
 //product relation
       public function products()
       {

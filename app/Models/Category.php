@@ -9,6 +9,7 @@ use App\Models\Product;
 
 class Category extends Model
 {
+  protected $with = ['sub_category'];
   protected $fillable = [
   "menu_id","name","description","category_icon","status"
 ];
