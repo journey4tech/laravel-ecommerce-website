@@ -38,7 +38,7 @@ class HomeController extends Controller
             $feature_c =SubCategory::where('status',1)->limit(4)->get();
             $ads=Ads::all();
             $carts_count=Cart::count();
-            return view('front.master',
+            return view('front.home.home',
             compact('all_products','menus','slider','dailyDeals','categories','popular_categories','ads','feature_c','recommended_products','carts_count','new_arrival','most_view'));
 
         } catch (\Exception $e) {
