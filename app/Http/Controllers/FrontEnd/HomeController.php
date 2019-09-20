@@ -31,7 +31,7 @@ class HomeController extends Controller
               $q->latest()->take(8);
             }])->active()->orderBy('priority','DESC')->get();
             $recommended_products = $this->getRecommendedProducts();
-            $new_arrival = Product::where('status',1)->latest()->take(3)->get();
+            $latest_products = Product::where('status',1)->latest()->take(3)->get();
             $most_view = Product::where('status',1)->orderByUniqueViews()->take(3)->get();
             $all_products=Product::where('status',1)->get();
             $categories = SubCategory::with('products')->get();
@@ -39,8 +39,8 @@ class HomeController extends Controller
             $ads=Ads::all();
             $carts_count=Cart::count();
              return view('front.home.home',
-             compact('all_products','menus','slider','dailyDeals','categories','popular_categories','ads','feature_c','recommended_products','carts_count','new_arrival','most_view'));
-           
+             compact('all_products','menus','slider','dailyDeals','categories','popular_categories','ads','feature_c','recommended_products','carts_count','latest_products','most_view'));
+          // return $latest_products;
         } catch (\Exception $e) {
             return $e->getMessage();
 
