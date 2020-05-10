@@ -72,7 +72,7 @@ class ProductController extends Controller {
                             'color' => 'required',
                             'size' => 'required',
                             'multiple' => 'required',
-                            'multiple.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4048',
+                            //'multiple.*' => 'image|mimes:jpeg,png,jpg,gif,svg',
                         ]);
             if ($validator->fails()) {
                 return back()
@@ -81,14 +81,15 @@ class ProductController extends Controller {
             }
             if ($request->hasfile('multiple')) {
                 foreach ($request->file('multiple') as $image) {
-                    $name = $image->getClientOriginalName();
+                    $name = time().'-'.$image->getClientOriginalName();
                     $image->move(public_path('uploads/documents') . '/productimages/', $name);
-                    $data[] = $name;
+                    $image_name[] = $name;
                 }
                 $product = New Product();
                 $product->product_name = $request->name;
                 $product->product_title = $request->title;
                 $product->sub_category_id = $request->sub_category_id;
+                $product->type = $request->type;
                 $product->slug = str_slug($request->title) . "-" . rand(255, 999);
                 $product->product_price = $request->product_price;
                 $product->special_price = $request->special_price;
@@ -98,7 +99,7 @@ class ProductController extends Controller {
                 $product->sku = $request->sku;
                 $product->stock = $request->stock;
                 $product->video_link = $request->video_link;
-                $product->multiple = json_encode($data);
+                $product->multiple = json_encode($image_name);
                 $product->description = $request->description;
                 $product->color = json_encode(request('color'));
                 $product->size = json_encode(request('size'));
@@ -135,8 +136,10 @@ class ProductController extends Controller {
         public function edit($id) {
             try {
                 $sub_categories = SubCategory::all();
+                
                 $product = Product::where('id', $id)->first();
-                return view('admin.products.edit', compact('product', 'sub_categories', 'product_colors'));
+                //return $product;
+                return view('admin.products.edit', compact('product', 'sub_categories'));
             }
             catch(\Exception $e) {
                 Helper::notifyError($e->getMessage());
@@ -151,27 +154,72 @@ class ProductController extends Controller {
          * @return \Illuminate\Http\Response
          */
         public function update(Request $request, $id) {
+            // try {
+            //     $product = Product::findOrFail($id);
+            //     // $product->size = json_encode(request('size'));
+            //     // $product->color = json_encode(request('color'));
+            //     $product->update($request->all());
+            //     if ($request->hasfile('multiple')) {
+            //         foreach ($request->file('multiple') as $image) {
+            //             $name = $image->getClientOriginalName();
+            //             $image->move(public_path('uploads/documents') . '/productimages/', $name);
+            //             $data[] = $name;
+            //             $product->multiple = json_encode($data);
+            //             $product->save();
+            //         }
+            //     }
+            //     Helper::notifySuccess('Product Updated successfully');
+            //     return redirect(route('admin.products.index'));
+            // }
+            // catch(\Exception $e) {
+            //     Helper::notifyError($e->getMessage());
+            //     return back();
+            // }
+
             try {
+                //return $request->all();
                 $product = Product::findOrFail($id);
-                $product->size = json_encode(request('size'));
-                $product->color = json_encode(request('color'));
-                $product->update($request->all());
+                
                 if ($request->hasfile('multiple')) {
                     foreach ($request->file('multiple') as $image) {
-                        $name = $image->getClientOriginalName();
+                        $name = time().'-'.$image->getClientOriginalName();
                         $image->move(public_path('uploads/documents') . '/productimages/', $name);
-                        $data[] = $name;
-                        $product->multiple = json_encode($data);
-                        $product->save();
+                        $image_name[] = $name;
                     }
-                }
+                    $product->multiple = json_encode($image_name);
+
+                }    
+
+                    $product->product_name = $request->product_name;
+                    $product->product_title = $request->product_title;
+                    $product->sub_category_id = $request->sub_category_id;
+                    $product->type = $request->type;
+                    $product->slug = str_slug($request->title) . "-" . rand(255, 999);
+                    $product->product_price = $request->product_price;
+                    $product->special_price = $request->special_price;
+                    $product->start_date = $request->start_date;
+                    $product->end_date = $request->end_date;
+                    $product->product_quantity = $request->product_quantity;
+                    $product->sku = $request->sku;
+                    $product->stock = $request->stock;
+                    $product->video_link = $request->video_link;
+                    //$product->multiple = json_encode($image_name);
+                    $product->description = $request->description;
+                    $product->color = json_encode(request('color'));
+                    $product->size = json_encode(request('size'));
+                    // $product->warrantly=$request->warrantly;
+                    $product->status = 1;
+                    $product->save();
+                  
+                //return 'success';
                 Helper::notifySuccess('Product Updated successfully');
                 return redirect(route('admin.products.index'));
-            }
-            catch(\Exception $e) {
-                Helper::notifyError($e->getMessage());
-                return back();
-            }
+          }
+          catch(\Exception $e) {
+              Helper::notifyError($e->getMessage());
+              return back();
+          }
+
         }
         /**
          * Remove the specified resource from storage.

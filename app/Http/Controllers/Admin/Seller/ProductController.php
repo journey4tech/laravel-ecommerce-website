@@ -35,7 +35,7 @@ class ProductController extends Controller
                           'sku' => 'required',
                           'stock' => 'required',
                           'description' => 'required',
-                          'multiple' => 'required',
+                          
                           'multiple.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4048',
                           'seller_id' => 'required',
                       ]);

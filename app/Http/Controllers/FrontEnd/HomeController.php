@@ -25,22 +25,26 @@ class HomeController extends Controller
 
             $today= date("y-m-d");
             $menus=Menu::with('categories')->get();
-            $slider=Slider::all();
+           
+            $sliders=Slider::all();
             $dailyDeals = DailyDeals::with('product')->active()->orderBy('priority','DESC')->get();
             $popular_categories = PopularCategory::with(['category','category.products'=>function($q){
               $q->latest()->take(8);
             }])->active()->orderBy('priority','DESC')->get();
             $recommended_products = $this->getRecommendedProducts();
-            $latest_products = Product::where('status',1)->latest()->take(3)->get();
+            $latest_products = Product::where('status',1)->latest()->get();
             $most_view = Product::where('status',1)->orderByUniqueViews()->take(3)->get();
-            $all_products=Product::where('status',1)->get();
+            $all_products=Product::where('status',1)->where('type', '=','Regular')->latest()->get();
+            $special_products=Product::where('status',1)->where('type', '=',"Special")->latest()->get();
+            $featured_products=Product::where('status',1)->where('type', '=',"Featured")->latest()->get();
             $categories = SubCategory::with('products')->get();
             $feature_c =SubCategory::where('status',1)->limit(4)->get();
             $ads=Ads::all();
+          
             $carts_count=Cart::count();
              return view('front.home.home',
-             compact('all_products','menus','slider','dailyDeals','categories','popular_categories','ads','feature_c','recommended_products','carts_count','latest_products','most_view'));
-          // return $latest_products;
+             compact('all_products','special_products','featured_products','menus','sliders','dailyDeals','categories','popular_categories','ads','feature_c','recommended_products','carts_count','latest_products','most_view'));
+           //return $latest_products;
         } catch (\Exception $e) {
             return $e->getMessage();
 

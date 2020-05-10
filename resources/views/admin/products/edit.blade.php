@@ -71,12 +71,23 @@
 
                                                                 <div class="form-group">
                                                                     <label class="control-label">Choose Category</label>
-                                                                    <select class="form-control form-white" data-placeholder="Choose a color..." name="category_id">
+                                                                    <select class="form-control form-white" data-placeholder="Choose a color..." name="sub_category_id">
                                                                         @foreach($sub_categories as $category)
-                                                                        <option value="{{$category->id}}" {{$category->id==$product->category_id?"selected":""}} >{{$category->name}}</option>
+                                                                        <option value="{{$category->id}}" {{$product->sub_category_id ? " Selected": ""}} >{{$category->name}}</option>
                                                                         @endforeach
 
                                                                     </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label">Product Type</label>
+                                                                    <select class="form-control form-white" data-placeholder="Choose a type..." name="type">
+                                                                        
+                                                                        <option {{ $product->type=="Regular" ? " Selected": ""}}>Regular</option>
+                                                                        <option {{ $product->type=="Special" ? " Selected": ""}}>Special</option>
+                                                                        <option {{ $product->type=="Featured" ? " Selected": ""}}>Featured</option>
+
+                                                                    </select>
+                                                                    @if ($errors->has('type')) <p class="text-danger">{{ $errors->first('type') }}</p> @endif
                                                                 </div>
 
                                                             </div>
@@ -133,9 +144,11 @@
                                                                                 </tr>
                                                                             </thead>
                                                                             <tbody>
+                                                                               
                                                                                 <?php
                                                                                   $avail_size = json_decode($product->size,true);
                                                                                  ?>
+                                                                                  @if(!empty($avail_size))
                                                                                     @foreach($avail_size as $data)
                                                                                     <tr>
                                                                                         <td>
@@ -148,6 +161,18 @@
                                                                                         </td>
                                                                                     </tr>
                                                                                     @endforeach
+                                                                                    @else
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <div class="form-group mb-0">
+                                                                                                <input type="text" name="size[]" class="form-control" multiple>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <button type="button" class="btn btn-light waves-effect waves-light delete-row-btn"><i class="fas fa-trash-alt"></i></button>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    @endif
                                                                             </tbody>
                                                                         </table>
                                                                     </div>
@@ -170,7 +195,10 @@
                                                                             <tbody>
                                                                                 <?php
                                                                                   $avail_color = json_decode($product->color,true);
+                                                                                 
+                                                                                  
                                                                                  ?>
+                                                                                 @if(!empty($avail_color))
                                                                                     @foreach($avail_color as $data)
                                                                                     <tr>
                                                                                         <td>
@@ -183,6 +211,18 @@
                                                                                         </td>
                                                                                     </tr>
                                                                                     @endforeach
+                                                                                    @else
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <div class="form-group mb-0">
+                                                                                                <input type="text" name="color[]" value="" class="form-control" multiple>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <button type="button" class="btn btn-light waves-effect waves-light delete-row-btn"><i class="fas fa-trash-alt"></i></button>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    @endif
                                                                             </tbody>
                                                                         </table>
                                                                     </div>
@@ -196,13 +236,20 @@
                                                             </div>
 
                                                             <div id="image" class="tab-pane fade">
-                                                                <!-- <div class="form-group ">
-                                                                    <label for="example-fileinput">Base Images</label>
-                                                                    <input type="file" id="example-fileinput" name="base_image" class="form-control-file" multiple>
-                                                                </div> -->
+                                                                
+                                                                <div class="form-group ">
+                                                                    <label for="example-fileinput">Previous Images</label>
+                                                                    <?php
+                                                                        $multiple = json_decode($product->multiple,true);
+                                                                    ?>
+                                                                    @foreach($multiple as $image)
+                                                                    <img src='{{ asset("uploads/documents/productimages/$image") }}' alt="">
+                                                                    @endforeach
+                                                                </div> 
+                                                               
                                                                 <div class="form-group">
                                                                     <label for="example-fileinput">Mulitple Images</label>
-                                                                    <input type="file" id="example-fileinput" name="multiple[]" class="form-control-file" multiple>{{$product->multiple}}
+                                                                    <input type="file" id="example-fileinput" name="multiple[]" class="form-control-file" multiple>
                                                                 </div>
 
                                                                 <div class="form-group">

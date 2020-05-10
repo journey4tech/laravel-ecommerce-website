@@ -2,9 +2,10 @@
 
 @section('content')
 @include('front/partials/slider')
-@include('front/partials/best-sale-product')
+@include('front/partials/latest-product')
 @include('front/partials/offer-banner-section')
-@include('front/partials/featured-slider-section')
+@include('front/partials/special-product-section')
+@include('front/partials/featured-product')
 
 
 
@@ -16,7 +17,7 @@
 
 
 <!-- promo banner section -->
-<div class="promo-banner-section container wow bounceInUp animated">
+{{-- <div class="promo-banner-section container wow bounceInUp animated">
 <div class="row">
   <div class="col-lg-12"> <img alt="promo-banner3" src="{{asset('frontEnd/assets/images/jewelry-banner.jpg')}}"></div>
 </div>
@@ -456,7 +457,7 @@
   <div class="post-date"><i class="icon-calendar"></i> Apr 10, 2014</div>
   <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce sit  ... </p>
 </div>
-</section>
+</section> --}}
 <!-- End Latest Blog -->
 
 @endsection

@@ -99,6 +99,19 @@
                                                                     </select>
                                                                     @if ($errors->has('sub_category_id')) <p class="text-danger">{{ $errors->first('sub_category_id') }}</p> @endif
                                                                 </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label">Product Type</label>
+                                                                    <select class="form-control form-white" data-placeholder="Choose a type..." name="type">
+                                                                        {{-- @foreach($types as $data)
+                                                                        <option>{{$data->type}}</option>
+                                                                        @endforeach --}}
+                                                                        <option>Regular</option>
+                                                                        <option>Special</option>
+                                                                        <option>Featured</option>
+
+                                                                    </select>
+                                                                    @if ($errors->has('sub_category_id')) <p class="text-danger">{{ $errors->first('sub_category_id') }}</p> @endif
+                                                                </div>
 
                                                             </div>
 
