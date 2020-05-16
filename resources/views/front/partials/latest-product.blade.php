@@ -14,8 +14,8 @@
                     <div class="item">
                         <div class="col-item">
                           <?php $images=collect(json_decode($product->multiple))->first(); ?>
-                          <div class="product-image-area"> <a class="product-image" title="{{ $product->product_title }}" href="product_detail.html"> <img style="width:270px;height:300.5px;" src="{{ asset('uploads/documents/productimages/'.$images) }}" class="img-responsive" alt="{{ $product->product_title }}" /> </a>
-                            <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="index.html#" title="Add to cart">
+                          <div class="product-image-area"> <a class="product-image" title="{{ $product->product_title }}" href="{{route('product',$product->slug)}}"> <img style="width:270px;height:300.5px;" src="{{ asset('uploads/documents/productimages/'.$images) }}" class="img-responsive" alt="{{ $product->product_title }}" /> </a>
+                            <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="{{route('product',$product->slug)}}" title="Add to cart">
                               <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
                               </a> <a class="quick-view" href="quick_view.html">
                               <div><i class="icon-eye-open"></i><span>Quick view</span></div>

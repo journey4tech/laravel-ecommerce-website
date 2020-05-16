@@ -238,12 +238,12 @@
                                                             <div id="image" class="tab-pane fade">
                                                                 
                                                                 <div class="form-group ">
-                                                                    <label for="example-fileinput">Previous Images</label>
+                                                                    <label for="example-fileinput">Previous Images</label><br>
                                                                     <?php
                                                                         $multiple = json_decode($product->multiple,true);
                                                                     ?>
                                                                     @foreach($multiple as $image)
-                                                                    <img src='{{ asset("uploads/documents/productimages/$image") }}' alt="">
+                                                                    <img style="width:100px;height:100px;" src='{{ asset("uploads/documents/productimages/$image") }}' alt="">
                                                                     @endforeach
                                                                 </div> 
                                                                

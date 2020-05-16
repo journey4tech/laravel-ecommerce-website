@@ -125,6 +125,7 @@ class ProductController extends Controller {
          */
         public function show($id) {
             $product = Product::where('id', $id)->first();
+            return $product;
             return view('admin.products.view', compact('product'));
         }
         /**
