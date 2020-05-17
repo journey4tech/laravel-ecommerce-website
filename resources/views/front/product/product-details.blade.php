@@ -11,12 +11,17 @@
                 <input name="form_key" value="6UbXroakyQlbfQzK" type="hidden">
                 <div class="product-img-box col-lg-6 col-sm-6 col-xs-12">
                   <ul class="moreview" id="moreview">
-                    <li class="moreview_thumb thumb_1"> <img class="moreview_thumb_image" src="{{ asset('frontEnd/assets/products-images/product1.jpg')}}" alt="thumbnail"> <img class="moreview_source_image" src="{{ asset('frontEnd/assets/products-images/product2.jpg')}}" alt=""> <span class="roll-over">Roll over image to zoom in</span> <img  class="zoomImg" src="{{ asset('frontEnd/assets/products-images/product3.jpg')}}" alt="thumbnail"></li>
+                    {{-- <li class="moreview_thumb thumb_1"> <img class="moreview_thumb_image" src="{{ asset('frontEnd/assets/products-images/product1.jpg')}}" alt="thumbnail"> <img class="moreview_source_image" src="{{ asset('frontEnd/assets/products-images/product2.jpg')}}" alt=""> <span class="roll-over">Roll over image to zoom in</span> <img  class="zoomImg" src="{{ asset('frontEnd/assets/products-images/product3.jpg')}}" alt="thumbnail"></li>
                     <li class="moreview_thumb thumb_2 moreview_thumb_active"> <img class="moreview_thumb_image" src="{{ asset('frontEnd/assets/products-images/product4.jpg')}}" alt="thumbnail"> <img class="moreview_source_image" src="{{ asset('frontEnd/assets/products-images/product4.jpg')}}" alt=""> <span class="roll-over">Roll over image to zoom in</span> <img  class="zoomImg" src="http://htmldemo.magikcommerce.com/ecommerce/polo-html-template/Variation1/green/images/product4.jpg" alt="thumbnail"></li>
                     <li class="moreview_thumb thumb_3"> <img class="moreview_thumb_image" src="{{ asset('frontEnd/assets/products-images/product5.jpg')}}" alt="thumbnail"> <img class="moreview_source_image" src="{{ asset('frontEnd/assets/products-images/product5.jpg')}}" alt=""> <span class="roll-over">Roll over image to zoom in</span> <img  class="zoomImg" src="{{ asset('frontEnd/assets/products-images/product5.jpg')}}" alt="thumbnail"></li>
                     <li class="moreview_thumb thumb_4"> <img class="moreview_thumb_image" src="{{ asset('frontEnd/assets/products-images/product6.jpg')}}" alt="thumbnail"> <img class="moreview_source_image" src="{{ asset('frontEnd/assets/products-images/product6.jpg')}}" alt=""> <span class="roll-over">Roll over image to zoom in</span> <img  class="zoomImg" src="{{ asset('frontEnd/assets/products-images/product6.jpg')}}" alt="thumbnail"></li>
-                    <li class="moreview_thumb thumb_5"> <img class="moreview_thumb_image" src="{{ asset('frontEnd/assets/products-images/product7.jpg')}}" alt="thumbnail"> <img class="moreview_source_image" src="{{ asset('frontEnd/assets/products-images/product7.jpg')}}" alt=""> <span class="roll-over">Roll over image to zoom in</span> <img  class="zoomImg" src="{{ asset('frontEnd/assets/products-images/product7.jpg')}}" alt="thumbnail"></li>
-                    <li class="moreview_thumb thumb_6"> <img class="moreview_thumb_image" src="{{ asset('frontEnd/assets/products-images/product8.jpg')}}" alt="thumbnail"> <img class="moreview_source_image" src="{{ asset('frontEnd/assets/products-images/product8.jpg')}}" alt=""> <span class="roll-over">Roll over image to zoom in</span> <img  class="zoomImg" src="{{ asset('frontEnd/assets/products-images/product8.jpg')}}" alt="thumbnail"></li>
+                    <li class="moreview_thumb thumb_5"> <img class="moreview_thumb_image" src="{{ asset('frontEnd/assets/products-images/product7.jpg')}}" alt="thumbnail"> <img class="moreview_source_image" src="{{ asset('frontEnd/assets/products-images/product7.jpg')}}" alt=""> <span class="roll-over">Roll over image to zoom in</span> <img  class="zoomImg" src="{{ asset('frontEnd/assets/products-images/product7.jpg')}}" alt="thumbnail"></li> --}}
+                    <?php
+                        $multiple = json_decode($product->multiple,true);
+                    ?>
+                    @foreach($multiple as $image)
+                  <li class="moreview_thumb thumb_6 "> <img class="moreview_thumb_image" src="{{ asset('uploads/documents/productimages/'.$image)}}" alt="thumbnail"> <img class="moreview_source_image" src="{{ asset('frontEnd/assets/products-images/product8.jpg')}}" alt=""> <span class="roll-over">Roll over image to zoom in</span> <img  class="zoomImg" src="{{ asset('frontEnd/assets/products-images/product8.jpg')}}" alt="thumbnail"></li>
+                    @endforeach
                   </ul>
                   <div class="moreview-control"> <a href="javascript:void(0)" class="moreview-prev"></a> <a href="javascript:void(0)" class="moreview-next"></a> </div>
                 </div>
@@ -31,16 +36,16 @@
                     </div>
                     <p class="rating-links"> <a href="product_detail.html#">1 Review(s)</a> <span class="separator">|</span> <a href="product_detail.html#">Add Your Review</a> </p>
                   </div>
-                  <p class="availability in-stock">Availability: <span>In stock</span></p>
+                  <p class="availability in-stock">Availability: <span>{{ $product->stock == 1 ? 'In Stock' : 'Out Stock'}}</span></p>
                   <div class="price-block">
                     <div class="price-box">
-                      <p class="old-price"> <span class="price-label">Regular Price:</span> <span class="price"> $315.99 </span> </p>
-                      <p class="special-price"> <span class="price-label">Special Price</span> <span class="price"> $309.99 </span> </p>
+                      <p class="old-price"> <span class="price-label">Regular Price:</span> <span class="price"> Tk.  {{ $product->product_price }} </span> </p>
+                      <p class="special-price"> <span class="price-label">Special Price</span> <span class="price">Tk.  {{ $product->special_price }} </span> </p>
                     </div>
                   </div>
                   <div class="short-description">
                     <h2>Quick Overview</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla.</p>
+                    <p>{{ $product->product_title }}</p>
                   </div>
                   <div class="add-to-box">
                     <div class="add-to-cart">
@@ -52,7 +57,7 @@
                           <button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;" class="increase items-count" type="button"><i class="icon-plus">&nbsp;</i></button>
                         </div>
                       </div>
-                      <button onClick="productAddToCartForm.submit(this)" class="button btn-cart" title="Add to Cart" type="button"><span><i class="icon-basket"></i> Add to Cart</span></button>
+                      <button onClick="productAddToCartForm.submit(this)" class="button btn-cart" title="Add to Cart" type="button"><span><i class="icon-basket"></i> Order</span></button>
                       <div class="email-addto-box">
                         <ul class="add-to-links">
                           <li> <a class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a></li>
@@ -88,8 +93,7 @@
                 <div id="productTabContent" class="tab-content">
                   <div class="tab-pane fade in active" id="product_tabs_description">
                     <div class="std">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla. Donec a neque libero. Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem, quis fermentum turpis eros eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in accumsan elit odio quis mi. Cras neque metus, consequat et blandit et, luctus a nunc. Etiam gravida vehicula tellus, in imperdiet ligula euismod eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam erat mi, rutrum at sollicitudin rhoncus, ultricies posuere erat. Duis convallis, arcu nec aliquam consequat, purus felis vehicula felis, a dapibus enim lorem nec augue.</p>
-                      <p> Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.</p>
+                      {!! $product->description !!}
                     </div>
                   </div>
                   <div class="tab-pane fade" id="product_tabs_tags">
@@ -335,11 +339,13 @@
                       <div id="related-products-slider" class="product-flexslider hidden-buttons">
                         <div class="slider-items slider-width-col4"> 
                           
+                          @foreach($latest_products as $product)
+                          <?php $images=collect(json_decode($product->multiple))->first(); ?>
                           <!-- Item -->
                           <div class="item">
                             <div class="col-item">
                               
-                              <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="products-images/product3.jpg" class="img-responsive" alt="a" /> </a>
+                            <div class="product-image-area"> <a class="product-image" title="Sample Product" href="{{route('product',$product->slug)}}"> <img src="{{ asset('uploads/documents/productimages/'.$images)}}" class="img-responsive" alt="a" /> </a>
                                 <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="product_detail.html#" title="Add to cart">
                                   <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
                                   </a> <a class="quick-view" href="quick_view.html">
@@ -352,7 +358,7 @@
                               </div>
                               <div class="info">
                                 <div class="info-inner">
-                                  <div class="item-title"> <a href="product_detail.html#l" title=" Sample Product"> Sample Product </a> </div>
+                                  <div class="item-title"> <a href="product_detail.html#l" title=" Sample Product"> {{ $product->product_name }} </a> </div>
                                   <!--item-title-->
                                   <div class="item-content">
                                     <div class="ratings">
@@ -361,8 +367,8 @@
                                       </div>
                                     </div>
                                     <div class="price-box">
-                                      <p class="special-price"> <span class="price"> $45.00 </span> </p>
-                                      <p class="old-price"> <span class="price-sep">-</span> <span class="price"> $50.00 </span> </p>
+                                      <p class="special-price"> <span class="price"> {{ $product->product_price }} </span> </p>
+                                      <p class="old-price"> <span class="price-sep">-</span> <span class="price"> {{ $product->special_price }}</span> </p>
                                     </div>
                                   </div>
                                   <!--item-content--> 
@@ -374,280 +380,14 @@
                             </div>
                           </div>
                           <!-- End Item --> 
+                          @endforeach
                           
-                          <!-- Item -->
-                          <div class="item">
-                            <div class="col-item">
-                              <div class="new-label new-top-right">New</div>
-                              <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="products-images/product2.jpg" class="img-responsive" alt="a" /> </a>
-                                <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="product_detail.html#" title="Add to cart">
-                                  <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
-                                  </a> <a class="quick-view" href="quick_view.html">
-                                  <div><i class="icon-eye-open"></i><span>Quick view</span></div>
-                                  </a> <a class="add_to_compare" href="compare.html">
-                                  <div><i class="icon-random"></i><span>Add to compare</span></div>
-                                  </a> <a class="addToWishlist wishlistProd_5" href="wishlist.html" >
-                                  <div><i class="icon-heart"></i><span>Add to Wishlist</span></div>
-                                  </a> </div>
-                              </div>
-                              <div class="info">
-                                <div class="info-inner">
-                                  <div class="item-title"> <a href="product_detail.html#l" title=" Sample Product"> Sample Product </a> </div>
-                                  <!--item-title-->
-                                  <div class="item-content">
-                                    <div class="ratings">
-                                      <div class="rating-box">
-                                        <div class="rating"></div>
-                                      </div>
-                                    </div>
-                                    <div class="price-box"> <span class="regular-price"> <span class="price">$422.00</span> </span> </div>
-                                  </div>
-                                  <!--item-content--> 
-                                </div>
-                                <!--info-inner-->
-                                
-                                <div class="clearfix"> </div>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- End Item --> 
-                          
-                          <!-- Item -->
-                          <div class="item">
-                            <div class="col-item">
-                              
-                              <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="products-images/product4.jpg"> </a>
-                                <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="product_detail.html#" title="Add to cart">
-                                  <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
-                                  </a> <a class="quick-view" href="quick_view.html">
-                                  <div><i class="icon-eye-open"></i><span>Quick view</span></div>
-                                  </a> <a class="add_to_compare" href="compare.html">
-                                  <div><i class="icon-random"></i><span>Add to compare</span></div>
-                                  </a> <a class="addToWishlist wishlistProd_5" href="wishlist.html" >
-                                  <div><i class="icon-heart"></i><span>Add to Wishlist</span></div>
-                                  </a> </div>
-                              </div>
-                              <div class="info">
-                                <div class="info-inner">
-                                  <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                                  <!--item-title-->
-                                  <div class="item-content">
-                                    <div class="ratings">
-                                      <div class="rating-box">
-                                        <div class="rating"></div>
-                                      </div>
-                                    </div>
-                                    <div class="price-box"> <span class="regular-price"> <span class="price">$50.00</span> </span> </div>
-                                  </div>
-                                  <!--item-content--> 
-                                </div>
-                                <!--info-inner-->
-                                
-                                <div class="clearfix"> </div>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- End Item --> 
-                          
-                          <!-- Item -->
-                          <div class="item">
-                            <div class="col-item">
-                              
-                              <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="products-images/product1.jpg"> </a>
-                                <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="product_detail.html#" title="Add to cart">
-                                  <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
-                                  </a> <a class="quick-view" href="quick_view.html">
-                                  <div><i class="icon-eye-open"></i><span>Quick view</span></div>
-                                  </a> <a class="add_to_compare" href="compare.html">
-                                  <div><i class="icon-random"></i><span>Add to compare</span></div>
-                                  </a> <a class="addToWishlist wishlistProd_5" href="wishlist.html" >
-                                  <div><i class="icon-heart"></i><span>Add to Wishlist</span></div>
-                                  </a> </div>
-                              </div>
-                              <div class="info">
-                                <div class="info-inner">
-                                  <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                                  <!--item-title-->
-                                  <div class="item-content">
-                                    <div class="ratings">
-                                      <div class="rating-box">
-                                        <div class="rating"></div>
-                                      </div>
-                                    </div>
-                                    <div class="price-box">
-                                      <p class="special-price"> <span class="price"> $45.00 </span> </p>
-                                      <p class="old-price"> <span class="price-sep">-</span> <span class="price"> $50.00 </span> </p>
-                                    </div>
-                                  </div>
-                                  <!--item-content--> 
-                                </div>
-                                <!--info-inner-->
-                                
-                                <div class="clearfix"> </div>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- End Item --> 
-                          
-                          <!-- Item -->
-                          <div class="item">
-                            <div class="col-item">
-                              
-                              <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="products-images/product6.jpg"> </a>
-                                <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="product_detail.html#" title="Add to cart">
-                                  <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
-                                  </a> <a class="quick-view" href="quick_view.html">
-                                  <div><i class="icon-eye-open"></i><span>Quick view</span></div>
-                                  </a> <a class="add_to_compare" href="compare.html">
-                                  <div><i class="icon-random"></i><span>Add to compare</span></div>
-                                  </a> <a class="addToWishlist wishlistProd_5" href="wishlist.html" >
-                                  <div><i class="icon-heart"></i><span>Add to Wishlist</span></div>
-                                  </a> </div>
-                              </div>
-                              <div class="info">
-                                <div class="info-inner">
-                                  <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                                  <!--item-title-->
-                                  <div class="item-content">
-                                    <div class="ratings">
-                                      <div class="rating-box">
-                                        <div class="rating"></div>
-                                      </div>
-                                    </div>
-                                    <div class="price-box">
-                                      <p class="special-price"> <span class="price"> $45.00 </span> </p>
-                                      <p class="old-price"> <span class="price-sep">-</span> <span class="price"> $50.00 </span> </p>
-                                    </div>
-                                  </div>
-                                  <!--item-content--> 
-                                </div>
-                                <!--info-inner-->
-                                
-                                <div class="clearfix"> </div>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- End Item --> 
-                          
-                          <!-- Item -->
-                          <div class="item">
-                            <div class="col-item">
-                              <div class="new-label new-top-right">New</div>
-                              <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="products-images/product7.jpg"> </a>
-                                <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="product_detail.html#" title="Add to cart">
-                                  <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
-                                  </a> <a class="quick-view" href="quick_view.html">
-                                  <div><i class="icon-eye-open"></i><span>Quick view</span></div>
-                                  </a> <a class="add_to_compare" href="compare.html">
-                                  <div><i class="icon-random"></i><span>Add to compare</span></div>
-                                  </a> <a class="addToWishlist wishlistProd_5" href="wishlist.html" >
-                                  <div><i class="icon-heart"></i><span>Add to Wishlist</span></div>
-                                  </a> </div>
-                              </div>
-                              <div class="info">
-                                <div class="info-inner">
-                                  <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                                  <!--item-title-->
-                                  <div class="item-content">
-                                    <div class="ratings">
-                                      <div class="rating-box">
-                                        <div class="rating"></div>
-                                      </div>
-                                    </div>
-                                    <div class="price-box"> <span class="regular-price"> <span class="price">$422.00</span> </span> </div>
-                                  </div>
-                                  <!--item-content--> 
-                                </div>
-                                <!--info-inner-->
-                                
-                                <div class="clearfix"> </div>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- End Item --> 
-                          
-                          <!-- Item -->
-                          <div class="item">
-                            <div class="col-item">
-                              
-                              <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="products-images/product8.jpg"> </a>
-                                <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="product_detail.html#" title="Add to cart">
-                                  <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
-                                  </a> <a class="quick-view" href="quick_view.html">
-                                  <div><i class="icon-eye-open"></i><span>Quick view</span></div>
-                                  </a> <a class="add_to_compare" href="compare.html">
-                                  <div><i class="icon-random"></i><span>Add to compare</span></div>
-                                  </a> <a class="addToWishlist wishlistProd_5" href="wishlist.html" >
-                                  <div><i class="icon-heart"></i><span>Add to Wishlist</span></div>
-                                  </a> </div>
-                              </div>
-                              <div class="info">
-                                <div class="info-inner">
-                                  <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                                  <!--item-title-->
-                                  <div class="item-content">
-                                    <div class="ratings">
-                                      <div class="rating-box">
-                                        <div class="rating"></div>
-                                      </div>
-                                    </div>
-                                    <div class="price-box"> <span class="regular-price"> <span class="price">$50.00</span> </span> </div>
-                                  </div>
-                                  <!--item-content--> 
-                                </div>
-                                <!--info-inner-->
-                                
-                                <div class="clearfix"> </div>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- End Item --> 
-                          
-                          <!-- Item -->
-                          <div class="item">
-                            <div class="col-item">
-                              
-                              <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="products-images/product9.jpg"> </a>
-                                <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="product_detail.html#" title="Add to cart">
-                                  <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
-                                  </a> <a class="quick-view" href="quick_view.html">
-                                  <div><i class="icon-eye-open"></i><span>Quick view</span></div>
-                                  </a> <a class="add_to_compare" href="compare.html">
-                                  <div><i class="icon-random"></i><span>Add to compare</span></div>
-                                  </a> <a class="addToWishlist wishlistProd_5" href="wishlist.html" >
-                                  <div><i class="icon-heart"></i><span>Add to Wishlist</span></div>
-                                  </a> </div>
-                              </div>
-                              <div class="info">
-                                <div class="info-inner">
-                                  <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                                  <!--item-title-->
-                                  <div class="item-content">
-                                    <div class="ratings">
-                                      <div class="rating-box">
-                                        <div class="rating"></div>
-                                      </div>
-                                    </div>
-                                    <div class="price-box">
-                                      <p class="special-price"> <span class="price"> $45.00 </span> </p>
-                                      <p class="old-price"> <span class="price-sep">-</span> <span class="price"> $50.00 </span> </p>
-                                    </div>
-                                  </div>
-                                  <!--item-content--> 
-                                </div>
-                                <!--info-inner-->
-                                
-                                <div class="clearfix"> </div>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- End Item --> 
                           
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="upsell-pro wow bounceInUp animated">
+                  {{-- <div class="upsell-pro wow bounceInUp animated">
                     <div class="slider-items-products">
                       <div class="new_title center">
                         <h2>Upsell Products</h2>
@@ -966,7 +706,7 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> --}}
                 </div>
               </div>
             </div>

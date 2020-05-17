@@ -43,6 +43,8 @@
 <script type="text/javascript" src="{{asset('frontEnd/assets/js/jquery.min.js')}}"></script> 
 <script type="text/javascript" src="{{asset('frontEnd/assets/js/bootstrap.min.js')}}"></script> 
 <script type="text/javascript" src="{{asset('frontEnd/assets/js/parallax.js')}}"></script> 
+<script type="text/javascript" src="{{asset('frontEnd/assets/js/jquery.jcarousel.min.js')}}"></script> 
+<script type="text/javascript" src="{{asset('frontEnd/assets/js/cloudzoom.js')}}"></script>
 <script type="text/javascript" src="{{asset('frontEnd/assets/js/common.js')}}"></script> 
 <script type="text/javascript" src="{{asset('frontEnd/assets/js/revslider.js')}}"></script> 
 <script type="text/javascript" src="{{asset('frontEnd/assets/js/owl.carousel.min.js')}}"></script> 

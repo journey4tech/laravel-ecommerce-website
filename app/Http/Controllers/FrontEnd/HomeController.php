@@ -122,11 +122,12 @@ class HomeController extends Controller
      {
        try {
          $product=Product::where('slug',$slug)->firstOrFail();
+         $latest_products = Product::where('status',1)->where('type', '=','Regular')->latest()->get();
          //return $product;
          $menus=Menu::with('categories')->get();
          views($product)->record(); //Record Visitor
 
-         return view('front.product.product-details',compact('product','menus'));
+         return view('front.product.product-details',compact('product','menus','latest_products'));
        } catch (\Exception $e) {
          abort(404);
        }
