@@ -4,16 +4,18 @@ namespace App\Http\Controllers\Admin\Product;
 use Auth;
 use Helper;
 use Validator;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\AddProductForm;
+use App\ProductSize;
+use App\Models\Product;
+use App\Models\SubCategory;
 
 // Models
-use App\Models\Product;
-use App\Models\SellerProduct;
 use App\Models\ProductColor;
-use App\ProductSize;
-use App\Models\SubCategory;
+use Illuminate\Http\Request;
+use App\Models\SellerProduct;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\AddProductForm;
+use Intervention\Image\Facades\Image;
+
 class ProductController extends Controller {
 
     public function __construct ()
@@ -81,8 +83,9 @@ class ProductController extends Controller {
             }
             if ($request->hasfile('multiple')) {
                 foreach ($request->file('multiple') as $image) {
+                    $img = Image::make($image)->resize(700, 850);
                     $name = time().'-'.$image->getClientOriginalName();
-                    $image->move(public_path('uploads/documents') . '/productimages/', $name);
+                    $img->save('uploads/documents/productimages/'.$name, 10);
                     $image_name[] = $name;
                 }
                 $product = New Product();
