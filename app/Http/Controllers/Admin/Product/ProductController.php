@@ -186,8 +186,9 @@ class ProductController extends Controller {
                 
                 if ($request->hasfile('multiple')) {
                     foreach ($request->file('multiple') as $image) {
+                        $img = Image::make($image)->resize(700, 850);
                         $name = time().'-'.$image->getClientOriginalName();
-                        $image->move(public_path('uploads/documents') . '/productimages/', $name);
+                        $img->save('uploads/documents/productimages/'.$name, 10);
                         $image_name[] = $name;
                     }
                     $product->multiple = json_encode($image_name);
