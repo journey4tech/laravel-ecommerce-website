@@ -23,27 +23,27 @@ class HomeController extends Controller
     {
         try {
 
-            $today= date("y-m-d");
-            $menus=Menu::with('categories')->get();
-           
-            $sliders=Slider::all();
-            $dailyDeals = DailyDeals::with('product')->active()->orderBy('priority','DESC')->get();
-            $popular_categories = PopularCategory::with(['category','category.products'=>function($q){
+            $data = [];
+            $data['today'] = date("y-m-d");
+            $data['menus'] = Menu::with('categories')->get();
+
+            $data['sliders'] = Slider::all();
+            $data['dailyDeals'] = DailyDeals::with('product')->active()->orderBy('priority','DESC')->get();
+            $data['popular_categories']= PopularCategory::with(['category','category.products'=>function($q){
               $q->latest()->take(8);
             }])->active()->orderBy('priority','DESC')->get();
-            $recommended_products = $this->getRecommendedProducts();
-            $latest_products = Product::where('status',1)->latest()->get();
-            $most_view = Product::where('status',1)->orderByUniqueViews()->take(3)->get();
-            $all_products=Product::where('status',1)->where('type', '=','Regular')->latest()->get();
-            $special_products=Product::where('status',1)->where('type', '=',"Special")->latest()->get();
-            $featured_products=Product::where('status',1)->where('type', '=',"Featured")->latest()->get();
-            $categories = SubCategory::with('products')->get();
-            $feature_c =SubCategory::where('status',1)->limit(4)->get();
-            $ads=Ads::all();
+            $data['recommended_products'] = $this->getRecommendedProducts();
+            $data['latest_products'] = Product::where('status',1)->latest()->get();
+            $data['most_view'] = Product::where('status',1)->orderByUniqueViews()->take(3)->get();
+            $data['all_products'] = Product::where('status',1)->where('type', '=','Regular')->latest()->get();
+            $data['special_products'] = Product::where('status',1)->where('type', '=',"Special")->latest()->get();
+            $data['featured_products'] = Product::where('status',1)->where('type', '=',"Featured")->latest()->get();
+            $data['categories'] = SubCategory::with('products')->get();
+            $data['feature_c'] = SubCategory::where('status',1)->limit(4)->get();
+            $data['ads'] = Ads::all();
           
-            $carts_count=Cart::count();
-             return view('front.home.home',
-             compact('all_products','special_products','featured_products','menus','sliders','dailyDeals','categories','popular_categories','ads','feature_c','recommended_products','carts_count','latest_products','most_view'));
+            $data['carts_count'] = Cart::count();
+             return view('front.home.home',$data);
            //return $latest_products;
         } catch (\Exception $e) {
             return $e->getMessage();
