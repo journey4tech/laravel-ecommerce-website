@@ -7,8 +7,8 @@
         <div class="row">
           <div class="product-view">
             <div class="product-essential">
-              <form action="product_detail.html#" method="post" id="product_addtocart_form">
-                <input name="form_key" value="6UbXroakyQlbfQzK" type="hidden">
+              <form action="{{ route('cartpost') }}" method="post" id="product_addtocart_form">
+                @csrf
                 <div class="product-img-box col-lg-6 col-sm-6 col-xs-12">
                   <ul class="moreview" id="moreview">
                     {{-- <li class="moreview_thumb thumb_1"> <img class="moreview_thumb_image" src="{{ asset('frontEnd/assets/products-images/product1.jpg')}}" alt="thumbnail"> <img class="moreview_source_image" src="{{ asset('frontEnd/assets/products-images/product2.jpg')}}" alt=""> <span class="roll-over">Roll over image to zoom in</span> <img  class="zoomImg" src="{{ asset('frontEnd/assets/products-images/product3.jpg')}}" alt="thumbnail"></li>
@@ -49,22 +49,27 @@
                   </div>
                   <div class="add-to-box">
                     <div class="add-to-cart">
-                      <label for="qty">Quantity:</label>
-                      <div class="pull-left">
-                        <div class="custom pull-left">
-                          <button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 0 ) result.value--;return false;" class="reduced items-count" type="button"><i class="icon-minus">&nbsp;</i></button>
-                          <input type="text" class="input-text qty" title="Qty" value="1" maxlength="12" id="qty" name="qty">
-                          <button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;" class="increase items-count" type="button"><i class="icon-plus">&nbsp;</i></button>
+
+
+
+                        <label for="qty">Quantity:</label>
+                        <div class="pull-left">
+                          <div class="custom pull-left">
+                            <button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 0 ) result.value--;return false;" class="reduced items-count" type="button"><i class="icon-minus">&nbsp;</i></button>
+                            <input type="text" class="input-text qty" title="Qty" value="1" maxlength="12" id="qty" name="qty">
+                            <input type="hidden"  name="product_id" value="{{ $product->id }}">
+                            <button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;" class="increase items-count" type="button"><i class="icon-plus">&nbsp;</i></button>
+                          </div>
                         </div>
-                      </div>
-                      <button onClick="productAddToCartForm.submit(this)" class="button btn-cart" title="Add to Cart" type="button"><span><i class="icon-basket"></i> Order</span></button>
-                      <div class="email-addto-box">
-                        <ul class="add-to-links">
-                          <li> <a class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a></li>
-                          <li><span class="separator">|</span> <a class="link-compare" href="compare.html"><span>Add to Compare</span></a></li>
-                        </ul>
-                        <p class="email-friend"><a href="product_detail.html#" class=""><span>Email to a Friend</span></a></p>
-                      </div>
+                        <button  class="button btn-cart" title="order" type="submit"><span><i class="icon-basket"></i> Order</span></button>
+
+                      {{--<div class="email-addto-box">--}}
+                        {{--<ul class="add-to-links">--}}
+                          {{--<li> <a class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a></li>--}}
+                          {{--<li><span class="separator">|</span> <a class="link-compare" href="compare.html"><span>Add to Compare</span></a></li>--}}
+                        {{--</ul>--}}
+                        {{--<p class="email-friend"><a href="product_detail.html#" class=""><span>Email to a Friend</span></a></p>--}}
+                      {{--</div>--}}
                     </div>
                   </div>
                   <div class="social">
@@ -106,7 +111,7 @@
                               <input class="input-text required-entry" name="productTagName" id="productTagName" type="text" >
                               <button type="button" title="Add Tags" class=" button btn-add" onClick="submitTagForm()"> <span>Add Tags</span> </button>
                             </div>
-                            <!--input-box--> 
+                            <!--input-box-->
                           </div>
                         </form>
                       </div>
@@ -124,7 +129,7 @@
                               <h4>How do you rate this product? <em class="required">*</em></h4>
                               <span id="input-message-box"></span>
                               <table id="product-review-table" class="data-table">
-                                
+
                                 <thead>
                                   <tr class="first last">
                                     <th>&nbsp;</th>
@@ -202,7 +207,7 @@
                           <ul>
                             <li>
                               <table class="ratings-table">
-                                
+
                                 <tbody>
                                   <tr>
                                     <th>Value</th>
@@ -232,7 +237,7 @@
                             </li>
                             <li class="even">
                               <table class="ratings-table">
-                                
+
                                 <tbody>
                                   <tr>
                                     <th>Value</th>
@@ -262,7 +267,7 @@
                             </li>
                             <li>
                               <table class="ratings-table">
-                                
+
                                 <tbody>
                                   <tr>
                                     <th>Value</th>
@@ -301,29 +306,29 @@
                     <div class="product-tabs-content-inner clearfix">
                       <p><strong>Lorem Ipsum</strong><span>&nbsp;is
                         simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                        has been the industry's standard dummy text ever since the 1500s, when 
+                        has been the industry's standard dummy text ever since the 1500s, when
                         an unknown printer took a galley of type and scrambled it to make a type
-                        specimen book. It has survived not only five centuries, but also the 
-                        leap into electronic typesetting, remaining essentially unchanged. It 
-                        was popularised in the 1960s with the release of Letraset sheets 
-                        containing Lorem Ipsum passages, and more recently with desktop 
-                        publishing software like Aldus PageMaker including versions of Lorem 
+                        specimen book. It has survived not only five centuries, but also the
+                        leap into electronic typesetting, remaining essentially unchanged. It
+                        was popularised in the 1960s with the release of Letraset sheets
+                        containing Lorem Ipsum passages, and more recently with desktop
+                        publishing software like Aldus PageMaker including versions of Lorem
                         Ipsum.</span></p>
                     </div>
                   </div>
                   <div class="tab-pane fade" id="product_tabs_custom1">
                     <div class="product-tabs-content-inner clearfix">
-                      <p> <strong> Comfortable </strong><span>&nbsp;preshrunk shirts. Highest Quality Printing.  6.1 oz. 100% preshrunk heavyweight cotton Shoulder-to-shoulder taping Double-needle sleeves and bottom hem     
-                        
+                      <p> <strong> Comfortable </strong><span>&nbsp;preshrunk shirts. Highest Quality Printing.  6.1 oz. 100% preshrunk heavyweight cotton Shoulder-to-shoulder taping Double-needle sleeves and bottom hem
+
                         Lorem Ipsumis
                         simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                        has been the industry's standard dummy text ever since the 1500s, when 
+                        has been the industry's standard dummy text ever since the 1500s, when
                         an unknown printer took a galley of type and scrambled it to make a type
-                        specimen book. It has survived not only five centuries, but also the 
-                        leap into electronic typesetting, remaining essentially unchanged. It 
-                        was popularised in the 1960s with the release of Letraset sheets 
-                        containing Lorem Ipsum passages, and more recently with desktop 
-                        publishing software like Aldus PageMaker including versions of Lorem 
+                        specimen book. It has survived not only five centuries, but also the
+                        leap into electronic typesetting, remaining essentially unchanged. It
+                        was popularised in the 1960s with the release of Letraset sheets
+                        containing Lorem Ipsum passages, and more recently with desktop
+                        publishing software like Aldus PageMaker including versions of Lorem
                         Ipsum.</span></p>
                     </div>
                   </div>
@@ -337,14 +342,14 @@
                         <h2>Related Products</h2>
                       </div>
                       <div id="related-products-slider" class="product-flexslider hidden-buttons">
-                        <div class="slider-items slider-width-col4"> 
-                          
+                        <div class="slider-items slider-width-col4">
+
                           @foreach($latest_products as $product)
                           <?php $images=collect(json_decode($product->multiple))->first(); ?>
                           <!-- Item -->
                           <div class="item">
                             <div class="col-item">
-                              
+
                             <div class="product-image-area"> <a class="product-image" title="Sample Product" href="{{route('product',$product->slug)}}"> <img src="{{ asset('uploads/documents/productimages/'.$images)}}" class="img-responsive" alt="a" /> </a>
                                 <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="product_detail.html#" title="Add to cart">
                                   <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
@@ -371,18 +376,18 @@
                                       <p class="old-price"> <span class="price-sep">-</span> <span class="price"> {{ $product->special_price }}</span> </p>
                                     </div>
                                   </div>
-                                  <!--item-content--> 
+                                  <!--item-content-->
                                 </div>
                                 <!--info-inner-->
-                                
+
                                 <div class="clearfix"> </div>
                               </div>
                             </div>
                           </div>
-                          <!-- End Item --> 
+                          <!-- End Item -->
                           @endforeach
-                          
-                          
+
+
                         </div>
                       </div>
                     </div>
@@ -393,12 +398,12 @@
                         <h2>Upsell Products</h2>
                       </div>
                       <div id="upsell-products-slider" class="product-flexslider hidden-buttons">
-                        <div class="slider-items slider-width-col4"> 
-                          
+                        <div class="slider-items slider-width-col4">
+
                           <!-- Item -->
                           <div class="item">
                             <div class="col-item">
-                              
+
                               <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="products-images/product13.jpg" class="img-responsive" alt="a" /> </a>
                                 <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="product_detail.html#" title="Add to cart">
                                   <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
@@ -425,16 +430,16 @@
                                       <p class="old-price"> <span class="price-sep">-</span> <span class="price"> $50.00 </span> </p>
                                     </div>
                                   </div>
-                                  <!--item-content--> 
+                                  <!--item-content-->
                                 </div>
                                 <!--info-inner-->
-                                
+
                                 <div class="clearfix"> </div>
                               </div>
                             </div>
                           </div>
-                          <!-- End Item --> 
-                          
+                          <!-- End Item -->
+
                           <!-- Item -->
                           <div class="item">
                             <div class="col-item">
@@ -462,20 +467,20 @@
                                     </div>
                                     <div class="price-box"> <span class="regular-price"> <span class="price">$422.00</span> </span> </div>
                                   </div>
-                                  <!--item-content--> 
+                                  <!--item-content-->
                                 </div>
                                 <!--info-inner-->
-                                
+
                                 <div class="clearfix"> </div>
                               </div>
                             </div>
                           </div>
-                          <!-- End Item --> 
-                          
+                          <!-- End Item -->
+
                           <!-- Item -->
                           <div class="item">
                             <div class="col-item">
-                              
+
                               <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="products-images/product15.jpg"> </a>
                                 <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="product_detail.html#" title="Add to cart">
                                   <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
@@ -499,20 +504,20 @@
                                     </div>
                                     <div class="price-box"> <span class="regular-price"> <span class="price">$50.00</span> </span> </div>
                                   </div>
-                                  <!--item-content--> 
+                                  <!--item-content-->
                                 </div>
                                 <!--info-inner-->
-                                
+
                                 <div class="clearfix"> </div>
                               </div>
                             </div>
                           </div>
-                          <!-- End Item --> 
-                          
+                          <!-- End Item -->
+
                           <!-- Item -->
                           <div class="item">
                             <div class="col-item">
-                              
+
                               <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="products-images/product16.jpg"> </a>
                                 <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="product_detail.html#" title="Add to cart">
                                   <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
@@ -539,20 +544,20 @@
                                       <p class="old-price"> <span class="price-sep">-</span> <span class="price"> $50.00 </span> </p>
                                     </div>
                                   </div>
-                                  <!--item-content--> 
+                                  <!--item-content-->
                                 </div>
                                 <!--info-inner-->
-                                
+
                                 <div class="clearfix"> </div>
                               </div>
                             </div>
                           </div>
-                          <!-- End Item --> 
-                          
+                          <!-- End Item -->
+
                           <!-- Item -->
                           <div class="item">
                             <div class="col-item">
-                              
+
                               <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="products-images/product17.jpg"> </a>
                                 <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="product_detail.html#" title="Add to cart">
                                   <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
@@ -579,16 +584,16 @@
                                       <p class="old-price"> <span class="price-sep">-</span> <span class="price"> $50.00 </span> </p>
                                     </div>
                                   </div>
-                                  <!--item-content--> 
+                                  <!--item-content-->
                                 </div>
                                 <!--info-inner-->
-                                
+
                                 <div class="clearfix"> </div>
                               </div>
                             </div>
                           </div>
-                          <!-- End Item --> 
-                          
+                          <!-- End Item -->
+
                           <!-- Item -->
                           <div class="item">
                             <div class="col-item">
@@ -616,20 +621,20 @@
                                     </div>
                                     <div class="price-box"> <span class="regular-price"> <span class="price">$422.00</span> </span> </div>
                                   </div>
-                                  <!--item-content--> 
+                                  <!--item-content-->
                                 </div>
                                 <!--info-inner-->
-                                
+
                                 <div class="clearfix"> </div>
                               </div>
                             </div>
                           </div>
-                          <!-- End Item --> 
-                          
+                          <!-- End Item -->
+
                           <!-- Item -->
                           <div class="item">
                             <div class="col-item">
-                              
+
                               <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="products-images/product19.jpg"> </a>
                                 <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="product_detail.html#" title="Add to cart">
                                   <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
@@ -653,20 +658,20 @@
                                     </div>
                                     <div class="price-box"> <span class="regular-price"> <span class="price">$50.00</span> </span> </div>
                                   </div>
-                                  <!--item-content--> 
+                                  <!--item-content-->
                                 </div>
                                 <!--info-inner-->
-                                
+
                                 <div class="clearfix"> </div>
                               </div>
                             </div>
                           </div>
-                          <!-- End Item --> 
-                          
+                          <!-- End Item -->
+
                           <!-- Item -->
                           <div class="item">
                             <div class="col-item">
-                              
+
                               <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="products-images/product20.jpg"> </a>
                                 <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="product_detail.html#" title="Add to cart">
                                   <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
@@ -693,16 +698,16 @@
                                       <p class="old-price"> <span class="price-sep">-</span> <span class="price"> $50.00 </span> </p>
                                     </div>
                                   </div>
-                                  <!--item-content--> 
+                                  <!--item-content-->
                                 </div>
                                 <!--info-inner-->
-                                
+
                                 <div class="clearfix"> </div>
                               </div>
                             </div>
                           </div>
-                          <!-- End Item --> 
-                          
+                          <!-- End Item -->
+
                         </div>
                       </div>
                     </div>
@@ -715,6 +720,6 @@
       </div>
     </div>
   </section>
-  <!--End main-container --> 
+  <!--End main-container -->
 
 @endsection

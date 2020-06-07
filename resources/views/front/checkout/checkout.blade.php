@@ -57,19 +57,19 @@
                                                         <td><span class="amount">৳ {{Cart::subtotal()}}</span></td>
                                                     </tr>
 
-                                                    <tr class="shipping">
-                                                        <th>
-                                                            <span>Shipping</span>
-                                                            @foreach($s_zones as $data)
-                                                            <span class="shipping-price-radio-btn">
-                                                                <input type="radio" value="" name="" class="input-radio" id="inside-dhaka" checked>
-                                                                <label for="inside-dhaka">{{$data->name}}</label>
-                                                            </span>
-                                                            @endforeach
+                                                    {{--<tr class="shipping">--}}
+                                                        {{--<th>--}}
+                                                            {{--<span>Shipping</span>--}}
+                                                            {{--@foreach($s_zones as $data)--}}
+                                                            {{--<span class="shipping-price-radio-btn">--}}
+                                                                {{--<input type="radio" value="" name="" class="input-radio" id="inside-dhaka" checked>--}}
+                                                                {{--<label for="inside-dhaka">{{$data->name}}</label>--}}
+                                                            {{--</span>--}}
+                                                            {{--@endforeach--}}
 
-                                                        </th>
-                                                        <td data-title="Shipping">Flat Rate: <span class="amount"> ৳ 50 </span> <input type="hidden" class="shipping_method" value="international_delivery" id="shipping_method_0" data-index="0" name="shipping_method[0]"></td>
-                                                    </tr>
+                                                        {{--</th>--}}
+                                                        {{--<td data-title="Shipping">Flat Rate: <span class="amount"> ৳ 50 </span> <input type="hidden" class="shipping_method" value="international_delivery" id="shipping_method_0" data-index="0" name="shipping_method[0]"></td>--}}
+                                                    {{--</tr>--}}
 
                                                     <tr class="order-total">
                                                         <th>Total</th>
@@ -79,18 +79,18 @@
                                             </table>
 
                                             <div class="woocommerce-checkout-payment" id="payment">
-                                                <ul class="wc_payment_methods payment_methods methods">
-                                                  @foreach($pay_methods as $value)
+                                                {{--<ul class="wc_payment_methods payment_methods methods">--}}
+                                                  {{--@foreach($pay_methods as $value)--}}
 
-                                                    <li class="wc_payment_method payment_method_cheque">
-                                                        <input type="radio" data-order_button_text="" value="{{$value->id}}" name="payment_method" class="input-radio" id="payment_method_cheque">
-                                                        <label for="payment_method_cheque">{{$value->name}}  </label>
-                                                        <div style="display:none;" class="payment_box payment_method_cheque">
-                                                        </div>
-                                                    </li>
-                                                    @endforeach
+                                                    {{--<li class="wc_payment_method payment_method_cheque">--}}
+                                                        {{--<input type="radio" data-order_button_text="" value="{{$value->id}}" name="payment_method" class="input-radio" id="payment_method_cheque">--}}
+                                                        {{--<label for="payment_method_cheque">{{$value->name}}  </label>--}}
+                                                        {{--<div style="display:none;" class="payment_box payment_method_cheque">--}}
+                                                        {{--</div>--}}
+                                                    {{--</li>--}}
+                                                    {{--@endforeach--}}
 
-                                                </ul>
+                                                {{--</ul>--}}
                                                 <div class="form-row place-order">
 
                                                   <input type="hidden" class="form-control" id="customer_id" name="customer_id" value="{{Auth::user()->id}}">

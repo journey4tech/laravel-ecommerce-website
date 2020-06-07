@@ -14,6 +14,7 @@ use App\Models\SubCategory;
 use App\Models\Product;
 use App\Models\DailyDeals;
 use App\Models\PopularCategory;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
@@ -209,5 +210,19 @@ class HomeController extends Controller
        return $e->getMessage();
      }
    }
+
+    public function placeOrder(Request $request)
+    {
+       Session::put('qty',$request->qty);
+
+       return redirect()->route('provide.info');
+
+
+    }
+
+    public function provideInformation()
+    {
+        
+    }
 
 }

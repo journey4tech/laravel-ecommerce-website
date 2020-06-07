@@ -12,23 +12,32 @@ use App\PaymentMethod;
 use App\ShippingZone;
 
 
+use App\Ads;
+use App\Models\Menu;
+use App\Models\Slider;
+use App\Models\Contact;
+use App\Models\SubCategory;
+use App\Models\Product;
+use App\Models\DailyDeals;
+use App\Models\PopularCategory;
+
 
 class CheckOutController extends Controller
 {
 
-    public function __construct()
-    {
-      $this->middleware('auth');
-    }
+//    public function __construct()
+//    {
+//      $this->middleware('auth');
+//    }
 
 
     public function checkout(){
       try {
 
         $cartcontent= Cart::content();
-        $s_zones= ShippingZone::all();
-        $pay_methods= PaymentMethod::all();
-        return view('front.checkout.checkout',compact('cartcontent','pay_methods','s_zones'));
+        //$s_zones= ShippingZone::all();
+        //$pay_methods= PaymentMethod::all();
+        return view('front.checkout.checkout',compact('cartcontent'));
 
       } catch (\Exception $e) {
         return $e->getMessage();
@@ -36,6 +45,21 @@ class CheckOutController extends Controller
 
 
     }
+
+    public function checkoutMe()
+    {
+
+        $data = [];
+        $data['today'] = date("y-m-d");
+        $data['menus'] = Menu::with('categories')->get();
+
+
+
+        $data['carts_count'] = Cart::count();
+
+        return view('front.pages.checkoutMe',$data);
+    }
+
 
     public function store(Request $request)
    {

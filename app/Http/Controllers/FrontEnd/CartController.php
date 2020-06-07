@@ -18,23 +18,26 @@ class CartController extends Controller
   public function cartpost(Request $request){
     try {
 
-       $session_id = Session::getId();
-       $product_qty=$request->quantity;
+
+
+       $product_qty=$request->qty;
        $product_slug=$request->product_slug;
-       $rowId = $request->rowId;
-       $product=Product::all()->where('slug', $product_slug)->first();
+
+        $product=Product::findOrFail($request->product_id);
      Cart::add([
-         ['id' => $product->id, 'name' =>$product->product_name, 'qty' =>$product_qty, 'price' =>$product->product_price,'rowId'=>$rowId, 'weight' => 550, 'options' => ['size' => 'large']]
+         ['id' => $product->id, 'name' =>$product->product_name, 'qty' =>$product_qty, 'price' =>$product->product_price,'weight' => 550, 'options' => ['size' => 'large','color'=>'blue']]
          // ['id' => '5566', 'name' => 'Product 3', 'qty' => 1, 'price' => 10.00, 'weight' => 550, 'options' => ['size' => 'large']]
 
      ]);
-      return redirect(route('cart'));
+      return redirect()->route('checkoutMe');
+
     } catch (\Exception $e) {
        return $e->getMessage();
 
      }
 
   }
+
 
 
 

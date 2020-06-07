@@ -25,6 +25,10 @@ Route::get('/product/{slug}','FrontEnd\HomeController@show_product')->name('prod
  Route::get('/about', 'FrontEnd\WelcomeController@about')->name('about');
  Route::get('/contact-us', 'FrontEnd\WelcomeController@contact')->name('contact');
  Route::post('/post-contact', 'FrontEnd\HomeController@post_contact')->name('postcontact');
+
+Route::get('/place-order', 'FrontEnd\HomeController@placeOrder')->name('place.order');
+Route::get('/provide-information', 'FrontEnd\HomeController@provideInformation')->name('provide.info');
+
  Route::get('/blog', 'FrontEnd\WelcomeController@blog')->name('blog');
  Route::get('/wishlist', 'FrontEnd\WelcomeController@wishlist')->name('wishlist');
  Route::get('/compare', 'FrontEnd\WelcomeController@compare')->name('compare');
@@ -40,6 +44,9 @@ Route::get('/product/{slug}','FrontEnd\HomeController@show_product')->name('prod
  Route::post('/cartx', 'FrontEnd\CartController@destroy')->name('cart_delete');
  Route::post('/clear-cartx', 'FrontEnd\CartController@clear_cart')->name('cart_destory');
  Route::post('/checkout', 'FrontEnd\CheckOutController@checkout')->name('checkout');
+
+ Route::get('/checkout-me', 'FrontEnd\CheckOutController@checkoutMe')->name('checkoutMe');
+
  Route::post('/order', 'FrontEnd\CheckOutController@store')->name('order');
  Route::get('/shop', 'FrontEnd\CheckOutController@shop')->name('shop');
  Route::get('/my-account', 'FrontEnd\CheckOutController@useraccount')->name('account');
