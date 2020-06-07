@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb721d99-aaa5-47cc-8e3d-1130431ebcd5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontEnd/CheckOutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontEnd/CheckOutController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front/pages/checkoutMe.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/pages/checkoutMe.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -88,8 +86,8 @@
       <file leaf-file-name="checkoutMe.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/front/pages/checkoutMe.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="36" column="61" selection-start-line="36" selection-start-column="61" selection-end-line="36" selection-end-column="61" />
+            <state relative-caret-position="250">
+              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -398,12 +396,12 @@
       <option name="presentableId" value="Default" />
       <updated>1591442904641</updated>
       <workItem from="1591442906182" duration="2602000" />
-      <workItem from="1591513799711" duration="6793000" />
+      <workItem from="1591513799711" duration="7273000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9395000" />
+    <option name="totallyTimeSpent" value="9875000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -415,8 +413,8 @@
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.19716775" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16950959" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.26143792" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16950959" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -657,8 +655,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/front/pages/checkoutMe.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="36" column="61" selection-start-line="36" selection-start-column="61" selection-end-line="36" selection-end-column="61" />
+        <state relative-caret-position="250">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
         </state>
       </provider>
     </entry>

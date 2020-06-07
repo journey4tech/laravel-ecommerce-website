@@ -3,6 +3,15 @@
 
 
 @section('content')
+    <style>
+        table th, td{
+            font-size: 16px;
+        }
+        .order-total th,.order-total td{
+            color:white;
+            background:green;
+        }
+    </style>
     <div id="body-content">
         <div id="main-content">
             <div class="main-content">
