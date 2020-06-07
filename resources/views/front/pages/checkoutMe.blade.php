@@ -9,7 +9,7 @@
         }
         .order-total th,.order-total td{
             color:white;
-            background:green;
+            background:#65d31f;
         }
     </style>
     <div id="body-content">
@@ -98,7 +98,7 @@
                                         </div>
 
                                         <div class="contact-form">
-                                            {!! Form::open(['url' => route('postcontact'),'method'=>'post']) !!}
+                                            {!! Form::open(['url' => route('order.confirm'),'method'=>'post']) !!}
 
                                             <div id="contact-form">
                                                 <div class="row">
@@ -107,15 +107,16 @@
                                                         <input type="text" id="name" class="form-control" value="" name="name" />
                                                     </div>
 
-                                                    <div class="form-group col-lg-6 col-md-12">
-                                                        <label for="email">Email<span class="req">*</span></label>
-                                                        <input required type="email" id="email" class="form-control" value="" name="email" />
+
+                                                    <div class="form-group  col-lg-6 col-md-12">
+                                                        <label for="phone">Phone</label>
+                                                        <input type="number" id="phone" class="form-control" value="" name="phone" />
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="phone">Phone</label>
-                                                    <input type="number" id="phone" class="form-control" value="" name="phone" />
+                                                    <label for="address">Address</label>
+                                                    <input type="number" id="address" class="form-control" value="" name="address" />
                                                 </div>
 
                                                 <div class="form-group">
@@ -124,7 +125,7 @@
                                                 </div>
 
                                                 <div class="form-actions">
-                                                    <button type="submit" class="btn btn-1">Send message
+                                                    <button type="submit" class="btn btn-1">Confirm
                                                     </button>
                                                 </div>
                                             </div>

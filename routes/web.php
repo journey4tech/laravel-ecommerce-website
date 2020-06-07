@@ -46,6 +46,7 @@ Route::get('/provide-information', 'FrontEnd\HomeController@provideInformation')
  Route::post('/checkout', 'FrontEnd\CheckOutController@checkout')->name('checkout');
 
  Route::get('/checkout-me', 'FrontEnd\CheckOutController@checkoutMe')->name('checkoutMe');
+ Route::post('/order-confirm', 'FrontEnd\CheckOutController@orderConfirm')->name('order.confirm');
 
  Route::post('/order', 'FrontEnd\CheckOutController@store')->name('order');
  Route::get('/shop', 'FrontEnd\CheckOutController@shop')->name('shop');
