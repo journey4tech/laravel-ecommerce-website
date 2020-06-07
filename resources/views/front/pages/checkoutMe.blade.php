@@ -33,11 +33,49 @@
                                 <div class="row">
 
                                     <div class="contact-form-wrapper col-md-6 col-sm-12">
-
                                         <div class="title-wrapper">
-                                            <h3>Leave A Message</h3>
-                                            <p>Maecenas dolor elit, semper a sem sed, pulvinar molestie lacus. Aliquam dignissim, elit non mattis ultrices, neque odio ultricies tellus, eu porttitor nisl ipsum eu massa.</p>
+                                            <h3>Order Details</h3>
                                         </div>
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th class="product-name">Product</th>
+                                                <th class="product-total">Total</th>
+
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            @foreach($cartcontent as $data)
+                                                <tr class="cart_item">
+                                                    <td class="product-name">{{$data->name}}
+                                                        <strong class="product-quantity">× {{$data->qty}}</strong>
+                                                    </td>
+                                                    <td class="product-total">
+                                                        <span class="amount">৳ {{$data->price}}</span>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                            </tbody>
+                                            <tfoot>
+
+                                            <tr class="cart-subtotal">
+                                                <th>Subtotal</th>
+                                                <td><span class="amount">৳ {{Cart::subtotal()}}</span></td>
+                                            </tr>
+                                            <tr class="cart-subtotal">
+                                                <th>Delevery Charge</th>
+                                                <td><span class="amount">৳ 50</span></td>
+                                            </tr>
+
+
+
+
+                                            <tr class="order-total">
+                                                <th>Total</th>
+                                                <td><strong><span class="amount">৳ {{$total = str_replace(',', '', Cart::subtotal()) +50}}</span></strong> </td>
+                                            </tr>
+                                            </tfoot>
+                                        </table>
 
 
 
