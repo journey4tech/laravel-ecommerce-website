@@ -4,6 +4,27 @@
 
     </li>
 
+
+    <li>
+        <a href="javascript: void(0);">
+            <i class="la la-diamond"></i>
+
+            <span>Add Role </span>
+            <span class="menu-arrow"></span>
+        </a>
+        <ul class="nav-second-level" aria-expanded="false">
+            <li>
+                <a href="{{route('admin.sellers.create')}}">Add Role Orders</a>
+            </li>
+
+            <li>
+                <a href="{{route('admin.sellers.index')}}">Manage Seller</a>
+            </li>
+
+
+        </ul>
+    </li>
+
     <li>
         <a href="javascript: void(0);">
             <i class="la la-cube"></i>
@@ -63,40 +84,40 @@
         </ul>
     </li>
 
-    <li>
-        <a href="javascript: void(0);">
-            <i class="la la-cogs"></i>
-            <span> Homepage Setting </span>
-            <span class="menu-arrow"></span>
-        </a>
-        <ul class="nav-second-level" aria-expanded="false">
-            <li> <a href="{{route('admin.products.advance-products.daily-deals')}}">Deals of the Day</a> </li>
+    {{--<li>--}}
+        {{--<a href="javascript: void(0);">--}}
+            {{--<i class="la la-cogs"></i>--}}
+            {{--<span> Homepage Setting </span>--}}
+            {{--<span class="menu-arrow"></span>--}}
+        {{--</a>--}}
+        {{--<ul class="nav-second-level" aria-expanded="false">--}}
+            {{--<li> <a href="{{route('admin.products.advance-products.daily-deals')}}">Deals of the Day</a> </li>--}}
 
-        </ul>
-        <ul class="nav-second-level" aria-expanded="false">
-            <li> <a href="{{route('admin.popular-category')}}">Popular Categories</a> </li>
+        {{--</ul>--}}
+        {{--<ul class="nav-second-level" aria-expanded="false">--}}
+            {{--<li> <a href="{{route('admin.popular-category')}}">Popular Categories</a> </li>--}}
 
-        </ul>
-    </li>
+        {{--</ul>--}}
+    {{--</li>--}}
 
-    <li class="menu-title mt-2">System</li>
+    {{--<li class="menu-title mt-2">System</li>--}}
 
-    <li>
-        <a href="javascript: void(0);">
-            <i class="la la-cube"></i>
-            <span> Cupon </span>
-            <span class="menu-arrow"></span>
-        </a>
-        <ul class="nav-second-level" aria-expanded="false">
-            <li>
-                <a href="{{route('admin.coupons.create')}}">Add Cupon</a>
-            </li>
-            <li>
-                <a href="{{route('admin.coupons.index')}}">Manage Cupon</a>
-            </li>
+    {{--<li>--}}
+        {{--<a href="javascript: void(0);">--}}
+            {{--<i class="la la-cube"></i>--}}
+            {{--<span> Cupon </span>--}}
+            {{--<span class="menu-arrow"></span>--}}
+        {{--</a>--}}
+        {{--<ul class="nav-second-level" aria-expanded="false">--}}
+            {{--<li>--}}
+                {{--<a href="{{route('admin.coupons.create')}}">Add Cupon</a>--}}
+            {{--</li>--}}
+            {{--<li>--}}
+                {{--<a href="{{route('admin.coupons.index')}}">Manage Cupon</a>--}}
+            {{--</li>--}}
 
-        </ul>
-    </li>
+        {{--</ul>--}}
+    {{--</li>--}}
 
     <li>
         <a href="javascript: void(0);">
@@ -114,45 +135,45 @@
 
         </ul>
     </li>
-    <li>
-        <a href="javascript: void(0);">
-            <i class="la la-file-text-o"></i>
-            <span> Payment Method </span>
-            <span class="menu-arrow"></span>
-        </a>
-        <ul class="nav-second-level" aria-expanded="false">
-            <li>
-                <a href="{{route('admin.payment-methods.create')}}">Add Payment Method</a>
-            </li>
-            <li>
-                <a href="{{route('admin.payment-methods.index')}}">Manage  Method</a>
-            </li>
+    {{--<li>--}}
+        {{--<a href="javascript: void(0);">--}}
+            {{--<i class="la la-file-text-o"></i>--}}
+            {{--<span> Payment Method </span>--}}
+            {{--<span class="menu-arrow"></span>--}}
+        {{--</a>--}}
+        {{--<ul class="nav-second-level" aria-expanded="false">--}}
+            {{--<li>--}}
+                {{--<a href="{{route('admin.payment-methods.create')}}">Add Payment Method</a>--}}
+            {{--</li>--}}
+            {{--<li>--}}
+                {{--<a href="{{route('admin.payment-methods.index')}}">Manage  Method</a>--}}
+            {{--</li>--}}
 
-        </ul>
-    </li>
+        {{--</ul>--}}
+    {{--</li>--}}
 
-    <li>
-        <a href="javascript: void(0);">
-            <i class="la la-file-text-o"></i>
-            <span> Shipping Zone </span>
-            <span class="menu-arrow"></span>
-        </a>
-        <ul class="nav-second-level" aria-expanded="false">
-            <li>
-                <a href="{{route('admin.shipping-zone.create')}}">Add Shipping Zone</a>
-            </li>
-            <li>
-                <a href="{{route('admin.shipping-zone.index')}}">Manage  Zone </a>
-            </li>
+    {{--<li>--}}
+        {{--<a href="javascript: void(0);">--}}
+            {{--<i class="la la-file-text-o"></i>--}}
+            {{--<span> Shipping Zone </span>--}}
+            {{--<span class="menu-arrow"></span>--}}
+        {{--</a>--}}
+        {{--<ul class="nav-second-level" aria-expanded="false">--}}
+            {{--<li>--}}
+                {{--<a href="{{route('admin.shipping-zone.create')}}">Add Shipping Zone</a>--}}
+            {{--</li>--}}
+            {{--<li>--}}
+                {{--<a href="{{route('admin.shipping-zone.index')}}">Manage  Zone </a>--}}
+            {{--</li>--}}
 
-        </ul>
-    </li>
+        {{--</ul>--}}
+    {{--</li>--}}
 
     <li>
         <a href="javascript: void(0);">
             <i class="la la-diamond"></i>
-            <span class="badge badge-danger float-right">New</span>
             <span>Orders </span>
+            <span class="menu-arrow"></span>
         </a>
         <ul class="nav-second-level" aria-expanded="false">
             <li>
@@ -168,68 +189,51 @@
 
         </ul>
     </li>
-    <li>
-        <a href="javascript: void(0);">
-            <i class="la la-diamond"></i>
-            <span class="badge badge-danger float-right">New</span>
-            <span>Add Role </span>
-        </a>
-        <ul class="nav-second-level" aria-expanded="false">
-            <li>
-                <a href="{{route('admin.sellers.create')}}">Add Role Orders</a>
-            </li>
 
-            <li>
-                <a href="{{route('admin.sellers.index')}}">Manage Seller</a>
-            </li>
+    {{--<li>--}}
+        {{--<a href="{{route('admin.contact')}}">--}}
+            {{--<i class="la la-diamond"></i>--}}
+            {{--<span class="badge badge-danger float-right">New</span>--}}
+            {{--<span>Contact </span>--}}
+        {{--</a>--}}
 
+    {{--</li>--}}
 
-        </ul>
-    </li>
-    <li>
-        <a href="{{route('admin.contact')}}">
-            <i class="la la-diamond"></i>
-            <span class="badge badge-danger float-right">New</span>
-            <span>Contact </span>
-        </a>
+    {{--<li>--}}
+        {{--<a href="{{route('admin.users')}}">--}}
+            {{--<i class="la la-diamond"></i>--}}
+            {{--<span class="badge badge-danger float-right">New</span>--}}
+            {{--<span>Users </span>--}}
+        {{--</a>--}}
 
-    </li>
+    {{--</li>--}}
+    {{--<li>--}}
+        {{--<a href="{{route('admin.seller-product')}}">--}}
+            {{--<i class="la la-diamond"></i>--}}
+            {{--<span class="badge badge-danger float-right">New</span>--}}
+            {{--<span>Seller Product  </span>--}}
+        {{--</a>--}}
 
-    <li>
-        <a href="{{route('admin.users')}}">
-            <i class="la la-diamond"></i>
-            <span class="badge badge-danger float-right">New</span>
-            <span>Users </span>
-        </a>
-
-    </li>
-    <li>
-        <a href="{{route('admin.seller-product')}}">
-            <i class="la la-diamond"></i>
-            <span class="badge badge-danger float-right">New</span>
-            <span>Seller Product  </span>
-        </a>
-
-    </li>
+    {{--</li>--}}
 
 
-    <li>
-        <a href="javascript: void(0);">
-            <i class="la la-diamond"></i>
-            <span> Feedback </span>
-            <span class="menu-arrow"></span>
-        </a>
-        <ul class="nav-second-level" aria-expanded="false">
-            <li>
-                <a href="ui-buttons.html">Ratting</a>
-            </li>
-            <li>
-                <a href="ui-cards.html">Report</a>
-            </li>
-            <li>
+    {{--<li>--}}
+        {{--<a href="javascript: void(0);">--}}
+            {{--<i class="la la-diamond"></i>--}}
+            {{--<span> Feedback </span>--}}
+            {{--<span class="menu-arrow"></span>--}}
+        {{--</a>--}}
+        {{--<ul class="nav-second-level" aria-expanded="false">--}}
+            {{--<li>--}}
+                {{--<a href="ui-buttons.html">Ratting</a>--}}
+            {{--</li>--}}
+            {{--<li>--}}
+                {{--<a href="ui-cards.html">Report</a>--}}
+            {{--</li>--}}
+            {{--<li>--}}
 
-        </ul>
-        </li>
+        {{--</ul>--}}
+        {{--</li>--}}
 
 
 </ul>

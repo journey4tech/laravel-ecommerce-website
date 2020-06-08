@@ -93,8 +93,8 @@
                                     <div class="contact-form-wrapper col-md-6 col-sm-12">
 
                                         <div class="title-wrapper">
-                                            <h3>Leave A Message</h3>
-                                            <p>Maecenas dolor elit, semper a sem sed, pulvinar molestie lacus. Aliquam dignissim, elit non mattis ultrices, neque odio ultricies tellus, eu porttitor nisl ipsum eu massa.</p>
+                                            <h3>Provide  Information</h3>
+
                                         </div>
 
                                         <div class="contact-form">
@@ -125,7 +125,7 @@
                                                 </div>
 
                                                 <div class="form-actions">
-                                                    <button type="submit" class="btn btn-1">Confirm
+                                                    <button type="submit" class="btn btn-success">Confirm an Order
                                                     </button>
                                                 </div>
                                             </div>
