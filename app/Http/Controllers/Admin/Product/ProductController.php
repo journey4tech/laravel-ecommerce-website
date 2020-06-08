@@ -28,14 +28,15 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
+
         if (Auth::user()->hasRole(['seller'])) {
           $products = SellerProduct::where('seller_id', Auth::user()->id)->with(['products','products.sub_category'])->get();
           $products = $products->map(function($item, $key){
             return $item->products;
-          });
+          })->paginate(10);
 
         }else{
-          $products = Product::with('sub_category')->get();
+          $products = Product::with('sub_category')->paginate(10);
         }
         return view('admin.products.manage', compact('products'));
     }

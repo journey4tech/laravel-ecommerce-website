@@ -2,6 +2,30 @@
 
     <li class="menu-title">Yinimini</li>
 
+
+    <li>
+        <a href="javascript: void(0);">
+            <i class="la la-cube"></i>
+            <span> Category </span>
+            <span class="menu-arrow"></span>
+        </a>
+        <ul class="nav-second-level" aria-expanded="false">
+            <li>
+                <a href="{{route('admin.categories.create')}}">Categories</a>
+            </li>
+        <!-- <li>
+                <a href="{{route('admin.menus.index')}}">Manage Menu  </a>
+            </li>
+            <li>
+                <a href="{{route('admin.categories.index')}}">Manage Category </a>
+            </li>
+            <li>
+                <a href="{{route('admin.sub-categories.index')}}">Manage Sub-Category </a>
+            </li> -->
+
+        </ul>
+    </li>
+
         <li>
             <a href="javascript: void(0);">
                 <i class="la la-clone"></i>
@@ -20,22 +44,22 @@
             </ul>
         </li>
 
-        <li>
-            <a href="javascript: void(0);">
-                <i class="la la-cube"></i>
-                <span> Profile </span>
-                <span class="menu-arrow"></span>
-            </a>
-            <ul class="nav-second-level" aria-expanded="false">
-                <li>
-                    <a href="{{route('admin.seller-profiles.create')}}">Add Complete Profile</a>
-                </li>
-                <li>
-                    <a href="{{route('admin.seller-profiles.index')}}">Manage Profile</a>
-                </li>
+        {{--<li>--}}
+            {{--<a href="javascript: void(0);">--}}
+                {{--<i class="la la-cube"></i>--}}
+                {{--<span> Profile </span>--}}
+                {{--<span class="menu-arrow"></span>--}}
+            {{--</a>--}}
+            {{--<ul class="nav-second-level" aria-expanded="false">--}}
+                {{--<li>--}}
+                    {{--<a href="{{route('admin.seller-profiles.create')}}">Add Complete Profile</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a href="{{route('admin.seller-profiles.index')}}">Manage Profile</a>--}}
+                {{--</li>--}}
 
-            </ul>
-        </li>
+            {{--</ul>--}}
+        {{--</li>--}}
 
         <li>
             <a href="javascript: void(0);">
