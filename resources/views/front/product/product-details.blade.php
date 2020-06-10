@@ -47,6 +47,22 @@
                     <h2>Quick Overview</h2>
                     <p>{{ $product->product_title }}</p>
                   </div>
+
+                  <div class="short-description">
+                    <h2>Colors</h2>
+                    @php
+                      $colors = json_decode($product->color)
+                    @endphp
+                    @if(! empty($colors))
+                      @foreach($colors as $color)
+                        <span style="text-transform: capitalize">{{ $color }}</span>
+                        @if(!$loop->last)
+                          ,
+                        @endif
+                      @endforeach
+                    @endif
+
+                  </div>
                   <div class="add-to-box">
                     <div class="add-to-cart">
 
