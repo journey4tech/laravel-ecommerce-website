@@ -55,7 +55,7 @@
                     @endphp
                     @if(! empty($colors))
                       @foreach($colors as $color)
-                        <span style="text-transform: capitalize">{{ $color }}</span>
+                        <span >{{ $color }}</span>
                         @if(!$loop->last)
                           ,
                         @endif
@@ -77,6 +77,26 @@
                             <button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;" class="increase items-count" type="button"><i class="icon-plus">&nbsp;</i></button>
                           </div>
                         </div>
+
+
+                        <div class="pull-left">
+                          <div class="custom pull-left">
+                            <select name="color" id="">
+                              @php
+                                $colors = json_decode($product->color)
+                              @endphp
+                              @if(! empty($colors))
+                                @foreach($colors as $color)
+                                  <option>{{ $color }}</option>
+
+                                @endforeach
+                              @endif
+
+
+                            </select>
+                          </div>
+                        </div>
+
                         <button  class="button btn-cart" title="order" type="submit"><span><i class="icon-basket"></i> Order</span></button>
 
                       {{--<div class="email-addto-box">--}}

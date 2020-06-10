@@ -296,7 +296,7 @@
                                     <button style="width:220px;" type="submit" name="btn" class="btn btn-success btn-md">Update</button>
                                 </div>
                             </div>
-                            </from>
+                            </form>
                         </div>
                     </div>
 

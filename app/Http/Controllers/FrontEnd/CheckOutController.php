@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\FrontEnd;
 
+use App\ProductOrder;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Http\Controllers\Controller;
@@ -58,6 +59,55 @@ class CheckOutController extends Controller
         $data['carts_count'] = Cart::count();
 
         return view('front.pages.checkoutMe',$data);
+    }
+
+    public function productOrderConfirm(Request $request)
+    {
+        try {
+
+
+
+            $carts = Cart::content();
+            //return $carts->name;
+
+
+
+
+            if(! empty($carts)){
+                $data = [];
+                foreach($carts as $cart){
+                    $data = new ProductOrder();
+                    $data->customer_name = $request->customer_name;
+                    $data->phone = $request->phone;
+                    $data->address = $request->address;
+
+                    $data->product_id= $cart->id;
+                    $data->product_name = $cart->name;
+                    $data->product_price = $cart->price;
+                    $data->total_order = $cart->qty;
+                    $data->color = $cart->options->color;
+                    $data->status ='Pending';
+                    $data->save();
+                }
+            }
+
+
+
+
+
+
+            Cart::destroy();
+
+
+            return redirect()->back()->with([
+                'alert-type' => 'success',
+                'message' => 'We will contact you soon !!!'
+            ]);
+        }
+        catch (\Exception $e) {
+            return $e->getMessage();
+
+        }
     }
 
     public function orderConfirm(Request $request)

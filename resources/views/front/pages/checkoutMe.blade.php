@@ -98,30 +98,27 @@
                                         </div>
 
                                         <div class="contact-form">
-                                            {!! Form::open(['url' => route('order.confirm'),'method'=>'post']) !!}
+                                            {!! Form::open(['url' => route('product.order.confirm'),'method'=>'post']) !!}
 
                                             <div id="contact-form">
                                                 <div class="row">
                                                     <div class="form-group col-lg-6 col-md-12">
                                                         <label for="name">Name<span class="req">*</span></label>
-                                                        <input type="text" id="name" class="form-control" value="" name="name" />
+                                                        <input type="text" id="customer_name" class="form-control" value="" name="customer_name" />
                                                     </div>
 
 
                                                     <div class="form-group  col-lg-6 col-md-12">
                                                         <label for="phone">Phone</label>
-                                                        <input type="number" id="phone" class="form-control" value="" name="phone" />
+                                                        <input type="text" id="phone" class="form-control" value="" name="phone" />
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group">
-                                                    <label for="address">Address</label>
-                                                    <input type="number" id="address" class="form-control" value="" name="address" />
-                                                </div>
+
 
                                                 <div class="form-group">
-                                                    <label for="message">Message</label>
-                                                    <textarea required id="message" class="form-control" cols="40" rows="7" name="description"></textarea>
+                                                    <label for="message">Address</label>
+                                                    <textarea required id="address" class="form-control" cols="40" rows="7" name="address"></textarea>
                                                 </div>
 
                                                 <div class="form-actions">

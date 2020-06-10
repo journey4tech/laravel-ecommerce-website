@@ -22,10 +22,22 @@ class CartController extends Controller
 
        $product_qty=$request->qty;
        $product_slug=$request->product_slug;
+       $product_color=$request->color;
+
+
 
         $product=Product::findOrFail($request->product_id);
      Cart::add([
-         ['id' => $product->id, 'name' =>$product->product_name, 'qty' =>$product_qty, 'price' =>$product->product_price,'weight' => 550, 'options' => ['size' => 'large','color'=>'blue']]
+         ['id' => $product->id,
+             'name' =>$product->product_name,
+             'qty' =>$product_qty,
+             'price' =>$product->product_price,
+             'weight' => 550,
+             'options' => [
+                 //'size' => 'large',
+                 'color'=>$product_color
+             ]
+         ]
          // ['id' => '5566', 'name' => 'Product 3', 'qty' => 1, 'price' => 10.00, 'weight' => 550, 'options' => ['size' => 'large']]
 
      ]);

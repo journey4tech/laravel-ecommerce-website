@@ -15,6 +15,10 @@ class Product extends Model implements ViewableContract
   'special_price','start_date','end_date','sku','stock','base_image','multiple','description','color','size','warrantly','status']; //only the field names inside the array can be mass-assign
 
 
+
+    public function getColorAttribute($value) {
+        return strtoupper($value);
+    }
   public function sub_category(){
         return $this->belongsTo('App\Models\SubCategory','sub_category_id','id');
   }
