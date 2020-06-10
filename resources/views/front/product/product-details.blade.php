@@ -90,10 +90,8 @@
               <div class="col-sm-12 wow bounceInUp animated">
                 <ul id="product-detail-tab" class="nav nav-tabs product-tabs">
                   <li class="active"> <a href="product_detail.html#product_tabs_description" data-toggle="tab"> Product Description </a> </li>
-                  <li><a href="product_detail.html#product_tabs_tags" data-toggle="tab">Tags</a></li>
                   <li> <a href="product_detail.html#reviews_tabs" data-toggle="tab">Reviews</a> </li>
-                  <li> <a href="product_detail.html#product_tabs_custom" data-toggle="tab">Custom Tab</a> </li>
-                  <li> <a href="product_detail.html#product_tabs_custom1" data-toggle="tab">Custom Tab1</a> </li>
+
                 </ul>
                 <div id="productTabContent" class="tab-content">
                   <div class="tab-pane fade in active" id="product_tabs_description">
@@ -125,79 +123,7 @@
                         <div class="form-add">
                           <form id="review-form" method="post" action="product_detail.html#">
                             <h3>Write Your Own Review</h3>
-                            <fieldset>
-                              <h4>How do you rate this product? <em class="required">*</em></h4>
-                              <span id="input-message-box"></span>
-                              <table id="product-review-table" class="data-table">
 
-                                <thead>
-                                  <tr class="first last">
-                                    <th>&nbsp;</th>
-                                    <th><span class="nobr">1 *</span></th>
-                                    <th><span class="nobr">2 *</span></th>
-                                    <th><span class="nobr">3 *</span></th>
-                                    <th><span class="nobr">4 *</span></th>
-                                    <th><span class="nobr">5 *</span></th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr class="first odd">
-                                    <th>Price</th>
-                                    <td class="value"><input type="radio" class="radio" value="11" id="Price_1" name="ratings[3]"></td>
-                                    <td class="value"><input type="radio" class="radio" value="12" id="Price_2" name="ratings[3]"></td>
-                                    <td class="value"><input type="radio" class="radio" value="13" id="Price_3" name="ratings[3]"></td>
-                                    <td class="value"><input type="radio" class="radio" value="14" id="Price_4" name="ratings[3]"></td>
-                                    <td class="value last"><input type="radio" class="radio" value="15" id="Price_5" name="ratings[3]"></td>
-                                  </tr>
-                                  <tr class="even">
-                                    <th>Value</th>
-                                    <td class="value"><input type="radio" class="radio" value="6" id="Value_1" name="ratings[2]"></td>
-                                    <td class="value"><input type="radio" class="radio" value="7" id="Value_2" name="ratings[2]"></td>
-                                    <td class="value"><input type="radio" class="radio" value="8" id="Value_3" name="ratings[2]"></td>
-                                    <td class="value"><input type="radio" class="radio" value="9" id="Value_4" name="ratings[2]"></td>
-                                    <td class="value last"><input type="radio" class="radio" value="10" id="Value_5" name="ratings[2]"></td>
-                                  </tr>
-                                  <tr class="last odd">
-                                    <th>Quality</th>
-                                    <td class="value"><input type="radio" class="radio" value="1" id="Quality_1" name="ratings[1]"></td>
-                                    <td class="value"><input type="radio" class="radio" value="2" id="Quality_2" name="ratings[1]"></td>
-                                    <td class="value"><input type="radio" class="radio" value="3" id="Quality_3" name="ratings[1]"></td>
-                                    <td class="value"><input type="radio" class="radio" value="4" id="Quality_4" name="ratings[1]"></td>
-                                    <td class="value last"><input type="radio" class="radio" value="5" id="Quality_5" name="ratings[1]"></td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                              <input type="hidden" value="" class="validate-rating" name="validate_rating">
-                              <div class="review1">
-                                <ul class="form-list">
-                                  <li>
-                                    <label class="required" for="nickname_field">Nickname<em>*</em></label>
-                                    <div class="input-box">
-                                      <input type="text" class="input-text required-entry" id="nickname_field" name="nickname">
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <label class="required" for="summary_field">Summary<em>*</em></label>
-                                    <div class="input-box">
-                                      <input type="text" class="input-text required-entry" id="summary_field" name="title">
-                                    </div>
-                                  </li>
-                                </ul>
-                              </div>
-                              <div class="review2">
-                                <ul>
-                                  <li>
-                                    <label class="label-wide" for="review_field">Review<em>*</em></label>
-                                    <div class="input-box">
-                                      <textarea class="required-entry" rows="3" cols="5" id="review_field" name="detail"></textarea>
-                                    </div>
-                                  </li>
-                                </ul>
-                                <div class="buttons-set">
-                                  <button class="button submit" title="Submit Review" type="submit"><span>Submit Review</span></button>
-                                </div>
-                              </div>
-                            </fieldset>
                           </form>
                         </div>
                       </div>
