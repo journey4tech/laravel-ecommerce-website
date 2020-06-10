@@ -280,6 +280,14 @@
                             <div class="col-12">
 
                                 <div class="text-left pt-2">
+                                    {{--<button style="width:220px;" type="submit" name="btn" class="btn btn-success btn-md">submit</button>--}}
+                                    <a  style="width:220px;"  href="{{ route('admin.products.index') }}"  class="btn btn-primary btn-md">Back</a>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+
+                                <div class="text-left pt-2">
                                     <button style="width:220px;" type="submit" name="btn" class="btn btn-success btn-md">submit</button>
                                 </div>
                             </div>

@@ -41,9 +41,9 @@
                                     <td>
 
 
-                                        <a href="{{route('admin.products.show',$product->id)}}" class="btn btn-info" title="Product View">
-                                            <span class="fas fa-eye"></span>
-                                        </a>
+                                        {{--<a href="{{route('admin.products.show',$product->id)}}" class="btn btn-info" title="Product View">--}}
+                                            {{--<span class="fas fa-eye"></span>--}}
+                                        {{--</a>--}}
                                         <a href="{{route('admin.products.edit',$product->id)}}" class="btn btn-success" title="Product Edit">
                                             <span class="fas fa-pen"></span>
                                         </a>
