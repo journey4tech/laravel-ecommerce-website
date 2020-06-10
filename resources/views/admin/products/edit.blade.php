@@ -117,8 +117,13 @@
 
                                                             <div id="inventory" class="tab-pane fade">
                                                                 <div class="form-group">
+                                                                    <label class="control-label"> Quantity</label>
+                                                                    <input class="form-control form-white" value="{{$product->product_quantity}}" placeholder="Enter Quantity" type="number" name="product_quantity" />
+                                                                </div>
+
+                                                                <div class="form-group">
                                                                     <label class="control-label"> SKU</label>
-                                                                    <input class="form-control form-white" value="{{$product->sku}}" placeholder="Enter name" type="text" name="sku" />
+                                                                    <input class="form-control form-white" value="{{$product->sku}}" placeholder="Enter Sku" type="text" name="sku" />
                                                                 </div>
 
                                                                 <div class="form-group">
@@ -288,7 +293,7 @@
                             <div class="col-12">
 
                                 <div class="text-left pt-2">
-                                    <button style="width:220px;" type="submit" name="btn" class="btn btn-success btn-md">submit</button>
+                                    <button style="width:220px;" type="submit" name="btn" class="btn btn-success btn-md">Update</button>
                                 </div>
                             </div>
                             </from>
