@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\FrontEnd;
 
+use App\Customer;
 use App\ProductOrder;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -74,13 +75,15 @@ class CheckOutController extends Controller
 
 
             if(! empty($carts)){
+                $customer = new Customer();
+                $customer->customer_name = $request->customer_name;
+                $customer->phone = $request->phone;
+                $customer->address = $request->address;
+                $customer->save();
                 $data = [];
                 foreach($carts as $cart){
                     $data = new ProductOrder();
-                    $data->customer_name = $request->customer_name;
-                    $data->phone = $request->phone;
-                    $data->address = $request->address;
-
+                    $data->customer_id= $customer->id;
                     $data->product_id= $cart->id;
                     $data->product_name = $cart->name;
                     $data->product_price = $cart->price;
