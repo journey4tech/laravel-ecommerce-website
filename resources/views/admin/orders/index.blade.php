@@ -29,51 +29,27 @@
                             <thead class="thead-dark">
                                 <tr>
                                     <th>Id</th>
-                                    <th>Coustomer Name</th>
-                                    <th>Product Name</th>
-                                    <th>Product Qty</th>
-                                    <th>Product Price</th>
-                                    <th>Location</th>
-
-                                    <th>Customer Phone </th>
+                                    <th>Customer Name</th>
+                                    <th>Mobile</th>
+                                    <th>Address</th>
                                     <th>Order Time</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($pending_orders as $data)
+                                @foreach($customers as $item)
 
                                 <tr>
 
-                                    <th scope="row">{{$data->id}}</th>
-                                    <td>{{$data->customer->name}}</td>
-                                    <td>
-                                        <?php
-                                            $name = json_decode($data->product_name);
-                                                            ?>
-                                            <ul>
-                                                @foreach($name as $value)
-                                                <li>{{ $value }}</li>
-                                                @endforeach
-                                            </ul>
-                                    </td>
-                                    <td>
-                                        <?php
-                                            $quantity = json_decode($data->product_qty);
-                                                            ?>
-                                            <ul>
-                                                @foreach($quantity as $qty)
-                                                <li>{{ $qty }}</li>
-                                                @endforeach
-                                            </ul>
-                                    </td>
-                                    <td>{{$data->product_price}}</td>
-                                    <td>{{$data->delivery_address}}</td>
-                                    <td>{{$data->phone_number}}</td>
+                                    <th scope="row">{{$loop->iteration}}</th>
+                                    <td>{{$item->customer_name}}</td>
+                                    <td>{{$item->phone}}</td>
+                                    <td>{{$item->address}}</td>
+
 
                                   <td>
                                       <?php
-                                      $dt = new DateTime($data->created_at);
+                                      $dt = new DateTime($item->created_at);
                                       $tz = new DateTimeZone('Asia/Dhaka');
 
                                     $dt->setTimezone($tz);
@@ -84,17 +60,17 @@
 
                                     <td class="action-column">
 
-                                      <a href="{{route('admin.orders.show',$data->id)}}" class="btn btn-info" title="Orders View">
+                                      <a href="{{route('admin.orders.show',$item->id)}}" class="btn btn-info" title="Orders View">
                                           <span class="fas fa-eye"></span>
                                       </a>
 
-                                      {!! Form::open(['url' => route('admin.updateStatus',$data->id),'method'=>'post']) !!}
+                                      {!! Form::open(['url' => route('admin.updateStatus',$item->id),'method'=>'post']) !!}
                                       <button type="submit" title="Confrimed" name="status" value="Confrimed" class="btn btn-success" >
                                           <span class="fas fa-check-circle"></span>
                                       </button>
                                       {!! Form::close() !!}
 
-                                      {!! Form::open(['url' => route('admin.orders.destroy',$data->id),'method'=>'DELETE']) !!}
+                                      {!! Form::open(['url' => route('admin.orders.destroy',$item->id),'method'=>'DELETE']) !!}
 
                                         <button type="submit" title="Delete" class="btn btn-danger" onclick="return confirm('Are you sure to delete this'); ">
                                             <span class="fas fa-trash-alt"></span>

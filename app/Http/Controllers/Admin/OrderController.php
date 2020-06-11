@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Customer;
 use App\Order;
 use Helper;
 use Illuminate\Http\Request;
@@ -20,8 +21,10 @@ class OrderController extends Controller
      */
     public function index()
     {
-       $pending_orders=Order::where('status','pending')->get();
-       return view('admin.orders.index',compact('pending_orders'));
+       //$pending_orders=Order::where('status','pending')->get();
+        $customers = Customer::latest()->get();
+       // return $customers;
+       return view('admin.orders.index',compact('customers'));
 
     }
 
