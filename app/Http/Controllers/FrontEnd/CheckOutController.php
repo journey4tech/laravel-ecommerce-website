@@ -79,6 +79,7 @@ class CheckOutController extends Controller
                 $customer->customer_name = $request->customer_name;
                 $customer->phone = $request->phone;
                 $customer->address = $request->address;
+                $customer->status = 'Pending';
                 $customer->save();
                 $data = [];
                 foreach($carts as $cart){

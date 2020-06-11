@@ -33,6 +33,7 @@
                                     <th>Mobile</th>
                                     <th>Address</th>
                                     <th>Order Time</th>
+                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -57,7 +58,7 @@
                                   ?>
                                   </td>
 
-
+                                    <td>{{$item->status}}</td>
                                     <td class="action-column">
 
                                       <a href="{{route('admin.orders.show',$item->id)}}" class="btn btn-info" title="Orders View">
