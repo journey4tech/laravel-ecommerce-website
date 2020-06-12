@@ -58,8 +58,20 @@ class HomeController extends Controller
 
       try {
 
-        $sub_c_wise_products = SubCategory::where('slug',$slug)->with('products')->firstOrFail();
-        return View('front.product.category_wise_product',compact('sub_c_wise_products'));
+          $data = [];
+          $data['today'] = date("y-m-d");
+          $data['menus'] = Menu::with('categories')->get();
+
+          $data['sliders'] = Slider::all();
+          $data['dailyDeals'] = DailyDeals::with('product')->active()->orderBy('priority','DESC')->get();
+          $data['popular_categories']= PopularCategory::with(['category','category.products'=>function($q){
+              $q->latest()->take(8);
+          }])->active()->orderBy('priority','DESC')->get();
+          $data['recommended_products'] = $this->getRecommendedProducts();
+          $data['latest_products'] = Product::where('status',1)->latest()->get();
+           $data['sub_wise_products'] = SubCategory::where('slug',$slug)->with('products')->firstOrFail();
+        //return $data['sub_wise_products'];
+        return View('front.partials.category_wise_product',$data);
 
       } catch (\Exception $e) {
         return $e->getMessage();

@@ -48,7 +48,7 @@
       <div class="row">
         <div class="col-lg-2 col-sm-3 col-md-2"> 
           <!-- Header Logo --> 
-          <a class="logo" title="Magento Commerce" href="index.html"><img alt="Magento Commerce" src="{{asset('frontEnd/assets/images/logo.png')}}"></a> 
+          <a class="logo" title="Magento Commerce" href="{{ route('home') }}"><img alt="Magento Commerce" src="{{asset('frontEnd/assets/images/logo.png')}}"></a>
           <!-- End Header Logo --> 
         </div>
         <div class="col-lg-8 col-sm-6 col-md-8"> 
@@ -309,13 +309,13 @@
                   @if (count($category->sub_category) > 0)
                   <ul class="level2">
                     @foreach ($category->sub_category as $sub_category)
-                    <li class="level2 first"><a href="index.html#"><span>{{ $sub_category->name }}</span></a></li>
+                    <li class="level2 first"><a href="{{ route('sub_category',$sub_category->slug) }}"><span>{{ $sub_category->name }}</span></a></li>
                     @endforeach
                   </ul>
                   @endif
                 </li>
                 @endforeach
-               
+
               </ul>
             @endif
           </li> 

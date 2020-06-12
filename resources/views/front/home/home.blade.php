@@ -2,6 +2,10 @@
 
 @section('content')
 @include('front/partials/slider')
+
+@includeWhen(request()->is('/category/*'), 'front/partials/category_wise_product')
+
+
 @include('front/partials/latest-product')
 @include('front/partials/offer-banner-section')
 @include('front/partials/special-product-section')

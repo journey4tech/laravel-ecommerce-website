@@ -28,7 +28,7 @@
                 <div class="product-shop col-lg-6 col-sm-6 col-xs-12">
                   <div class="product-next-prev"> <a class="product-next" href="product_detail.html#"><span></span></a> <a class="product-prev" href="product_detail.html#"><span></span></a> </div>
                   <div class="product-name">
-                    <h1>Sample Product</h1>
+                    <h1>{{ $product->product_name }}</h1>
                   </div>
                   <div class="ratings">
                     <div class="rating-box">
