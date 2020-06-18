@@ -37,6 +37,8 @@ class CategoryController extends Controller
       $menus=Menu::all();
       $categories=Category::all();
 
+
+
       return view('admin.category.create',compact('menus','categories'));
     }
 

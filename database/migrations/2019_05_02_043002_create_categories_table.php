@@ -17,8 +17,7 @@ class CreateCategoriesTable extends Migration
           $table->increments('id');
           $table->integer('menu_id');
           $table->string('name');
-         $table->text('description')->nullable();;
-         $table->string('category_icon');
+          $table->text('description')->nullable();;
           $table->tinyInteger('status');
           $table->timestamps();
         });

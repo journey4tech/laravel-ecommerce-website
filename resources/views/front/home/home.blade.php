@@ -1,9 +1,14 @@
+@php
+    $route = Route::current()->getName();
+@endphp
 @extends('front.master')
 
 @section('content')
-@include('front/partials/slider')
 
-@includeWhen(request()->is('/category/*'), 'front/partials/category_wise_product')
+    @include('front/partials/slider')
+{{--@if($route=='home')--}}
+    {{--@include('front/partials/slider')--}}
+{{--@endif--}}
 
 
 @include('front/partials/latest-product')

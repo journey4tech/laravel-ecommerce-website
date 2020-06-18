@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Menu;
 use App\Models\Category;
 use App\Models\SubCategory;
+use Illuminate\Support\Str;
 
 class MenusTableSeeder extends Seeder
 {
@@ -18,47 +19,75 @@ class MenusTableSeeder extends Seeder
     {
         $menus = Menu::insert([
           [
-            'name' => 'Electronics',
+            'name' => 'Desktop',
             'description' => 'None',
-            'menu_icon' => '',
+            'slug' => Str::slug('Desktop'),
             'status' => 1
           ],
           [
-            'name' => 'Accessories',
+            'name' => 'Laptop',
             'description' => 'None',
-            'menu_icon' => '',
+             'slug' => Str::slug('Laptop'),
             'status' => 1
           ],
           [
-            'name' => ' Backpacks',
+            'name' => 'Mobile',
             'description' => 'None',
-            'menu_icon' => '',
+             'slug' => Str::slug('Mobile'),
             'status' => 1
-          ],
+          ]
         ]);
 
 
         $categories = Category::insert([
           [
-            'name' => 'Laptops',
+            'name' => 'Budget PC',
             'menu_id' => 1,
             'description' => 'None',
-            'category_icon' => '/demo/category (1).jpg',
             'status' => 1
           ],
-          [
+            [
+            'name' => 'HighConfiguration PC',
+            'menu_id' => 1,
+            'description' => 'None',
+            'status' => 1
+          ],
 
-            'name' => 'Desktop',
-            'menu_id' => 1,
+            [
+            'name' => 'Lenovo',
+            'menu_id' => 2,
             'description' => 'None',
-            'category_icon' => '/demo/category (2).jpg',
             'status' => 1
           ],
-          [
-            'name' => 'Mobile',
-            'menu_id' => 1,
+            [
+            'name' => 'HP',
+            'menu_id' => 2,
             'description' => 'None',
-            'category_icon' => '/demo/category (3).jpg',
+            'status' => 1
+          ],
+            [
+            'name' => 'Asus',
+            'menu_id' => 2,
+            'description' => 'None',
+            'status' => 1
+          ],
+
+          [
+            'name' => 'Walton',
+            'menu_id' => 3,
+            'description' => 'None',
+            'status' => 1
+          ],
+            [
+            'name' => 'Symphony',
+            'menu_id' => 3,
+            'description' => 'None',
+            'status' => 1
+          ],
+            [
+            'name' => 'MI',
+            'menu_id' => 3,
+            'description' => 'None',
             'status' => 1
           ],
         ]);
@@ -67,63 +96,81 @@ class MenusTableSeeder extends Seeder
           [
             'menu_id' => 1,
             'category_id' => 1,
-            'name' => 'Apple',
+            'name' => 'PC1',
             'description' => 'None',
-            'slug' => str_slug('Apple'),
-            'icon' => '/demo/category (1).jpg',
+            'slug' => Str::slug('PC1'),
+
+            'status' => 1,
+          ],
+            [
+            'menu_id' => 1,
+            'category_id' => 2,
+            'name' => 'PC2',
+            'description' => 'None',
+            'slug' => Str::slug('PC2'),
+
             'status' => 1,
           ],
 
-          [
-
+            [
             'menu_id' => 1,
+            'category_id' => 3,
+            'name' => 'HightConguration1',
+            'description' => 'None',
+            'slug' => Str::slug('HightConguration1'),
+
+            'status' => 1,
+          ],
+            [
+            'menu_id' => 2,
+            'category_id' => 2,
+            'name' => 'HightConguration2',
+            'description' => 'None',
+            'slug' => Str::slug('HightConguration2'),
+
+            'status' => 1,
+          ],
+            [
+            'menu_id' => 2,
             'category_id' => 1,
-            'name' => 'Lenevo',
+            'name' => 'Leonovo1',
             'description' => 'None',
-            'slug' => str_slug('Lenevo'),
-            'icon' => '/demo/category (2).jpg',
+            'slug' => Str::slug('Leonovo1'),
             'status' => 1,
           ],
-          [
-            'menu_id' => 1,
-            'category_id' => 2,
-            'name' => 'Hp',
-            'description' => 'None',
-            'slug' => str_slug('Hp'),
-            'icon' => '/demo/category (3).jpg',
-            'status' => 1,
-          ],
-
-          [
-
-            'menu_id' => 1,
-            'category_id' => 2,
-            'name' => 'Lenevo',
-            'description' => 'None',
-            'slug' => str_slug('Lenevo'),
-            'icon' => '/demo/ (1).jpg',
-            'status' => 1,
-          ],
-          [
-            'menu_id' => 1,
+            [
+            'menu_id' => 2,
             'category_id' => 3,
-            'name' => 'Samsung',
+            'name' => 'Leonovo2',
             'description' => 'None',
-            'slug' => str_slug('Samsung'),
-            'icon' => '/demo/ (2).jpg',
+            'slug' => Str::slug('Leonovo2'),
             'status' => 1,
           ],
 
-          [
-
-            'menu_id' => 1,
-            'category_id' => 3,
-            'name' => 'Huwaei',
+            [
+            'menu_id' => 2,
+            'category_id' => 2,
+            'name' => 'HP1',
             'description' => 'None',
-            'slug' => str_slug('Huwaei'),
-            'icon' => '/demo/ (3).jpg',
+            'slug' => Str::slug('HP1'),
             'status' => 1,
-          ]
+          ],
+            [
+            'menu_id' => 2,
+            'category_id' => 2,
+            'name' => 'HP2',
+            'description' => 'None',
+            'slug' => Str::slug('HP2'),
+            'status' => 1,
+          ],
+
+
+
+
+
+
+
+
 
         ]);
     }

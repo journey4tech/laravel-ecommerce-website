@@ -13,9 +13,9 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(MenusTableSeeder::class);
         $this->call(ProductsTableSeeder::class);
-        $this->call(CouponsTableSeeder::class);
+        //$this->call(CouponsTableSeeder::class);
         $this->call(SlidersTableSeeder::class);
-        $this->call(AdsTableSeeder::class);
+        //$this->call(AdsTableSeeder::class);
 
          // Role comes before Admin seeder here.
         $this->call(RoleTableSeeder::class);

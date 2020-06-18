@@ -47,19 +47,19 @@ class MenuController extends Controller
      try {
        $this->validate($request, [
         'name' => 'required',
-        'menu_icon' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4048',
+
       ]);
 
-      if($request->hasfile('menu_icon'))
-      {
-         $file = $request->file('menu_icon');
-         $name=time().$file->getClientOriginalName();
-         $file->move(public_path('uploads').'/Menuimages/', $name);
-      }
+//      if($request->hasfile('menu_icon'))
+//      {
+//         $file = $request->file('menu_icon');
+//         $name=time().$file->getClientOriginalName();
+//         $file->move(public_path('uploads').'/Menuimages/', $name);
+//      }
        $menu= new Menu();
        $menu->name=$request->name;
        $menu->description=$request->description;
-       $menu->menu_icon=$name;
+//       $menu->menu_icon=$name;
        $menu->status=1;
        $menu->save();
 
@@ -115,14 +115,14 @@ class MenuController extends Controller
         $menu=Menu::findOrFail($id);
         $menu->update($request->all());
 
-       if ($request->hasFile('menu_icon'))
-       {
-         $file = $request->file('menu_icon');
-         $name=time().$file->getClientOriginalName();
-         $menu->menu_icon = $name;
-         $file->move(public_path('uploads').'/Menuimages/', $name);
-         $menu->save();
-       }
+//       if ($request->hasFile('menu_icon'))
+//       {
+//         $file = $request->file('menu_icon');
+//         $name=time().$file->getClientOriginalName();
+//         $menu->menu_icon = $name;
+//         $file->move(public_path('uploads').'/Menuimages/', $name);
+//         $menu->save();
+//       }
 
        Helper::notifySuccess('Menu updated successfully');
        return redirect(route('admin.menus.index'));

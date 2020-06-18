@@ -29,6 +29,11 @@
 
 <!-- Google Fonts -->
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,700,800,400,600' rel='stylesheet' type='text/css'>
+        <style>
+                .logo img{
+                        width:120px !important;
+                }
+        </style>
 </head>
 
 <body>

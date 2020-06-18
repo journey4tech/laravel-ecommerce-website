@@ -46,7 +46,7 @@ Route::get('/provide-information', 'FrontEnd\HomeController@provideInformation')
  Route::post('/clear-cartx', 'FrontEnd\CartController@clear_cart')->name('cart_destory');
  Route::post('/checkout', 'FrontEnd\CheckOutController@checkout')->name('checkout');
 
- Route::get('/checkout-me', 'FrontEnd\CheckOutController@checkoutMe')->name('checkoutMe');
+ Route::get('/checkout-product', 'FrontEnd\CheckOutController@checkoutMe')->name('checkoutMe');
  Route::post('/product-order-confirm', 'FrontEnd\CheckOutController@productOrderConfirm')->name('product.order.confirm');
  Route::post('/order-confirm', 'FrontEnd\CheckOutController@orderConfirm')->name('order.confirm');
 

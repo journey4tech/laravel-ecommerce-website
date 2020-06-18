@@ -17,7 +17,7 @@
                                 <tr>
                                     <th>Product Id</th>
                                     <th>Product Name</th>
-                                    <th>Category</th>
+                                    {{--<th>Category</th>--}}
                                     <th>Price</th>
                                     <th>Status</th>
                                     <th>Action</th>
@@ -31,7 +31,7 @@
                                     <th scope="row">{{$product->id}}</th>
 
                                     <td>{{$product->product_name}}</td>
-                                    <td> {{$product->sub_category->name}}</td>
+                                    {{--<td> {{$product->sub_category->name}}</td>--}}
                                     <td>{{$product->product_price}}</td>
                                     <td>{{$product->status==1?'Published':'Unpublished'}}</td>
 

@@ -44,6 +44,7 @@
                                     <div class="contact-form-wrapper col-md-6 col-sm-12">
                                         <div class="title-wrapper">
                                             <h3>Order Details</h3>
+                                            <a href="{{ route('home') }}" style="color:green;margin-bottom:10px;">Continue Shopping</a>
                                         </div>
                                         <table class="table table-striped table-hover">
                                             <thead>
@@ -60,7 +61,7 @@
                                                         <strong class="product-quantity">× {{$data->qty}}</strong>
                                                     </td>
                                                     <td class="product-total">
-                                                        <span class="amount">৳ {{$data->price}}</span>
+                                                        <span class="amount">Tk. {{$data->price}}</span>
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -69,11 +70,11 @@
 
                                             <tr class="cart-subtotal">
                                                 <th>Subtotal</th>
-                                                <td><span class="amount">৳ {{Cart::subtotal()}}</span></td>
+                                                <td><span class="amount">Tk. {{Cart::subtotal()}}</span></td>
                                             </tr>
                                             <tr class="cart-subtotal">
                                                 <th>Delevery Charge</th>
-                                                <td><span class="amount">৳ 50</span></td>
+                                                <td><span class="amount">Tk. 50</span></td>
                                             </tr>
 
 
@@ -81,7 +82,7 @@
 
                                             <tr class="order-total">
                                                 <th>Total</th>
-                                                <td><strong><span class="amount">৳ {{$total = str_replace(',', '', Cart::subtotal()) +50}}</span></strong> </td>
+                                                <td><strong><span class="amount">Tk. {{$total = str_replace(',', '', Cart::subtotal()) +50}}</span></strong> </td>
                                             </tr>
                                             </tfoot>
                                         </table>

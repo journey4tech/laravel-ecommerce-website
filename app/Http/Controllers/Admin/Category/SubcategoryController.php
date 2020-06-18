@@ -27,6 +27,8 @@ class SubcategoryController extends Controller
     {
       $sub_categories=SubCategory::with('menu')->get();
 
+      //return $sub_categories;
+
       return view('admin.sub_category.manage',compact('sub_categories'));
     }
 

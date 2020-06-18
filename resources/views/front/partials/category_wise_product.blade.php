@@ -3,7 +3,7 @@
 @extends('front.master')
 
 @section('content')
-    @include('front/partials/slider')
+
 
     <section class="featured-pro container wow bounceInUp animated">
         <div class="slider-items-products">

@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model
 {
-      protected $fillable =["name","description","menu_icon","status"];
+      protected $guarded =['id'];
 //categories relation
       public function categories()
       {
