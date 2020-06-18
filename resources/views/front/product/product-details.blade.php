@@ -26,7 +26,7 @@
                   <div class="moreview-control"> <a href="javascript:void(0)" class="moreview-prev"></a> <a href="javascript:void(0)" class="moreview-next"></a> </div>
                 </div>
                 <div class="product-shop col-lg-6 col-sm-6 col-xs-12">
-                  <div class="product-next-prev"> <a class="product-next" href="product_detail.html#"><span></span></a> <a class="product-prev" href="product_detail.html#"><span></span></a> </div>
+                  {{--<div class="product-next-prev"> <a class="product-next" href="product_detail.html#"><span></span></a> <a class="product-prev" href="product_detail.html#"><span></span></a> </div>--}}
                   <div class="product-name">
                     <h1>{{ $product->product_name }}</h1>
                   </div>
@@ -34,7 +34,7 @@
                     <div class="rating-box">
                       <div class="rating"></div>
                     </div>
-                    <p class="rating-links"> <a href="product_detail.html#">1 Review(s)</a> <span class="separator">|</span> <a href="product_detail.html#">Add Your Review</a> </p>
+                    {{--<p class="rating-links"> <a href="product_detail.html#">1 Review(s)</a> <span class="separator">|</span> <a href="product_detail.html#">Add Your Review</a> </p>--}}
                   </div>
                   <p class="availability in-stock">Availability: <span>{{ $product->stock == 1 ? 'In Stock' : 'Out Stock'}}</span></p>
                   <div class="price-block">
@@ -108,17 +108,17 @@
                       {{--</div>--}}
                     </div>
                   </div>
-                  <div class="social">
-                    <ul>
-                      <li class="fb"><a href="product_detail.html#"></a></li>
-                      <li class="tw"><a href="product_detail.html#"></a></li>
-                      <li class="googleplus"><a href="product_detail.html#"></a></li>
-                      <li class="rss"><a href="product_detail.html#"></a></li>
-                      <li class="pintrest"><a href="product_detail.html#"></a></li>
-                      <li class="linkedin"><a href="product_detail.html#"></a></li>
-                      <li class="youtube"><a href="product_detail.html#"></a></li>
-                    </ul>
-                  </div>
+                  {{--<div class="social">--}}
+                    {{--<ul>--}}
+                      {{--<li class="fb"><a href="product_detail.html#"></a></li>--}}
+                      {{--<li class="tw"><a href="product_detail.html#"></a></li>--}}
+                      {{--<li class="googleplus"><a href="product_detail.html#"></a></li>--}}
+                      {{--<li class="rss"><a href="product_detail.html#"></a></li>--}}
+                      {{--<li class="pintrest"><a href="product_detail.html#"></a></li>--}}
+                      {{--<li class="linkedin"><a href="product_detail.html#"></a></li>--}}
+                      {{--<li class="youtube"><a href="product_detail.html#"></a></li>--}}
+                    {{--</ul>--}}
+                  {{--</div>--}}
                 </div>
               </form>
             </div>
