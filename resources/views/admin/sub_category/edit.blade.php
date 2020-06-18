@@ -69,12 +69,12 @@
                                       </div>
 
 
-                              <div class="form-group mb-3">
+                              {{--<div class="form-group mb-3">--}}
 
-                                  <label for="example-fileinput">SubCategory </label>
+                                  {{--<label for="example-fileinput">SubCategory </label>--}}
 
-                                  <input type="file" id="example-fileinput" name="icon" value="{{$sub_category->icon}}" class="form-control-file">{{$sub_category->icon}}
-                              </div>
+                                  {{--<input type="file" id="example-fileinput" name="icon" value="{{$sub_category->icon}}" class="form-control-file">{{$sub_category->icon}}--}}
+                              {{--</div>--}}
 
                                       <div class="form-group">
                                        <label class="control-label">Status</label>

@@ -118,10 +118,10 @@
                                                         </textarea>
 
                                                     </div>
-                                                    <div class="form-group mb-3">
-                                                        <label for="example-fileinput">Category Icon</label>
-                                                        <input type="file" id="example-fileinput" name="category_icon" class="form-control-file">
-                                                    </div>
+                                                    {{--<div class="form-group mb-3">--}}
+                                                        {{--<label for="example-fileinput">Category Icon</label>--}}
+                                                        {{--<input type="file" id="example-fileinput" name="category_icon" class="form-control-file">--}}
+                                                    {{--</div>--}}
 
                                                     <div class="text-right pt-2">
                                                         <button type="button" class="btn btn-light " data-dismiss="modal">Close</button>
@@ -156,10 +156,10 @@
 
                                                     </div>
 
-                                                    <div class="form-group mb-3">
-                                                        <label for="example-fileinput">Menu Icon</label>
-                                                        <input type="file" id="example-fileinput" name="menu_icon" class="form-control-file">
-                                                    </div>
+                                                    {{--<div class="form-group mb-3">--}}
+                                                        {{--<label for="example-fileinput">Menu Icon</label>--}}
+                                                        {{--<input type="file" id="example-fileinput" name="menu_icon" class="form-control-file">--}}
+                                                    {{--</div>--}}
 
                                                     <div class="text-right pt-2">
                                                         <button type="button" class="btn btn-light " data-dismiss="modal">Close</button>
@@ -217,10 +217,10 @@
 
                                                     </div>
 
-                                                    <div class="form-group mb-3">
-                                                        <label for="example-fileinput">Su category Icon</label>
-                                                        <input type="file" id="example-fileinput" name="icon" class="form-control-file">
-                                                    </div>
+                                                    {{--<div class="form-group mb-3">--}}
+                                                        {{--<label for="example-fileinput">Su category Icon</label>--}}
+                                                        {{--<input type="file" id="example-fileinput" name="icon" class="form-control-file">--}}
+                                                    {{--</div>--}}
 
                                                     <div class="text-right pt-2">
                                                         <button type="button" class="btn btn-light " data-dismiss="modal">Close</button>

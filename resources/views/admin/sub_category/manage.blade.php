@@ -46,7 +46,7 @@
                                     <td>{{$sub_category->name}}</td>
                                     <td>{{$sub_category->menu->name}}</td>
                                     {{--<td>{{$sub_category->category->name}}</td>--}}
-                                    <td><img style="border: 1px solid blue;border-radius: 30px 20px;width:100px;" src="{{asset('uploads/SubCategory/'.$sub_category->icon)}}" </td>
+                                    {{--<td><img style="border: 1px solid blue;border-radius: 30px 20px;width:100px;" src="{{asset('uploads/SubCategory/'.$sub_category->icon)}}" </td>--}}
 
                                     <td> {{$sub_category->status==1?'Published':'Unpublished'}}</td>
 

@@ -49,10 +49,10 @@
                             </textarea>
                         </div>
 
-                        <div class="form-group mb-3">
-                            <label for="example-fileinput">Menu Icon</label>
-                            <input type="file" id="example-fileinput" name="menu_icon" value="{{$menu->menu_icon}}" class="form-control-file">{{$menu->menu_icon}}
-                        </div>
+                        {{--<div class="form-group mb-3">--}}
+                            {{--<label for="example-fileinput">Menu Icon</label>--}}
+                            {{--<input type="file" id="example-fileinput" name="menu_icon" value="{{$menu->menu_icon}}" class="form-control-file">{{$menu->menu_icon}}--}}
+                        {{--</div>--}}
 
                         <div class="form-group">
                             <label class="control-label">Status</label>

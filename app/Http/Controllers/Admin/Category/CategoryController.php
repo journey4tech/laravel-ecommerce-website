@@ -54,22 +54,22 @@ class CategoryController extends Controller
 
              $this->validate($request, [
                'name' => 'required',
-               'category_icon' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4048',
+               //'category_icon' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4048',
 
            ]);
 
-         if($request->hasfile('category_icon'))
-           {
-              $file = $request->file('category_icon');
-              $name=time().$file->getClientOriginalName();
-              $file->move(public_path('uploads').'/Categoryimages/', $name);
-         }
+//         if($request->hasfile('category_icon'))
+//           {
+//              $file = $request->file('category_icon');
+//              $name=time().$file->getClientOriginalName();
+//              $file->move(public_path('uploads').'/Categoryimages/', $name);
+//         }
 
               $category= new Category();
               $category->name=$request->name;
               $category->menu_id=$request->menu_id;
               $category->description=$request->description;
-              $category->category_icon=$name;
+              //$category->category_icon=$name;
               $category->status=1;
               $category->save();
 
@@ -125,14 +125,14 @@ class CategoryController extends Controller
           $category=Category::findOrFail($id);
           $category->update($request->all());
 
-         if ($request->hasFile('category_icon'))
-         {
-           $file = $request->file('category_icon');
-           $name=time().$file->getClientOriginalName();
-           $category->category_icon = $name;
-           $file->move(public_path('uploads').'/Categoryimages/', $name);
-           $category->save();
-         }
+//         if ($request->hasFile('category_icon'))
+//         {
+//           $file = $request->file('category_icon');
+//           $name=time().$file->getClientOriginalName();
+//           $category->category_icon = $name;
+//           $file->move(public_path('uploads').'/Categoryimages/', $name);
+//           $category->save();
+//         }
 
          Helper::notifySuccess('Category Updated Successfully');
          return redirect(route('admin.categories.index'));

@@ -31,7 +31,7 @@
                                     <th>Id</th>
                                     <th> Category Name</th>
                                     <th>Menu Name</th>
-                                    <th>Image</th>
+                                    {{--<th>Image</th>--}}
                                     <th>Status</th>
 
                                     <th>Action</th>
@@ -44,7 +44,7 @@
                                     <th scope="row">{{$category->id}}</th>
                                     <td>{{$category->name}}</td>
                                     <td>{{$category->menu->name}}</td>
-                                    <td><img style="border: 1px solid blue;border-radius: 30px 20px;width:100px;" src="{{asset('uploads/Categoryimages/'.$category->category_icon)}}" </td>
+                                    {{--<td><img style="border: 1px solid blue;border-radius: 30px 20px;width:100px;" src="{{asset('uploads/Categoryimages/'.$category->category_icon)}}" </td>--}}
 
                                         <td>{{$category->status==1?'Published':'Unpublished'}}</td>
 

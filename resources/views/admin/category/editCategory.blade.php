@@ -58,10 +58,10 @@
                                           {!!($category->description)!!}
                                           </textarea>
                                       </div>
-                                      <div class="form-group mb-3">
-                                          <label for="example-fileinput">Category Icon</label>
-                                          <input type="file" id="example-fileinput" name="category_icon" value="{{$category->category_icon}}" class="form-control-file">{{$category->category_icon}}
-                                      </div>
+                                      {{--<div class="form-group mb-3">--}}
+                                          {{--<label for="example-fileinput">Category Icon</label>--}}
+                                          {{--<input type="file" id="example-fileinput" name="category_icon" value="{{$category->category_icon}}" class="form-control-file">{{$category->category_icon}}--}}
+                                      {{--</div>--}}
                                       <div class="form-group">
                                        <label class="control-label">Status *</label>
                                        <select class="form-control form-white" data-placeholder="Choose a color..." name="status">

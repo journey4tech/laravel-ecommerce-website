@@ -30,7 +30,7 @@
                                     <th>Id</th>
                                     <th> Menu Name</th>
                                     <th>Menu Description</th>
-                                    <th>Menu Icon</th>
+                                    {{--<th>Menu Icon</th>--}}
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -42,7 +42,7 @@
                                     <th scope="row">{{$menu->id}}</th>
                                     <td>{{$menu->name}}</td>
                                     <td>{{$menu->description}}</td>
-                                    <td><img style="border: 1px solid blue;border-radius: 30px 20px;width:100px;" src="{{asset('uploads/Menuimages/'.$menu->menu_icon)}}" </td>
+                                    {{--<td><img style="border: 1px solid blue;border-radius: 30px 20px;width:100px;" src="{{asset('uploads/Menuimages/'.$menu->menu_icon)}}" </td>--}}
                                     <td>{{$menu->status==1?'Published':'Unpublished'}}</td>
 
                                     {!! Form::open(['url' => route('admin.menus.destroy',$menu->id),'method'=>'DELETE']) !!}

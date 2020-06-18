@@ -57,12 +57,12 @@ class SubcategoryController extends Controller
         'name' => 'required',
         ]);
 
-        if($request->hasfile('icon'))
-        {
-          $file = $request->file('icon');
-          $name=time().$file->getClientOriginalName();
-          $file->move(public_path('uploads').'/SubCategory/', $name);
-        }
+//        if($request->hasfile('icon'))
+//        {
+//          $file = $request->file('icon');
+//          $name=time().$file->getClientOriginalName();
+//          $file->move(public_path('uploads').'/SubCategory/', $name);
+//        }
 
         $sub_category= new SubCategory();
         $sub_category->name=$request->name;
@@ -70,7 +70,7 @@ class SubcategoryController extends Controller
         $sub_category->category_id=$request->category_id;
         $sub_category->description=$request->description;
         $sub_category->slug =str_slug($request->name)."=".rand(255,999);
-        $sub_category->icon=$name;
+        //$sub_category->icon=$name;
         $sub_category->status=1;
         $sub_category->save();
 
@@ -127,14 +127,14 @@ class SubcategoryController extends Controller
         $sub_category=SubCategory::findOrFail($id);
         $sub_category->update($request->all());
 
-        if ($request->hasFile('icon'))
-        {
-          $file = $request->file('icon');
-          $name=time().$file->getClientOriginalName();
-          $sub_category->icon = $name;
-          $file->move(public_path('uploads').'/SubCategory/', $name);
-          $sub_category->save();
-        }
+//        if ($request->hasFile('icon'))
+//        {
+//          $file = $request->file('icon');
+//          $name=time().$file->getClientOriginalName();
+//          $sub_category->icon = $name;
+//          $file->move(public_path('uploads').'/SubCategory/', $name);
+//          $sub_category->save();
+//        }
 
         Helper::notifySuccess('SubCategory Updated Successfully');
         return redirect(route('admin.sub-categories.index'));
