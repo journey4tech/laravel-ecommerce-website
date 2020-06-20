@@ -4,7 +4,7 @@
 <!-- Mirrored from coderthemes.com/xeria/layouts/light/pages-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 30 Apr 2019 05:34:19 GMT -->
 <head>
         <meta charset="utf-8" />
-        <title>Yinimini Admin </title>
+        <title>U-Goals Admin </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />

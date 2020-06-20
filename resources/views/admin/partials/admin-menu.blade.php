@@ -180,12 +180,12 @@
                 <a href="{{route('admin.orders.index')}}">Pendding Orders</a>
             </li>
 
-            <li>
-                <a href="{{route('admin.confrimed_order')}}">Confirm Orders</a>
-            </li>
-            <li>
-                <a href="{{route('admin.delivered_order')}}">Deliverd Orders</a>
-            </li>
+            {{--<li>--}}
+                {{--<a href="{{route('admin.confrimed_order')}}">Confirm Orders</a>--}}
+            {{--</li>--}}
+            {{--<li>--}}
+                {{--<a href="{{route('admin.delivered_order')}}">Deliverd Orders</a>--}}
+            {{--</li>--}}
 
         </ul>
     </li>

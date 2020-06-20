@@ -38,14 +38,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($customers as $item)
+                                @foreach($productOrders as $item)
 
                                 <tr>
 
                                     <th scope="row">{{$loop->iteration}}</th>
-                                    <td>{{$item->customer_name}}</td>
-                                    <td>{{$item->phone}}</td>
-                                    <td>{{$item->address}}</td>
+                                    <td>{{$item->customer->customer_name}}</td>
+                                    <td>{{$item->customer->phone}}</td>
+                                    <td>{{$item->customer->address}}</td>
 
 
                                   <td>

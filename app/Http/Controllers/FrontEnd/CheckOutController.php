@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\FrontEnd;
 
 use App\Customer;
+
 use App\ProductOrder;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -12,6 +13,7 @@ use Session;
 Use App\Models\Order;
 use App\PaymentMethod;
 use App\ShippingZone;
+use Helper;
 
 
 use App\Ads;
@@ -59,6 +61,8 @@ class CheckOutController extends Controller
 
         $data['carts_count'] = Cart::count();
 
+
+
         return view('front.pages.checkoutMe',$data);
     }
 
@@ -102,11 +106,12 @@ class CheckOutController extends Controller
 
             Cart::destroy();
 
-
-            return redirect()->back()->with([
-                'alert-type' => 'success',
-                'message' => 'We will contact you soon !!!'
-            ]);
+            Helper::notifySuccess(' We will contact you soon !!! ');
+            return redirect()->back();
+//                ->with([
+//                'alert-type' => 'success',
+//                'message' => 'We will contact you soon !!!'
+//            ]);
         }
         catch (\Exception $e) {
             return $e->getMessage();

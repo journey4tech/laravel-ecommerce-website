@@ -11,7 +11,7 @@
 
                                <div class="text-center w-75 m-auto">
                                    <a href="index.html">
-                                       <span><img src="{{asset('admin/assets/images/logo_125x.png')}}" alt="" height="70"></span>
+                                       <span><img src="{{asset('frontEnd/assets/images/logo.png')}}" alt="" height="70"></span>
                                    </a>
                                    <p class="text-muted mb-4 mt-3">Enter your email address and password to access admin panel.</p>
                                </div>
@@ -65,12 +65,12 @@
                        </div>
                        <!-- end card -->
 
-                       <div class="row mt-3">
-                           <div class="col-12 text-center">
-                               <p> <a href="pages-recoverpw.html" class="text-muted ml-1">Forgot your password?</a></p>
-                               <p class="text-muted">Don't have an account? <a href="pages-register.html" class="text-muted ml-1"><b class="font-weight-semibold">Sign Up</b></a></p>
-                           </div> <!-- end col -->
-                       </div>
+                       {{--<div class="row mt-3">--}}
+                           {{--<div class="col-12 text-center">--}}
+                               {{--<p> <a href="pages-recoverpw.html" class="text-muted ml-1">Forgot your password?</a></p>--}}
+                               {{--<p class="text-muted">Don't have an account? <a href="pages-register.html" class="text-muted ml-1"><b class="font-weight-semibold">Sign Up</b></a></p>--}}
+                           {{--</div> <!-- end col -->--}}
+                       {{--</div>--}}
                        <!-- end row -->
 
                    </div> <!-- end col -->

@@ -12,59 +12,77 @@
                         <div class="col-md-12">
 
                             <div class="table-responsive">
-                                <h4 class="text-center"> Product Info</h4>
+                                <h4 class="text-center"> Customer Information</h4>
                                 <table class="table table-striped">
-                                    <tr>
-                                        <td> ID:</td>
-                                        <td>{{$order->id}}</td>
-                                    </tr>
+
                                     <tr>
                                         <td> Customer Name:</td>
-                                        <td>{{$order->customer->name}}</td>
+                                        <td>{{$order->customer->customer_name}}</td>
                                     </tr>
                                     <tr>
                                         <td> Customer Phone Number :</td>
-                                        <td>{{$order->customer->phone_number}}</td>
+                                        <td>{{$order->customer->phone}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Order Amount :</td>
+                                        <td>{{$order->total_order}}</td>
                                     </tr>
                                     <tr>
                                         <td> Delievery Location </td>
-                                        <td>{{$order->customer->delivery_address}}</td>
+                                        <td>{{$order->customer->address}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Product Name:</td>
+                                        <td> Order Status </td>
                                         <td>
-                                            <?php
-                                              $name = json_decode($order->product_name);
-                                                              ?>
-                                                <ul>
-                                                    @foreach($name as $value)
-                                                    <li>{{ $value }}</li>
-                                                    @endforeach
-                                                </ul>
+                                            <form action="{{ route('status.change') }}" method="post">
+                                                @csrf
+                                                <input type="hidden" name="order_id" value="{{$order->id}}">
+                                                <select name="status">
+                                                    <option {{ $order->status == 'Pending' ? " Selected": ''}}>Pending</option>
+                                                    <option {{ $order->status == 'Confirmed' ? " Selected": ''}}>Confirmed</option>
+
+                                                </select>
+
+                                                <input type="submit"  value="Change">
+                                            </form>
+
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>Total Price:</td>
-                                        <td>{{$order->product_price}}</td>
-                                    </tr>
+
+                                </table>
+                            </div>
+
+                            <div class="table-responsive">
+                                <h4 class="text-center"> Product Information</h4>
+                                <table class="table table-striped">
 
                                     <tr>
-                                        <td>Product Quantity</td>
-                                        <td>
-                                            <?php
-                                              $quantity = json_decode($order->product_qty);
-                                                              ?>
-                                                <ul>
-                                                    @foreach($quantity as $qty)
-                                                    <li>{{ $qty }}</li>
-                                                    @endforeach
-                                                </ul>
-                                        </td>
+                                        <td> Product Name:</td>
+                                        <td>{{$order->product->product_name}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Payment Method :</td>
-                                        <td>{{$order->pay_method->name}}</td>
-
+                                        <td> Product Title :</td>
+                                        <td>{{$order->product->product_title}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Product Category </td>
+                                        <td>{{$order->product->sub_category->name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Product Type </td>
+                                        <td>{{$order->product->type}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Product Price </td>
+                                        <td>{{$order->product->product_price}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Product Special Price </td>
+                                        <td>{{$order->product->special_price}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Product Color </td>
+                                        <td>{{$order->color}}</td>
                                     </tr>
 
                                 </table>

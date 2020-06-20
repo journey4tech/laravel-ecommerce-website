@@ -1,0 +1,3 @@
+  dbname: ugoapoap_rubel_ecommerce
+username: rubel
+pass: 109,.v@BsIKc

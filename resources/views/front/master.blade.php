@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 <meta name="author" content="">
-<title>Sami Computer</title>
+<title>U-Goals</title>
 
 <!-- Favicons Icon -->
 <link rel="icon" href="http://demo.magikthemes.com/skin/frontend/base/default/favicon.ico" type="image/x-icon" />
@@ -26,6 +26,7 @@
 <link rel="stylesheet" href="{{asset('frontEnd/assets/css/owl.carousel.css')}}" type="text/css">
 <link rel="stylesheet" href="{{asset('frontEnd/assets/css/owl.theme.css')}}" type="text/css">
 <link rel="stylesheet" href="{{asset('frontEnd/assets/css/font-awesome.css')}}" type="text/css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" type="text/css" />
 
 <!-- Google Fonts -->
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,700,800,400,600' rel='stylesheet' type='text/css'>
@@ -125,5 +126,29 @@
             });
         });
         </script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<script type="text/javascript">
+                @if(Session::has('message'))
+    var type="{{Session::get('alert-type')}}"
+
+
+    switch(type){
+
+        case 'success':
+            toastr.info("{{ Session::get('message') }}");
+
+            break;
+
+        case 'error':
+            toastr.error("{{ Session::get('message') }}");
+
+            break;
+    }
+
+        @endif
+</script>
 </body>
 </html>

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Customer;
+use App\Models\Product;
 use App\Order;
+use App\ProductOrder;
 use Helper;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -22,9 +24,10 @@ class OrderController extends Controller
     public function index()
     {
        //$pending_orders=Order::where('status','pending')->get();
-        $customers = Customer::latest()->get();
-       // return $customers;
-       return view('admin.orders.index',compact('customers'));
+        //$customers = Customer::latest()->get();
+        $productOrders = ProductOrder::latest()->get();
+
+       return view('admin.orders.index',compact('productOrders'));
 
     }
 
@@ -55,9 +58,11 @@ class OrderController extends Controller
      * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(ProductOrder $order)
     {
-      $order=Order::findOrFail($id);
+//        return "hello";
+//      $order=Order::findOrFail($id);
+
       return view('admin.orders.view',compact('order'));
     }
 
@@ -106,7 +111,9 @@ class OrderController extends Controller
 
     public function updateStatus(Request $request , $id)
     {
+
       try {
+
         $status = Order::findOrFail($id);
         $status->status = $request->status;
         $status->save();
@@ -118,6 +125,55 @@ class OrderController extends Controller
         return back();
       }
     }
+
+    public function statusChange(Request $request)
+    {
+
+
+      try {
+          $status = $request->status;
+          $order_id = $request->order_id;
+
+          if($status == 'Pending'){
+
+              $productOrder = ProductOrder::findOrFail($order_id);
+              $productOrder->status = $status;
+              $productOrder->save();
+
+              $remaining_quantity =  $productOrder->product->product_quantity + $productOrder->total_order;
+
+
+              $product = Product::findOrfail($productOrder->product_id);
+              $product->product_quantity = $remaining_quantity;
+              $product->save();
+
+              Helper::notifySuccess(' Order Status Updated ');
+          }
+
+          if($status == 'Confirmed'){
+              $productOrder = ProductOrder::findOrFail($order_id);
+              $productOrder->status = $status;
+              $productOrder->save();
+
+              $remaining_quantity =  $productOrder->product->product_quantity - $productOrder->total_order;
+
+
+              $product = Product::findOrfail($productOrder->product_id);
+              $product->product_quantity = $remaining_quantity;
+              $product->save();
+
+              Helper::notifySuccess(' Order Status Updated ');
+          }
+
+
+        return back();
+      } catch (\Exception $e) {
+        Helper::notifyError($e->getMessage());
+        return back();
+      }
+    }
+
+
 
       public function confrimed_order(){
         try {

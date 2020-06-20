@@ -31,8 +31,8 @@
                                     <th>Id</th>
                                     <th> Sub-Category Name</th>
                                     <th>Menu Name</th>
-                                    {{--<th>Category Name</th>--}}
-                                    <th>Image</th>
+                                    <th>Category Name</th>
+                                    {{--<th>Image</th>--}}
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -45,7 +45,7 @@
                                     <th scope="row">{{$sub_category->id}}</th>
                                     <td>{{$sub_category->name}}</td>
                                     <td>{{$sub_category->menu->name}}</td>
-                                    {{--<td>{{$sub_category->category->name}}</td>--}}
+                                    <td>{{$sub_category->category->name}}</td>
                                     {{--<td><img style="border: 1px solid blue;border-radius: 30px 20px;width:100px;" src="{{asset('uploads/SubCategory/'.$sub_category->icon)}}" </td>--}}
 
                                     <td> {{$sub_category->status==1?'Published':'Unpublished'}}</td>

@@ -56,6 +56,10 @@ Route::group(['prefix'=>'admin','as'=>'admin.', 'namespace' => 'Admin'],function
   Route::get('/seller-products','AdminController@get_seller_product')->name('seller-product');
   Route::resource('seller-profiles','Seller\ProfileController');
   Route::post('product/{id}','AdminController@updateStatus')->name('changedStatus');
+
+
+
+
   Route::get('total-orders','Seller\ProductController@show_orders')->name('seller-order');
 
 
@@ -66,5 +70,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.', 'namespace' => 'Admin'],function
 
 
  });
+
+Route::post('product/change-status','Admin\OrderController@statusChange')->name('status.change');
 
 ?>
