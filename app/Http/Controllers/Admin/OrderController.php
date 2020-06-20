@@ -95,10 +95,10 @@ class OrderController extends Controller
      * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(ProductOrder $order)
     {
       try {
-        $order =Order::findOrFail($id);
+
         $order->delete();
 
          Helper::notifySuccess(' Order Deleted ');
@@ -107,7 +107,21 @@ class OrderController extends Controller
           Helper::notifyError($e->getMessage());
           return back();
         }
-            }
+   }
+
+   //public function destroy($id)
+//    {
+//      try {
+//        $order =ProductOrder::findOrFail($id);
+//        $order->delete();
+//
+//         Helper::notifySuccess(' Order Deleted ');
+//         return back();
+//        } catch (\Exception $e) {
+//          Helper::notifyError($e->getMessage());
+//          return back();
+//        }
+//    }
 
     public function updateStatus(Request $request , $id)
     {

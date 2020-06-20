@@ -65,11 +65,11 @@
                                           <span class="fas fa-eye"></span>
                                       </a>
 
-                                      {!! Form::open(['url' => route('admin.updateStatus',$item->id),'method'=>'post']) !!}
-                                      <button type="submit" title="Confrimed" name="status" value="Confrimed" class="btn btn-success" >
-                                          <span class="fas fa-check-circle"></span>
-                                      </button>
-                                      {!! Form::close() !!}
+                                      {{--{!! Form::open(['url' => route('admin.updateStatus',$item->id),'method'=>'post']) !!}--}}
+                                      {{--<button type="submit" title="Confrimed" name="status" value="Confrimed" class="btn btn-success" >--}}
+                                          {{--<span class="fas fa-check-circle"></span>--}}
+                                      {{--</button>--}}
+                                      {{--{!! Form::close() !!}--}}
 
                                       {!! Form::open(['url' => route('admin.orders.destroy',$item->id),'method'=>'DELETE']) !!}
 
