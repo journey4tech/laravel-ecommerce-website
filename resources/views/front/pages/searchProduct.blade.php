@@ -9,6 +9,7 @@
                             <h2>Searched Products</h2>
                         </div>
                         <div id="best-seller-slider" class="product-flexslider hidden-buttons">
+                            @if( !$results->isEmpty())
                             <div class="slider-items slider-width-col3">
                                 @foreach ($results as $product)
                                     <div class="item">
@@ -51,6 +52,9 @@
                             @endforeach
                             <!-- Item -->
                             </div>
+                                @else
+                                <h2>No item found !!</h2>
+                            @endif
                         </div>
 
                     </div>

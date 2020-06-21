@@ -269,7 +269,10 @@ class HomeController extends Controller
                             ->OrWhere('product_title','LIKE', '%'. $search. '%')
                             ->OrWhere('product_title','LIKE', '%'. $search. '%')
                             ->OrWhere('description','LIKE', '%'. $search. '%')
+                            ->latest()
                             ->get();
+
+        //return $data['results'];
 
         return view('front.pages.searchProduct', $data);
 

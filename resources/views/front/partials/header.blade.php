@@ -288,8 +288,8 @@
         
         <!--End mobile-menu -->
         <ul id="nav" class="hidden-xs">
-          
-          @foreach ($menus as $menu)
+
+        @foreach ($menus as $menu)
           <li class="level0 parent drop-menu"><a href="grid.html"><span>{{ $menu->name }} </span> 
             <!--<span class="category-label-hot">Hot</span> --> 
             </a>
