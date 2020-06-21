@@ -69,50 +69,50 @@
           <!-- End Search-col --> 
         </div>
         <!-- Top Cart -->
-        <div class="col-lg-2 col-sm-3 col-md-2">
-          <div class="top-cart-contain">
-            <div class="mini-cart">
-              <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"> <a href="index.html#"> <i class="glyphicon glyphicon-shopping-cart"></i>
-                <div class="cart-box"><span class="title">cart</span><span id="cart-total">2 item </span></div>
-                </a></div>
-              <div>
-                <div class="top-cart-content arrow_box">
-                  <div class="block-subtitle">Recently added item(s)</div>
-                  <ul id="cart-sidebar" class="mini-products-list">
-                    <li class="item even"> <a class="product-image" href="index.html#" title="Downloadable Product "><img alt="Downloadable Product " src="{{asset('frontEnd/assets/products-images/product3.jpg')}}" width="80"></a>
-                      <div class="detail-item">
-                        <div class="product-details"> <a href="index.html#" title="Remove This Item" onClick="" class="glyphicon glyphicon-remove">&nbsp;</a> <a class="glyphicon glyphicon-pencil" title="Edit item" href="index.html#">&nbsp;</a>
-                          <p class="product-name"> <a href="product_detail.html" title="Downloadable Product">Sample Product </a> </p>
-                        </div>
-                        <div class="product-details-bottom"> <span class="price">$100.00</span> <span class="title-desc">Qty:</span> <strong>1</strong> </div>
-                      </div>
-                    </li>
-                    <li class="item last odd"> <a class="product-image" href="index.html#" title="  Sample Product "><img alt="  Sample Product " src="{{asset('frontEnd/assets/products-images/product2.jpg')}}" width="80"></a>
-                      <div class="detail-item">
-                        <div class="product-details"> <a href="index.html#" title="Remove This Item" onClick="" class="glyphicon glyphicon-remove">&nbsp;</a> <a class="glyphicon glyphicon-pencil" title="Edit item" href="index.html#">&nbsp;</a>
-                          <p class="product-name"> <a href="index.html#" title="  Sample Product "> Sample Product </a> </p>
-                        </div>
-                        <div class="product-details-bottom"> <span class="price">$320.00</span> <span class="title-desc">Qty:</span> <strong>2</strong> </div>
-                      </div>
-                    </li>
-                  </ul>
-                  <div class="top-subtotal">Subtotal: <span class="price">$420.00</span></div>
-                  <div class="actions">
-                    <button class="btn-checkout" type="button"><span>Checkout</span></button>
-                    <button class="view-cart" type="button"><span>View Cart</span></button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="ajaxconfig_info"> <a href="index.html#/"></a>
-              <input value="" type="hidden">
-              <input id="enable_module" value="1" type="hidden">
-              <input class="effect_to_cart" value="1" type="hidden">
-              <input class="title_shopping_cart" value="Go to shopping cart" type="hidden">
-            </div>
-          </div>
-        </div>
-        <!-- End Top Cart --> 
+        {{--<div class="col-lg-2 col-sm-3 col-md-2">--}}
+          {{--<div class="top-cart-contain">--}}
+            {{--<div class="mini-cart">--}}
+              {{--<div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"> <a href="index.html#"> <i class="glyphicon glyphicon-shopping-cart"></i>--}}
+                {{--<div class="cart-box"><span class="title">cart</span><span id="cart-total">2 item </span></div>--}}
+                {{--</a></div>--}}
+              {{--<div>--}}
+                {{--<div class="top-cart-content arrow_box">--}}
+                  {{--<div class="block-subtitle">Recently added item(s)</div>--}}
+                  {{--<ul id="cart-sidebar" class="mini-products-list">--}}
+                    {{--<li class="item even"> <a class="product-image" href="index.html#" title="Downloadable Product "><img alt="Downloadable Product " src="{{asset('frontEnd/assets/products-images/product3.jpg')}}" width="80"></a>--}}
+                      {{--<div class="detail-item">--}}
+                        {{--<div class="product-details"> <a href="index.html#" title="Remove This Item" onClick="" class="glyphicon glyphicon-remove">&nbsp;</a> <a class="glyphicon glyphicon-pencil" title="Edit item" href="index.html#">&nbsp;</a>--}}
+                          {{--<p class="product-name"> <a href="product_detail.html" title="Downloadable Product">Sample Product </a> </p>--}}
+                        {{--</div>--}}
+                        {{--<div class="product-details-bottom"> <span class="price">$100.00</span> <span class="title-desc">Qty:</span> <strong>1</strong> </div>--}}
+                      {{--</div>--}}
+                    {{--</li>--}}
+                    {{--<li class="item last odd"> <a class="product-image" href="index.html#" title="  Sample Product "><img alt="  Sample Product " src="{{asset('frontEnd/assets/products-images/product2.jpg')}}" width="80"></a>--}}
+                      {{--<div class="detail-item">--}}
+                        {{--<div class="product-details"> <a href="index.html#" title="Remove This Item" onClick="" class="glyphicon glyphicon-remove">&nbsp;</a> <a class="glyphicon glyphicon-pencil" title="Edit item" href="index.html#">&nbsp;</a>--}}
+                          {{--<p class="product-name"> <a href="index.html#" title="  Sample Product "> Sample Product </a> </p>--}}
+                        {{--</div>--}}
+                        {{--<div class="product-details-bottom"> <span class="price">$320.00</span> <span class="title-desc">Qty:</span> <strong>2</strong> </div>--}}
+                      {{--</div>--}}
+                    {{--</li>--}}
+                  {{--</ul>--}}
+                  {{--<div class="top-subtotal">Subtotal: <span class="price">$420.00</span></div>--}}
+                  {{--<div class="actions">--}}
+                    {{--<button class="btn-checkout" type="button"><span>Checkout</span></button>--}}
+                    {{--<button class="view-cart" type="button"><span>View Cart</span></button>--}}
+                  {{--</div>--}}
+                {{--</div>--}}
+              {{--</div>--}}
+            {{--</div>--}}
+            {{--<div id="ajaxconfig_info"> <a href="index.html#/"></a>--}}
+              {{--<input value="" type="hidden">--}}
+              {{--<input id="enable_module" value="1" type="hidden">--}}
+              {{--<input class="effect_to_cart" value="1" type="hidden">--}}
+              {{--<input class="title_shopping_cart" value="Go to shopping cart" type="hidden">--}}
+            {{--</div>--}}
+          {{--</div>--}}
+        {{--</div>--}}
+        {{--<!-- End Top Cart --> --}}
       </div>
     </div>
   </header>
