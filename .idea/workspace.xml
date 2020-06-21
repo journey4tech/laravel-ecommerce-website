@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb721d99-aaa5-47cc-8e3d-1130431ebcd5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontEnd/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontEnd/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/partials/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,16 +25,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="header.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/front/partials/header.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="58" column="43" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="43" />
+            <state relative-caret-position="283">
+              <caret line="58" column="46" selection-start-line="58" selection-start-column="46" selection-end-line="58" selection-end-column="46" />
+              <folding>
+                <element signature="n#style#0;n#select#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#header#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FrontEnd/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="492">
@@ -198,9 +198,9 @@
         <option value="$PROJECT_DIR$/resources/views/admin/orders/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/front/partials/header.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/pages/searchProduct.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FrontEnd/HomeController.php" />
+        <option value="$PROJECT_DIR$/resources/views/front/partials/header.blade.php" />
       </list>
     </option>
   </component>
@@ -513,12 +513,12 @@
       <workItem from="1592573115270" duration="3496000" />
       <workItem from="1592634773803" duration="4851000" />
       <workItem from="1592679920758" duration="2586000" />
-      <workItem from="1592717354389" duration="2912000" />
+      <workItem from="1592717354389" duration="3050000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61498000" />
+    <option name="totallyTimeSpent" value="61636000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -530,8 +530,8 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.23529412" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22014925" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.23529412" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22014925" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -878,13 +878,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/partials/header.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="58" column="43" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/front/partials/category_wise_product.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -926,6 +919,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="492">
           <caret line="278" lean-forward="true" selection-start-line="278" selection-end-line="278" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/front/partials/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="58" column="46" selection-start-line="58" selection-start-column="46" selection-end-line="58" selection-end-column="46" />
+          <folding>
+            <element signature="n#style#0;n#select#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#header#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

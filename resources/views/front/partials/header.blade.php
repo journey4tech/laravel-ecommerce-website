@@ -56,10 +56,9 @@
           <div class="search-box">
             <form action="{{ route('search') }}" method="POST" >
               @csrf
-              <select name="sub_category_id" class="cate-dropdown hidden-xs">
-                <option value="0">All Categories</option>
+              <select style="visibility:hidden" name="sub_category_id" class="cate-dropdown hidden-xs">
+                <option value="0">Choose Category</option>
                 @foreach(\App\Models\SubCategory::all() as $subcategory)
-                  <option value="0">Choose Category</option>
                   <option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
                 @endforeach
               </select>
