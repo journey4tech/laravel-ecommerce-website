@@ -237,4 +237,42 @@ class HomeController extends Controller
         
     }
 
+    public function search(Request $request)
+    {
+
+        $data = [];
+        $data['today'] = date("y-m-d");
+        $data['menus'] = Menu::with('categories')->get();
+
+        $data['sliders'] = Slider::all();
+        $data['dailyDeals'] = DailyDeals::with('product')->active()->orderBy('priority','DESC')->get();
+        $data['popular_categories']= PopularCategory::with(['category','category.products'=>function($q){
+            $q->latest()->take(8);
+        }])->active()->orderBy('priority','DESC')->get();
+        $data['recommended_products'] = $this->getRecommendedProducts();
+        $data['latest_products'] = Product::where('status',1)->latest()->get();
+        $data['most_view'] = Product::where('status',1)->orderByUniqueViews()->take(3)->get();
+        $data['all_products'] = Product::where('status',1)->where('type', '=','Regular')->latest()->get();
+        $data['special_products'] = Product::where('status',1)->where('type', '=',"Special")->latest()->get();
+        $data['featured_products'] = Product::where('status',1)->where('type', '=',"Featured")->latest()->get();
+        $data['categories'] = SubCategory::with('products')->get();
+        $data['feature_c'] = SubCategory::where('status',1)->limit(4)->get();
+        $data['ads'] = Ads::all();
+
+        $data['carts_count'] = Cart::count();
+
+        $search = $request->get('term');
+        $sub_category_id = $request->get('sub_category_id');
+        //return $search .$category_id;
+
+        $data['results'] = Product::where('product_name', 'LIKE', '%'. $search. '%')
+                            ->OrWhere('product_title','LIKE', '%'. $search. '%')
+                            ->OrWhere('product_title','LIKE', '%'. $search. '%')
+                            ->OrWhere('description','LIKE', '%'. $search. '%')
+                            ->get();
+
+        return view('front.pages.searchProduct', $data);
+
+    }
+
 }

@@ -54,24 +54,16 @@
         <div class="col-lg-8 col-sm-6 col-md-8"> 
           <!-- Search-col -->
           <div class="search-box">
-            <form action="http://htmldemo.magikcommerce.com/ecommerce/polo-html-template/Variation1/green/cat" method="POST" id="search_mini_form" name="Categories">
-              <select name="category_id" class="cate-dropdown hidden-xs">
+            <form action="{{ route('search') }}" method="POST" >
+              @csrf
+              <select name="sub_category_id" class="cate-dropdown hidden-xs">
                 <option value="0">All Categories</option>
-                <option value="36">Camera</option>
-                <option value="37">Electronics</option>
-                <option value="42">&nbsp;&nbsp;&nbsp;Cell Phones</option>
-                <option value="43">&nbsp;&nbsp;&nbsp;Cameras</option>
-                <option value="44">&nbsp;&nbsp;&nbsp;Laptops</option>
-                <option value="45">&nbsp;&nbsp;&nbsp;Hard Drives</option>
-                <option value="46">&nbsp;&nbsp;&nbsp;Monitors</option>
-                <option value="47">&nbsp;&nbsp;&nbsp;Mouse</option>
-                <option value="48">&nbsp;&nbsp;&nbsp;Digital Cameras</option>
-                <option value="38">Desktops</option>
-                <option value="39">Computer Parts</option>
-                <option value="40">Televisions</option>
-                <option value="41">Featured</option>
+                @foreach(\App\Models\SubCategory::all() as $subcategory)
+                  <option value="0">Choose Category</option>
+                  <option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
+                @endforeach
               </select>
-              <input type="text" placeholder="Search here..." value="" maxlength="70" class="" name="search" id="search">
+              <input type="text" placeholder="Search here..."  name="term" id="search">
               <button id="submit-button" class="search-btn-bg"><span>Search</span></button>
             </form>
           </div>
