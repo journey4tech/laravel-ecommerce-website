@@ -11,6 +11,7 @@ class Order extends Model
   protected $fileable=['customer_id','product_id','product_name','product_price',
   'product_qty','home_address','delivery_address','phone_number','payment_method'];
 
+
   //Customer relation
   public function customer(){
     return $this->belongsTo('App\User','customer_id','id');

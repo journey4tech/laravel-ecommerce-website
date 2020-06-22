@@ -66,7 +66,7 @@
                                     </tr>
                                     <tr>
                                         <td> Product Category </td>
-                                        <td>{{$order->product->sub_category->name}}</td>
+                                        <td>{{$order->product->category->name}}</td>
                                     </tr>
                                     <tr>
                                         <td> Product Type </td>

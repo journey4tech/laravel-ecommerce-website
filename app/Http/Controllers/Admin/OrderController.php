@@ -61,7 +61,11 @@ class OrderController extends Controller
     public function show(ProductOrder $order)
     {
 //        return "hello";
-//      $order=Order::findOrFail($id);
+    // $order=ProductOrder::findOrFail($id);
+     //return $order;
+
+
+    //return $order;
 
       return view('admin.orders.view',compact('order'));
     }
