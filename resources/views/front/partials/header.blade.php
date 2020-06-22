@@ -290,7 +290,7 @@
         <ul id="nav" class="hidden-xs">
 
         @foreach ($menus as $menu)
-          <li class="level0 parent drop-menu"><a href="grid.html"><span>{{ $menu->name }} </span> 
+          <li class="level0 parent drop-menu"><a href="{{route('menu',$menu->id)}}"><span>{{ $menu->name }} </span>
             <!--<span class="category-label-hot">Hot</span> --> 
             </a>
             @if (count($menu->categories) > 0)

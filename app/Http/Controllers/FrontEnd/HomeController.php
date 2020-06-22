@@ -84,19 +84,25 @@ class HomeController extends Controller
     {
 
       try {
-            $products = [];
+          $products = [];
 
-            $subcategories = SubCategory::where('menu_id', $id)->get();
+//            $subcategories = SubCategory::where('menu_id', $id)->get();
+//
+//            if ($subcategories) {
+//              foreach ($subcategories as $subcategory) {
+//                if ($singleProduct = Product::where('sub_category_id', $subcategory->id)->first()) {
+//                  $products [] = $singleProduct;
+//                }
+//              }
+//            }
 
-            if ($subcategories) {
-              foreach ($subcategories as $subcategory) {
-                if ($singleProduct = Product::where('sub_category_id', $subcategory->id)->first()) {
-                  $products [] = $singleProduct;
-                }
-              }
-            }
+          $data['menus'] = Menu::with('categories')->get();
+          $data['menu'] =  Menu::with('categories.products')->where('id', $id)->first();
 
-            return View('front.product.menu_product',compact('products'));
+
+          return View('front.partials.menu_wise_product',$data);
+
+
 
       } catch (\Exception $e) {
         return $e->getMessage();
