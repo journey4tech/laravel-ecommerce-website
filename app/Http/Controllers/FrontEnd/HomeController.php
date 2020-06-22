@@ -109,20 +109,23 @@ class HomeController extends Controller
     {
 
       try {
-            $products = [];
+//            $category_wise_products = [];
+//
+//            $categories = Category::where('name', $name)->get();
+//            //return $categories;
+//
+//            if ($categories) {
+//              foreach ($categories as $category) {
+//                if ($singleProduct = Product::where('category_id', $category->id)->first()) {
+//                    $category_wise_products [] = $singleProduct;
+//                }
+//              }
+//            }
+          $data['menus'] = Menu::with('categories')->get();
+          $data['category'] =  Category::with('products')->where('name', $name)->first();
+          //return $category;
 
-            $categories = Category::where('name', $name)->get();
-            return $categories;
-
-            if ($subcategories) {
-              foreach ($subcategories as $subcategory) {
-                if ($singleProduct = Product::where('sub_category_id', $subcategory->id)->first()) {
-                  $products [] = $singleProduct;
-                }
-              }
-            }
-
-            return View('front.product.category_product',compact('products'));
+            return View('front.partials.category_wise_product',$data);
 
       } catch (\Exception $e) {
         return $e->getMessage();

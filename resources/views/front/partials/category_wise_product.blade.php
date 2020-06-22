@@ -14,7 +14,7 @@
                 <div class="slider-items slider-width-col4">
 
 
-                @foreach($sub_wise_products->products as $product)
+                @foreach($category->products as $product)
                     <?php $images=collect(json_decode($product->multiple))->first(); ?>
                     <!-- Item -->
                         <div class="item">
