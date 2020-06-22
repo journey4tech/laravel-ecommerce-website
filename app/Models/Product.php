@@ -10,6 +10,7 @@ class Product extends Model implements ViewableContract
 {
   use Viewable;
   protected $removeViewsOnDelete = true;
+  protected $guarded = ['id'];
   
   protected $fillable = ['seller_id','product_name', 'product_title','sub_category_id','product_price',
   'special_price','start_date','end_date','sku','stock','base_image','multiple','description','color','size','warrantly','status']; //only the field names inside the array can be mass-assign

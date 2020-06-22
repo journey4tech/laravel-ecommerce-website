@@ -85,9 +85,10 @@ class ProductController extends Controller {
             }
             if ($request->hasfile('multiple')) {
                 foreach ($request->file('multiple') as $image) {
-                    $img = Image::make($image)->resize(700, 850);
+                    //$img = Image::make($image)->resize(1000, 1000);
                     $name = time().'-'.$image->getClientOriginalName();
-                    $img->save('uploads/documents/productimages/'.$name, 10);
+                    Image::make($image)->resize(1000,1000)
+                        ->save('uploads/documents/productimages/'.$name, 100);
                     $image_name[] = $name;
                 }
                 $product = New Product();
@@ -188,9 +189,11 @@ class ProductController extends Controller {
                 
                 if ($request->hasfile('multiple')) {
                     foreach ($request->file('multiple') as $image) {
-                        $img = Image::make($image)->resize(700, 850);
+                        //$img = Image::make($image)->resize(1000, 1000);
                         $name = time().'-'.$image->getClientOriginalName();
-                        $img->save('uploads/documents/productimages/'.$name, 10);
+//                        $img->save('uploads/documents/productimages/'.$name, 10);
+                        Image::make($image)->resize(1000,1000)
+                                           ->save('uploads/documents/productimages/'.$name, 100);
                         $image_name[] = $name;
                     }
                     $product->multiple = json_encode($image_name);

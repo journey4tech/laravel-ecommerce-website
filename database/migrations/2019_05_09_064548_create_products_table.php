@@ -32,7 +32,7 @@ class CreateProductsTable extends Migration
             $table->text('color')->nullable();
             $table->text('size')->nullable();
             $table->text('video_link')->nullable();
-            $table->string('warrantly')->nullable();
+            $table->string('warranty')->nullable();
             $table->tinyInteger('status');
             $table->bigInteger('total_order')->default(0);
             $table->softDeletes();
