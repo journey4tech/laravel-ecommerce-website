@@ -49,9 +49,9 @@
 
                                         <td>
 
-                                            <a href="" class="btn btn-info" title="Category View">
-                                                <span class="fas fa-eye"></span>
-                                            </a>
+                                            {{--<a href="" class="btn btn-info" title="Category View">--}}
+                                                {{--<span class="fas fa-eye"></span>--}}
+                                            {{--</a>--}}
                                             <a href="{{(route('admin.menus.edit',$menu->id))}}" class="btn btn-success" title="Category Edit">
                                                 <span class="fas fa-pen"></span>
                                             </a>

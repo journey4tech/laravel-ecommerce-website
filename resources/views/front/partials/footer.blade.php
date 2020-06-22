@@ -92,17 +92,7 @@
             <li class="last"><a href="index.html#" title="Return policy">Return policy</a></li>
           </ul>
         </div>
-        <div class="col-md-2 col-sm-4">
-          <h4>Style Advisor</h4>
-          <ul class="links">
-            <li class="first"><a title="Your Account" href="login.html">Your Account</a></li>
-            <li><a title="Information" href="index.html#">Information</a></li>
-            <li><a title="Addresses" href="index.html#">Addresses</a></li>
-            <li><a title="Addresses" href="index.html#">Discount</a></li>
-            <li><a title="Orders History" href="index.html#">Orders History</a></li>
-            <li class="last"><a title=" Additional Information" href="index.html#">Additional Information</a></li>
-          </ul>
-        </div>
+
         <div class="col-md-2 col-sm-4">
           <h4>Information</h4>
           <ul class="links">
@@ -118,10 +108,10 @@
           <h4>Contact us</h4>
           <div class="contacts-info">
             <address>
-            <i class="add-icon">&nbsp;</i>123 Main Street, Anytown, <br>
-            &nbsp;CA 12345  USA
+            <i class="add-icon">&nbsp;</i>Shatabdi Bhaban (1st Floor) 92.N.S. Road, Thana More
+              Kushtia-7000, Khulna, Bangladesh
             </address>
-            <div class="phone-footer"><i class="phone-icon">&nbsp;</i> +1 800 123 1234</div>
+            <div class="phone-footer"><i class="phone-icon">&nbsp;</i> 01778-903844</div>
             <div class="email-footer"><i class="email-icon">&nbsp;</i> <a href="index.html#">support@magikcommerce.com</a> </div>
           </div>
         </div>
@@ -130,7 +120,7 @@
     <div class="footer-bottom">
       <div class="container">
         <div class="row">
-          <div class="col-sm-5 col-xs-12 coppyright"> &copy; 2015. All Rights Reserved. Designed by <a href="index.html#">magikcommerce.com</a> </div>
+          <div class="col-sm-5 col-xs-12 coppyright"> &copy;  All Rights Reserved. Designed  and Developed by Md. Firoz Rahman Sabuz </div>
           <div class="col-sm-7 col-xs-12 company-links">
             <ul class="links">
               <li><a href="index.html#" title="Magento Themes">Magento Themes</a></li>
