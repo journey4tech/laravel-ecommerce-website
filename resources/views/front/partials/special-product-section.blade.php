@@ -33,7 +33,8 @@
                 </div>
                 <!--info-inner-->
                 <div class="actions">
-                  <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
+
+                  <a href="{{route('product',$product->slug)}}"><button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button></a>
                 </div>
                 <!--actions-->
                 
