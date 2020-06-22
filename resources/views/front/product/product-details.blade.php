@@ -36,7 +36,7 @@
                     </div>
                     {{--<p class="rating-links"> <a href="product_detail.html#">1 Review(s)</a> <span class="separator">|</span> <a href="product_detail.html#">Add Your Review</a> </p>--}}
                   </div>
-                  <p class="availability in-stock">Availability: <span>{{ $product->stock == 1 ? 'In Stock' : 'Out Stock'}}</span></p>
+                  <p class="availability in-stock">Availability: <span>{{ $product->stock >= 1 ? 'In Stock' : 'Out Stock'}}</span></p>
                   <div class="price-block">
                     <div class="price-box">
                       <p class="old-price"> <span class="price-label">Regular Price:</span> <span class="price"> Tk.  {{ $product->product_price }} </span> </p>

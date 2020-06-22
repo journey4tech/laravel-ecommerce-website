@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(MenusTableSeeder::class);
         //$this->call(ProductsTableSeeder::class);
-        factory(\App\Models\Product::class,50)->create();
+        factory(\App\Models\Product::class,100)->create();
         //$this->call(CouponsTableSeeder::class);
         $this->call(SlidersTableSeeder::class);
         //$this->call(AdsTableSeeder::class);

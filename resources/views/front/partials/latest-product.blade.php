@@ -27,7 +27,7 @@
                           </div>
                           <div class="info">
                             <div class="info-inner">
-                              <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> {{ $product->product_title }} </a> </div>
+                              <div class="item-title"> <a title=" Sample Product" href="{{route('product',$product->slug)}}"> {{ $product->product_title }} </a> </div>
                               <!--item-title-->
                               <div class="item-content">
                                 <div class="ratings">
@@ -36,8 +36,8 @@
                                   </div>
                                 </div>
                                 <div class="price-box">
-                                  <p class="special-price"> <span class="price"> ${{ $product->special_price}} </span> </p>
-                                  <p class="old-price"> <span class="price-sep">-</span> <span class="price"> ${{ $product->product_price}}</span> </p>
+                                  <p class="special-price"> <span class="price"> Tk. {{ $product->special_price}} </span> </p>
+                                  <p class="old-price"> <span class="price-sep">-</span> <span class="price"> Tk. {{ $product->product_price}}</span> </p>
                                 </div>
                               </div>
                               <!--item-content--> 

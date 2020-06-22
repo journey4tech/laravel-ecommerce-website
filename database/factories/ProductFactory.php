@@ -6,7 +6,12 @@ use App\Model;
 use Faker\Generator as Faker;
 
 $factory->define(\App\Models\Product::class, function (Faker $faker) {
-
+    $image1 = $faker->randomElement(['/demo/1.jpg','/demo/2.jpg','/demo/7.jpg']);
+    $image2 = $faker->randomElement(['/demo/2.jpg','/demo/7.jpg','/demo/3.jpg']);
+    $image3 = $faker->randomElement(['/demo/3.jpg','/demo/6.jpg','/demo/1.jpg']);
+    $image4 = $faker->randomElement(['/demo/4.jpg','/demo/3.jpg','/demo/2.jpg']);
+    $image5 = $faker->randomElement(['/demo/5.jpg','/demo/1.jpg','/demo/3.jpg']);
+    $image6 = $faker->randomElement(['/demo/6.jpg','/demo/3.jpg','/demo/4.jpg']);
     return [
         'product_name' => $faker->name,
         'product_title' => $faker->text,
@@ -20,7 +25,7 @@ $factory->define(\App\Models\Product::class, function (Faker $faker) {
         'product_quantity' => $faker->numberBetween(5,50),
         'sku' => Str::random(4),
         'stock' => $faker->numberBetween(5,50),
-        'multiple' => json_encode(['/demo/1.jpg','/demo/2.jpg','/demo/3.jpg','/demo/4.jpg','/demo/5.jpg','/demo/6.jpg','/demo/7.jpg']),
+        'multiple' => json_encode([$image1,$image2,$image3,$image4,$image5,$image6]),
         'description' => 'চীনের সঙ্গে লাদাখে সংঘর্ষের পর ভারতীয় সেনাবাহিনী তাদের আগের নীতি থেকে সরে আসছে। এখন থেকে ভারতীয় ফিল্ড কমান্ডাররা ‘ব্যতিক্রমী’ পরিস্থিতিতে আগ্নেয়াস্ত্র ব্যবহার করতে পারবে। এর আগে ভারতের প্রধানমন্ত্রী নরেন্দ্র মোদিও বলেছেন, পরিস্থিতি মোকাবিলায় সেনাবাহিনীকে পূর্ণ স্বাধীনতা দেওয়া হয়েছে।
 
 ভারত ও চীন স্বাক্ষরিত ১৯৯৬ ও ২০০৫ সালের চুক্তি অনুযায়ী, একে অপরের বিরুদ্ধে আগ্নেয়াস্ত্র ব্যবহার করবে না। দুই দেশের মধ্যে সংঘর্ষে আগ্নেয়াস্ত্র ব্যবহার বন্ধ করার বিষয়ে প্রথম চুক্তি হয়েছিল ১৯৯৬ সালে। সংঘাত যাতে ছড়িয়ে না পড়ে, তাই দুই দেশের মধ্যে বিরোধপূর্ণ সীমান্ত এলাকায় গোলাগুলি ও বিস্ফোরকের ব্যবহার নিষিদ্ধ করা হয় ওই চুক্তিতে।',
