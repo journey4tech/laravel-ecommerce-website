@@ -165,10 +165,11 @@ class OrderController extends Controller
               $product->product_quantity = $remaining_quantity;
               $product->save();
 
-              Helper::notifySuccess(' Order Status Updated ');
+              Helper::notifySuccess(' Order sent to completion ');
           }
 
-          if($status == 'Confirmed'){
+
+          if($status == 'Completed'){
               $productOrder = ProductOrder::findOrFail($order_id);
               $productOrder->status = $status;
               $productOrder->save();
@@ -180,7 +181,7 @@ class OrderController extends Controller
               $product->product_quantity = $remaining_quantity;
               $product->save();
 
-              Helper::notifySuccess(' Order Status Updated ');
+              Helper::notifySuccess(' Order Completed !! ');
           }
 
 

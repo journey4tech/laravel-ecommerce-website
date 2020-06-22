@@ -39,7 +39,7 @@
                                                 <input type="hidden" name="order_id" value="{{$order->id}}">
                                                 <select name="status">
                                                     <option {{ $order->status == 'Pending' ? " Selected": ''}}>Pending</option>
-                                                    <option {{ $order->status == 'Confirmed' ? " Selected": ''}}>Confirmed</option>
+                                                     <option {{ $order->status == 'Completed' ? " Selected": ''}}>Completed</option>
 
                                                 </select>
 
