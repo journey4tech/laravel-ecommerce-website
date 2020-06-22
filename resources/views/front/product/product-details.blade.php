@@ -313,19 +313,21 @@
                             <div class="col-item">
 
                             <div class="product-image-area"> <a class="product-image" title="Sample Product" href="{{route('product',$product->slug)}}"> <img src="{{ asset('uploads/documents/productimages/'.$images)}}" class="img-responsive" alt="a" /> </a>
-                                <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="product_detail.html#" title="Add to cart">
+                                <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="{{route('product',$product->slug)}}" title="Add to cart">
                                   <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
-                                  </a> <a class="quick-view" href="quick_view.html">
+                                  </a> <a class="quick-view" href="{{route('product',$product->slug)}}">
                                   <div><i class="icon-eye-open"></i><span>Quick view</span></div>
-                                  </a> <a class="add_to_compare" href="compare.html">
-                                  <div><i class="icon-random"></i><span>Add to compare</span></div>
-                                  </a> <a class="addToWishlist wishlistProd_5" href="wishlist.html" >
+                                  </a>
+                                  {{--<a class="add_to_compare" href="compare.html">--}}
+                                  {{--<div><i class="icon-random"></i><span>Add to compare</span></div>--}}
+                                  {{--</a> --}}
+                                  <a class="addToWishlist wishlistProd_5" href="wishlist.html" >
                                   <div><i class="icon-heart"></i><span>Add to Wishlist</span></div>
                                   </a> </div>
                               </div>
                               <div class="info">
                                 <div class="info-inner">
-                                  <div class="item-title"> <a href="product_detail.html#l" title=" Sample Product"> {{ $product->product_name }} </a> </div>
+                                  <div class="item-title"> <a href="{{route('product',$product->slug)}}" title=" {{ $product->product_name }}"> {{ $product->product_name }} </a> </div>
                                   <!--item-title-->
                                   <div class="item-content">
                                     <div class="ratings">
