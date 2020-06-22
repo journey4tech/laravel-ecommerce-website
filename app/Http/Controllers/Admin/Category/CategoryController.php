@@ -53,7 +53,7 @@ class CategoryController extends Controller
         try   {
 
              $this->validate($request, [
-               'name' => 'required',
+               'name' => 'required | unique:categories',
                //'category_icon' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4048',
 
            ]);

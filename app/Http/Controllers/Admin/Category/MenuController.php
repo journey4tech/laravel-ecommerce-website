@@ -46,7 +46,7 @@ class MenuController extends Controller
 
      try {
        $this->validate($request, [
-        'name' => 'required',
+        'name' => 'required | unique:menus',
 
       ]);
 

@@ -296,14 +296,14 @@
             @if (count($menu->categories) > 0)
             <ul class="level1">
                 @foreach ($menu->categories as $category)
-                <li class="level1 first parent"><a href="http://htmldemo.magikcommerce.com/ecommerce/polo-html-template/Variation1/green/grid"><span>{{ $category->name }}</span></a>
-                  @if (count($category->sub_category) > 0)
-                  <ul class="level2">
-                    @foreach ($category->sub_category as $sub_category)
-                    <li class="level2 first"><a href="{{ route('sub_category',$sub_category->slug) }}"><span>{{ $sub_category->name }}</span></a></li>
-                    @endforeach
-                  </ul>
-                  @endif
+                <li class="level1 first parent"><a href="{{ route('category',$category->name) }}"><span>{{ $category->name }}</span></a>
+                  {{--@if (count($category->sub_category) > 0)--}}
+                  {{--<ul class="level2">--}}
+                    {{--@foreach ($category->sub_category as $sub_category)--}}
+                    {{--<li class="level2 first"><a href="{{ route('sub_category',$sub_category->slug) }}"><span>{{ $sub_category->name }}</span></a></li>--}}
+                    {{--@endforeach--}}
+                  {{--</ul>--}}
+                  {{--@endif--}}
                 </li>
                 @endforeach
 

@@ -91,9 +91,9 @@
 
                                                                 <div class="form-group">
                                                                     <label class="control-label">Choose Category</label>
-                                                                    <select class="form-control form-white" data-placeholder="Choose a color..." name="sub_category_id">
-                                                                        @foreach($sub_categories as $data)
-                                                                        <option value="{{$data->id}}">{{$data->name}}</option>
+                                                                    <select class="form-control form-white" data-placeholder="Choose a color..." name="category_id">
+                                                                        @foreach($categories as $item)
+                                                                        <option value="{{$item->id}}">{{$item->name}}</option>
                                                                         @endforeach
 
                                                                     </select>

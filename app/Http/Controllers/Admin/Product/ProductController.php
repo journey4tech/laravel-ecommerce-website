@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\Admin\Product;
 
+use App\Models\Category;
 use Auth;
 use Helper;
 use Validator;
@@ -48,8 +49,8 @@ class ProductController extends Controller {
      */
     public function create() {
         try {
-            $sub_categories = SubCategory::all();
-            return view('admin.products.create', compact('sub_categories'));
+            $categories = Category::all();
+            return view('admin.products.create', compact('categories'));
         }
         catch(\Exception $e) {
             return $e->getMessage();
@@ -66,7 +67,7 @@ class ProductController extends Controller {
             $validator = Validator::make($request->all(), ['multiple' => 'required',
                             'name' => 'required',
                             'title' => 'required',
-                            'sub_category_id' => 'required',
+                            'category_id' => 'required',
                             'product_price' => 'required',
                             'product_quantity' => 'required',
                             'sku' => 'required',
@@ -92,7 +93,7 @@ class ProductController extends Controller {
                 $product = New Product();
                 $product->product_name = $request->name;
                 $product->product_title = $request->title;
-                $product->sub_category_id = $request->sub_category_id;
+                $product->category_id = $request->category_id;
                 $product->type = $request->type;
                 $product->slug = str_slug($request->title) . "-" . rand(255, 999);
                 $product->product_price = $request->product_price;
@@ -140,11 +141,11 @@ class ProductController extends Controller {
          */
         public function edit($id) {
             try {
-                $sub_categories = SubCategory::all();
+                $categories = Category::all();
                 
                 $product = Product::where('id', $id)->first();
-                //return $product;
-                return view('admin.products.edit', compact('product', 'sub_categories'));
+                //return $product->category->name;
+                return view('admin.products.edit', compact('product', 'categories'));
             }
             catch(\Exception $e) {
                 Helper::notifyError($e->getMessage());
@@ -198,7 +199,7 @@ class ProductController extends Controller {
 
                     $product->product_name = $request->product_name;
                     $product->product_title = $request->product_title;
-                    $product->sub_category_id = $request->sub_category_id;
+                    $product->category_id = $request->category_id;
                     $product->type = $request->type;
                     $product->slug = str_slug($request->title) . "-" . rand(255, 999);
                     $product->product_price = $request->product_price;

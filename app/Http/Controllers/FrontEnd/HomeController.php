@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\FrontEnd;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -104,13 +105,14 @@ class HomeController extends Controller
 
     }
 
-    public function category_products($id)
+    public function category_products($name)
     {
 
       try {
             $products = [];
 
-            $subcategories = SubCategory::where('category_id', $id)->get();
+            $categories = Category::where('name', $name)->get();
+            return $categories;
 
             if ($subcategories) {
               foreach ($subcategories as $subcategory) {
