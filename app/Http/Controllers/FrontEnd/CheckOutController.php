@@ -50,7 +50,7 @@ class CheckOutController extends Controller
 
     }
 
-    public function checkoutMe()
+    public function cartList()
     {
 
         $data = [];
@@ -66,7 +66,7 @@ class CheckOutController extends Controller
 
 
 
-        return view('front.pages.checkoutMe',$data);
+        return view('front.pages.cart-item',$data);
     }
 
     public function productOrderConfirm(Request $request)

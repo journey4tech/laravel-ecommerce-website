@@ -40,13 +40,13 @@ Route::get('/provide-information', 'FrontEnd\HomeController@provideInformation')
  Route::post('/cartpostAjax', 'FrontEnd\CartController@cartpostAjax')->name('cartpost.ajax');
  Route::get('/cart', 'FrontEnd\CartController@cart')->name('cart');
  Route::get('/getcartitems', 'FrontEnd\CartController@getCartItem')->name('cart.ajax');
- Route::post('/cartUpdate', 'FrontEnd\CartController@updateCart')->name('cart_update');
+ Route::post('/cartUpdate', 'FrontEnd\CartController@updateCart')->name('cart.update');
  Route::get('/getCartSubtotal', 'FrontEnd\CartController@getCartSubtotal')->name('cart_subtotal');
- Route::post('/cartx', 'FrontEnd\CartController@destroy')->name('cart_delete');
- Route::post('/clear-cartx', 'FrontEnd\CartController@clear_cart')->name('cart_destory');
+ Route::get('/cart-item-remove/{rowId}', 'FrontEnd\CartController@destroy')->name('cart.item.remove');
+ Route::get('/clear-cartx', 'FrontEnd\CartController@clear_cart')->name('cart.destroy');
  Route::post('/checkout', 'FrontEnd\CheckOutController@checkout')->name('checkout');
 
- Route::get('/checkout-product', 'FrontEnd\CheckOutController@checkoutMe')->name('checkoutMe');
+ Route::get('/cart-list', 'FrontEnd\CheckOutController@cartList')->name('cart.item');
  Route::post('/product-order-confirm', 'FrontEnd\CheckOutController@productOrderConfirm')->name('product.order.confirm');
  Route::post('/order-confirm', 'FrontEnd\CheckOutController@orderConfirm')->name('order.confirm');
 

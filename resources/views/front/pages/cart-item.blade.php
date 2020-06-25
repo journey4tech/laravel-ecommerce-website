@@ -41,45 +41,52 @@
                                            <h2>Your Cart Items</h2>
                                        </div>
                                        <div class="table-responsive">
-                                           <form method="post" action="shopping_cart.html#updatePost/">
-                                               <input type="hidden" value="Vwww7itR3zQFe86m" name="form_key">
+
+
                                                <fieldset>
                                                    <table class="data-table cart-table" id="shopping-cart-table">
                                                        <thead>
                                                        <tr class="first last">
-                                                           <th rowspan="1">&nbsp;</th>
+                                                           <th rowspan="1">No.</th>
+                                                           <th rowspan="1">Image</th>
                                                            <th rowspan="1"><span class="nobr">Product Name</span></th>
-                                                           <th rowspan="1"></th>
                                                            <th colspan="1" class="a-center"><span class="nobr">Unit Price</span></th>
                                                            <th class="a-center" rowspan="1">Qty</th>
+                                                           <th class="a-center" rowspan="1">Action</th>
                                                            <th colspan="1" class="a-center">Subtotal</th>
-                                                           <th class="a-center" rowspan="1">&nbsp;</th>
+
                                                        </tr>
                                                        </thead>
                                                        <tfoot>
                                                        <tr class="first last">
-                                                           <td class="a-right last" colspan="7"><button onclick="setLocation('#')" class="button btn-continue" title="Continue Shopping" type="button"><span><span>Continue Shopping</span></span></button>
+                                                           <td class="a-right last" colspan="7"><a href="{{ route('home') }}"><button class="button btn-continue" title="Continue Shopping" type="button"><span><span>Continue Shopping</span></span></button></a>
                                                                <button class="button btn-update" title="Update Cart" value="update_qty" name="update_cart_action" type="submit"><span><span>Update Cart</span></span></button>
-                                                               <button id="empty_cart_button" class="button btn-empty" title="Clear Cart" value="empty_cart" name="update_cart_action" type="submit"><span><span>Clear Cart</span></span></button></td>
+                                                               <a href="{{ route('cart.destroy') }}"><button id="empty_cart_button" class="button btn-empty" title="Clear Cart"><span><span>Clear Cart</span></span></button></a>
+                                                               </td>
                                                        </tr>
                                                        </tfoot>
                                                        <tbody>
                                                        @foreach($carts as $cart)
                                                            <tr class="first odd">
+                                                               <td>{{ $loop->iteration }}</td>
                                                                <td class="image"><a class="product-image" title="Sample Product"><img width="75" alt="Sample Product" src="{{ asset('uploads/documents/productimages/'.$cart->options->images) }}"></a></td>
                                                                <td><h2 class="product-name"> <a href="product_detail.html">{{ $cart->name }}</a> </h2></td>
-                                                               <td class="a-center"><a title="Edit item parameters" class="edit-bnt" href="shopping_cart.html#configure/id/15945/"></a></td>
                                                                <td class="a-right"><span class="cart-price"> <span class="price">Tk. {{ $cart->price }}</span> </span></td>
-                                                               <td class="a-center movewishlist"><input maxlength="12" class="input-text qty" title="Qty" size="4" value="{{ $cart->qty }}" name="cart[15945][qty]"></td>
+                                                               {!! Form::open(['url' => route('cart.update'),'method'=>'post']) !!}
+                                                               @csrf
+                                                               <input type="hidden" name="rowId" value="{{$cart->rowId}}">
+                                                               <td class="a-center movewishlist"><input  maxlength="12" class="input-text qty" title="Qty" size="4" value="{{ $cart->qty }}" name="qty"></td>
+                                                               <td class="a-center"><button style="border:none;outline:none;" class="edit-bnt" type="submit"></button>  <a style="margin-left:20px;" class="button remove-item" title="Remove item" href="{{ route('cart.item.remove',$cart->rowId) }}"><span><span>Remove item</span></span></a></td>
+                                                               {!! Form::close() !!}
                                                                <td class="a-right movewishlist"><span class="cart-price"> <span class="price">Tk. {{ $cart->price*$cart->qty }}</span> </span></td>
-                                                               <td class="a-center last"><a class="button remove-item" title="Remove item" href="shopping_cart.html#"><span><span>Remove item</span></span></a></td>
+
                                                            </tr>
                                                        @endforeach
 
                                                        </tbody>
                                                    </table>
                                                </fieldset>
-                                           </form>
+
                                        </div>
                                    </div>
                                </div>

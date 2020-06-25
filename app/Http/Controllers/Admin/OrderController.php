@@ -101,11 +101,12 @@ class OrderController extends Controller
      * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ProductOrder $order)
+    public function destroy($id)
     {
       try {
 
-        $order->delete();
+          Customer::findOrFail($id)->delete();
+
 
          Helper::notifySuccess(' Order Deleted ');
          return back();

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\FrontEnd;
+use App\Helpers\Helper;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use App\Models\Product;
@@ -43,7 +44,7 @@ class CartController extends Controller
          // ['id' => '5566', 'name' => 'Product 3', 'qty' => 1, 'price' => 10.00, 'weight' => 550, 'options' => ['size' => 'large']]
 
      ]);
-      return redirect()->route('checkoutMe');
+      return redirect()->route('cart.item');
 
     } catch (\Exception $e) {
        return $e->getMessage();
@@ -132,6 +133,7 @@ class CartController extends Controller
 
   public function updateCart(Request $request)
   {
+
     $request->validate([
       'rowId' => 'required',
       'qty' => 'required'
@@ -139,24 +141,29 @@ class CartController extends Controller
     try {
       $cart = Cart::update($request->rowId, $request->qty); // Will update the quantity
 
-      return response()->json($cart);
+      //return response()->json($cart);
+        Helper::notifySuccess('Cart Quantity Updated');
+        return redirect(route('cart.item'));
     } catch (\Exception $e) {
       return response()->json($e->getMessage(), 502);
     }
   }
 
-  public function destroy( Request $request)
+  public function destroy( $rowId)
   {
-      $content = $request->rowid;
-      Cart::remove($content);
-      return redirect(route('cart'));
+
+      Cart::remove($rowId);
+      Helper::notifySuccess('Cart item removed !!');
+      return redirect(route('cart.item'));
   }
 
 
 public function clear_cart( Request $request)
     {
+
       Cart::destroy();
-      return redirect(route('cart'));
+      Helper::notifySuccess('Cart clear !!');
+      return redirect(route('cart.item'));
 
     }
 
