@@ -70,7 +70,9 @@ class HomeController extends Controller
           $data = [];
           $data['today'] = date("y-m-d");
           $data['menus'] = Menu::with('categories')->get();
-
+          $data['carts_count'] = Cart::count();
+          //return $data['carts_count'];
+          $data['carts'] =Cart::content();
           $data['sliders'] = Slider::all();
           $data['dailyDeals'] = DailyDeals::with('product')->active()->orderBy('priority','DESC')->get();
           $data['popular_categories']= PopularCategory::with(['category','category.products'=>function($q){
@@ -269,7 +271,9 @@ class HomeController extends Controller
         $data = [];
         $data['today'] = date("y-m-d");
         $data['menus'] = Menu::with('categories')->get();
-
+        $data['carts_count'] = Cart::count();
+        //return $data['carts_count'];
+        $data['carts'] =Cart::content();
         $data['sliders'] = Slider::all();
         $data['dailyDeals'] = DailyDeals::with('product')->active()->orderBy('priority','DESC')->get();
         $data['popular_categories']= PopularCategory::with(['category','category.products'=>function($q){

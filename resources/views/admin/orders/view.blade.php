@@ -17,34 +17,34 @@
 
                                     <tr>
                                         <td> Customer Name:</td>
-                                        <td>{{$order->customer->customer_name}}</td>
+                                        <td>{{ $customer->customer_name}}</td>
                                     </tr>
                                     <tr>
                                         <td> Customer Phone Number :</td>
-                                        <td>{{$order->customer->phone}}</td>
+                                        <td>{{$customer->phone}}</td>
                                     </tr>
-                                    <tr>
-                                        <td> Order Amount :</td>
-                                        <td>{{$order->total_order}}</td>
-                                    </tr>
-                                    <tr>
+                                    {{--<tr>--}}
+                                        {{--<td> Order Amount :</td>--}}
+                                        {{--<td>{{$order->total_order}}</td>--}}
+                                    {{--</tr>--}}
+                                    {{--<tr>--}}
                                         <td> Delievery Location </td>
-                                        <td>{{$order->customer->address}}</td>
+                                        <td>{{$customer->address}}</td>
                                     </tr>
                                     <tr>
                                         <td> Order Status </td>
                                         <td>
-                                            <form action="{{ route('status.change') }}" method="post">
-                                                @csrf
-                                                <input type="hidden" name="order_id" value="{{$order->id}}">
-                                                <select name="status">
-                                                    <option {{ $order->status == 'Pending' ? " Selected": ''}}>Pending</option>
-                                                     <option {{ $order->status == 'Completed' ? " Selected": ''}}>Completed</option>
+                                            {{--<form action="{{ route('status.change') }}" method="post">--}}
+                                                {{--@csrf--}}
+                                                {{--<input type="hidden" name="order_id" value="{{$order->id}}">--}}
+                                                {{--<select name="status">--}}
+                                                    {{--<option {{ $order->status == 'Pending' ? " Selected": ''}}>Pending</option>--}}
+                                                     {{--<option {{ $order->status == 'Completed' ? " Selected": ''}}>Completed</option>--}}
 
-                                                </select>
+                                                {{--</select>--}}
 
-                                                <input type="submit"  value="Change">
-                                            </form>
+                                                {{--<input type="submit"  value="Change">--}}
+                                            {{--</form>--}}
 
                                         </td>
                                     </tr>
@@ -53,37 +53,58 @@
                             </div>
 
                             <div class="table-responsive">
-                                <h4 class="text-center"> Product Information</h4>
+                                <h4 class="text-center"> Order Information</h4>
                                 <table class="table table-striped">
+                                    <tr>
+                                        <th>Order No.</th>
+                                        <th>Product Name</th>
+                                        <th>Category</th>
+                                        <th>Type</th>
+                                        <th>Color</th>
 
+                                        <th>Regular Price</th>
+                                        <th>Discount</th>
+                                        <th>Discounted Price</th>
+                                    </tr>
+                                    @php
+                                        $total_cost = 0;
+                                    @endphp
+                                    @foreach($orders as $order)
+
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{$order->product->product_name}}</td>
+                                            <td>{{$order->product->sub_category->name}}</td>
+                                            <td>{{$order->product->type}}</td>
+                                            <td>{{$order->color}}</td>
+                                            <td>{{$order->product->product_price}}</td>
+                                            <td>{{$order->product->discount}}%</td>
+                                            <td>{{ $total_cost += 200 }}</td>
+
+                                        </tr>
+
+                                    @endforeach
                                     <tr>
-                                        <td> Product Name:</td>
-                                        <td>{{$order->product->product_name}}</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>Service Charge:</td>
+                                        <td></td>
                                     </tr>
                                     <tr>
-                                        <td> Product Title :</td>
-                                        <td>{{$order->product->product_title}}</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td style="background: green;color:white"><b>Total Cost:</b> </td>
+                                        <td style="background: green;color:white">{{ $total_cost }}</td>
                                     </tr>
-                                    <tr>
-                                        <td> Product Category </td>
-                                        <td>{{$order->product->category->name}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td> Product Type </td>
-                                        <td>{{$order->product->type}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td> Product Price </td>
-                                        <td>{{$order->product->product_price}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td> Product Special Price </td>
-                                        <td>{{$order->product->special_price}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td> Product Color </td>
-                                        <td>{{$order->color}}</td>
-                                    </tr>
+
 
                                 </table>
                             </div>

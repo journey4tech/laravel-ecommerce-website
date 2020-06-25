@@ -26,8 +26,10 @@ class OrderController extends Controller
        //$pending_orders=Order::where('status','pending')->get();
         //$customers = Customer::latest()->get();
         $productOrders = ProductOrder::latest()->get();
+        $customers = Customer::latest()->get();
 
-       return view('admin.orders.index',compact('productOrders'));
+
+       return view('admin.orders.index',compact('customers'));
 
     }
 
@@ -58,16 +60,16 @@ class OrderController extends Controller
      * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(ProductOrder $order)
+    public function show($id)
     {
 //        return "hello";
-    // $order=ProductOrder::findOrFail($id);
+     $customer=Customer::findOrFail($id);
      //return $order;
-
+     $orders = ProductOrder::where('customer_id',$customer->id)->latest()->paginate(10);
 
     //return $order;
 
-      return view('admin.orders.view',compact('order'));
+      return view('admin.orders.view',compact('customer','orders'));
     }
 
     /**

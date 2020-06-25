@@ -83,9 +83,9 @@ class CheckOutController extends Controller
 
             if(! empty($carts)){
                 $customer = new Customer();
-                $customer->customer_name = $request->customer_name;
-                $customer->phone = $request->phone;
-                $customer->address = $request->address;
+                $customer->customer_name = 'Sabuz';
+                $customer->phone = '01754165234';
+                $customer->address = 'Thanapara';
                 $customer->status = 'Pending';
                 $customer->save();
                 $data = [];

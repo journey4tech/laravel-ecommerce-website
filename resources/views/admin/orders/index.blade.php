@@ -38,14 +38,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($productOrders as $item)
+                                @foreach($customers as $item)
 
                                 <tr>
 
                                     <th scope="row">{{$loop->iteration}}</th>
-                                    <td>{{$item->customer->customer_name}}</td>
-                                    <td>{{$item->customer->phone}}</td>
-                                    <td>{{$item->customer->address}}</td>
+                                    <td>{{$item->customer_name}}</td>
+                                    <td>{{$item->phone}}</td>
+                                    <td>{{$item->address}}</td>
 
 
                                   <td>
@@ -58,7 +58,7 @@
                                   ?>
                                   </td>
 
-                                    <td>{{$item->status}}</td>
+                                    <td>{{ $item->status }} </td>
                                     <td class="action-column">
 
                                       <a href="{{route('admin.orders.show',$item->id)}}" class="btn btn-info" title="Orders View">

@@ -3,15 +3,11 @@
 
 
 @section('content')
-    <style>
-        table th, td{
-            font-size: 16px;
-        }
-        .order-total th,.order-total td{
-            color:white;
-            background:#65d31f;
-        }
-    </style>
+
+
+
+
+
     <div id="body-content">
         <div id="main-content">
             <div class="main-content">
@@ -21,118 +17,110 @@
                     <div class="wrap-breadcrumb bw-color">
                         <div id="breadcrumb" class="breadcrumb-holder container">
 
-                            <ul class="breadcrumb">
-                                <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-                                    <a itemprop="url" href="/">
-                                        <span itemprop="title" class="d-none">Arena Electro</span>Home
-                                    </a>
-                                </li>
+                            {{--<ul class="breadcrumb">--}}
+                                {{--<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">--}}
+                                    {{--<a itemprop="url" href="/">--}}
+                                        {{--<span itemprop="title" class="d-none">Arena Electro</span>Home--}}
+                                    {{--</a>--}}
+                                {{--</li>--}}
 
-                                <li class="active">Product Confirm page</li>
+                                {{--<li class="active">Cart List</li>--}}
 
-                            </ul>
+                            {{--</ul>--}}
 
                         </div>
                     </div>
 
-                    <div class="page-contact">
+                    <div class="page-contact" style="margin-top: 50px;">
 
                         <div class="container">
                             <div id="col-main" class="page-contact-content">
-                                <div class="row">
+                               <div class="col-md-8">
+                                   <div class="cart wow bounceInUp animated">
+                                       <div class="page-title">
+                                           <h2>Your Cart Items</h2>
+                                       </div>
+                                       <div class="table-responsive">
+                                           <form method="post" action="shopping_cart.html#updatePost/">
+                                               <input type="hidden" value="Vwww7itR3zQFe86m" name="form_key">
+                                               <fieldset>
+                                                   <table class="data-table cart-table" id="shopping-cart-table">
+                                                       <thead>
+                                                       <tr class="first last">
+                                                           <th rowspan="1">&nbsp;</th>
+                                                           <th rowspan="1"><span class="nobr">Product Name</span></th>
+                                                           <th rowspan="1"></th>
+                                                           <th colspan="1" class="a-center"><span class="nobr">Unit Price</span></th>
+                                                           <th class="a-center" rowspan="1">Qty</th>
+                                                           <th colspan="1" class="a-center">Subtotal</th>
+                                                           <th class="a-center" rowspan="1">&nbsp;</th>
+                                                       </tr>
+                                                       </thead>
+                                                       <tfoot>
+                                                       <tr class="first last">
+                                                           <td class="a-right last" colspan="7"><button onclick="setLocation('#')" class="button btn-continue" title="Continue Shopping" type="button"><span><span>Continue Shopping</span></span></button>
+                                                               <button class="button btn-update" title="Update Cart" value="update_qty" name="update_cart_action" type="submit"><span><span>Update Cart</span></span></button>
+                                                               <button id="empty_cart_button" class="button btn-empty" title="Clear Cart" value="empty_cart" name="update_cart_action" type="submit"><span><span>Clear Cart</span></span></button></td>
+                                                       </tr>
+                                                       </tfoot>
+                                                       <tbody>
+                                                       @foreach($carts as $cart)
+                                                           <tr class="first odd">
+                                                               <td class="image"><a class="product-image" title="Sample Product"><img width="75" alt="Sample Product" src="{{ asset('uploads/documents/productimages/'.$cart->options->images) }}"></a></td>
+                                                               <td><h2 class="product-name"> <a href="product_detail.html">{{ $cart->name }}</a> </h2></td>
+                                                               <td class="a-center"><a title="Edit item parameters" class="edit-bnt" href="shopping_cart.html#configure/id/15945/"></a></td>
+                                                               <td class="a-right"><span class="cart-price"> <span class="price">Tk. {{ $cart->price }}</span> </span></td>
+                                                               <td class="a-center movewishlist"><input maxlength="12" class="input-text qty" title="Qty" size="4" value="{{ $cart->qty }}" name="cart[15945][qty]"></td>
+                                                               <td class="a-right movewishlist"><span class="cart-price"> <span class="price">Tk. {{ $cart->price*$cart->qty }}</span> </span></td>
+                                                               <td class="a-center last"><a class="button remove-item" title="Remove item" href="shopping_cart.html#"><span><span>Remove item</span></span></a></td>
+                                                           </tr>
+                                                       @endforeach
 
-                                    <div class="contact-form-wrapper col-md-6 col-sm-12">
-                                        <div class="title-wrapper">
-                                            <h3>Order Details</h3>
-                                            <a href="{{ route('home') }}" style="color:green;margin-bottom:10px;">Continue Shopping</a>
-                                        </div>
-                                        <table class="table table-striped table-hover">
-                                            <thead>
-                                            <tr>
-                                                <th class="product-name">Product</th>
-                                                <th class="product-total">Total</th>
+                                                       </tbody>
+                                                   </table>
+                                               </fieldset>
+                                           </form>
+                                       </div>
+                                   </div>
+                               </div>
+                                <div class="col-md-4">
 
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            @foreach($carts as $data)
-                                                <tr class="cart_item">
-                                                    <td class="product-name">{{$data->name}}
-                                                        <strong class="product-quantity">× {{$data->qty}}</strong>
-                                                    </td>
-                                                    <td class="product-total">
-                                                        <span class="amount">Tk. {{$data->price}}</span>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                            </tbody>
-                                            <tfoot>
+                                        <div class="totals">
+                                            <h3>Cart Total</h3>
+                                            <div class="inner">
+                                                <table id="shopping-cart-totals-table" class="table shopping-cart-table-total">
+                                                    <colgroup>
+                                                        <col>
+                                                        <col width="1">
+                                                    </colgroup>
+                                                    <tfoot>
+                                                    <tr>
+                                                        <td class="a-left" colspan="1"><strong>Grand Total</strong></td>
+                                                        <td class="a-right"><strong><span class="price">Tk. {{Cart::subtotal()}}</span></strong></td>
+                                                    </tr>
+                                                    </tfoot>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td class="a-left" colspan="1"> Subtotal </td>
+                                                        <td class="a-right"><span class="price">$649.00</span></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <ul class="checkout">
+                                                    {!! Form::open(['url' => route('product.order.confirm'),'method'=>'post']) !!}
+                                                    <li>
 
-                                            <tr class="cart-subtotal">
-                                                <th>Subtotal</th>
-                                                <td><span class="amount">Tk. {{Cart::subtotal()}}</span></td>
-                                            </tr>
-                                            <tr class="cart-subtotal">
-                                                <th>Delevery Charge</th>
-                                                <td><span class="amount">Tk. 50</span></td>
-                                            </tr>
+                                                        <button type="submit" title="Proceed to Checkout" class="button btn-proceed-checkout" onclick="#"><span>Proceed to Checkout</span></button>
+                                                    </li>
+                                                    {!! Form::close() !!}
 
-
-
-
-                                            <tr class="order-total">
-                                                <th>Total</th>
-                                                <td><strong><span class="amount">Tk. {{$total = str_replace(',', '', Cart::subtotal())}}</span></strong> </td>
-                                            </tr>
-                                            </tfoot>
-                                        </table>
-
-
-
-                                    </div>
-
-                                    <div class="contact-form-wrapper col-md-6 col-sm-12">
-
-                                        <div class="title-wrapper">
-                                            <h3>Provide  Information</h3>
-
-                                        </div>
-
-                                        <div class="contact-form">
-                                            {!! Form::open(['url' => route('product.order.confirm'),'method'=>'post']) !!}
-
-                                            <div id="contact-form">
-                                                <div class="row">
-                                                    <div class="form-group col-lg-6 col-md-12">
-                                                        <label for="name">Name<span class="req">*</span></label>
-                                                        <input type="text" id="customer_name" class="form-control" value="" name="customer_name" />
-                                                    </div>
-
-
-                                                    <div class="form-group  col-lg-6 col-md-12">
-                                                        <label for="phone">Phone</label>
-                                                        <input type="text" id="phone" class="form-control" value="" name="phone" />
-                                                    </div>
-                                                </div>
-
-
-
-                                                <div class="form-group">
-                                                    <label for="message">Address</label>
-                                                    <textarea required id="address" class="form-control" cols="40" rows="7" name="address"></textarea>
-                                                </div>
-
-                                                <div class="form-actions">
-                                                    <button type="submit" class="btn btn-success">Confirm an Order
-                                                    </button>
-                                                </div>
+                                                    <li><a href="shopping_cart.html#" title="Checkout with Multiple Addresses">Checkout with Multiple Addresses</a> </li>
+                                                    <br>
+                                                </ul>
                                             </div>
-                                            {!! Form::close() !!}
+                                            <!--inner-->
                                         </div>
-
-                                    </div>
-
-
+                                        <!--totals-->
 
                                 </div>
                             </div>
