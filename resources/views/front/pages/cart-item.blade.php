@@ -60,7 +60,7 @@
                                                        <tfoot>
                                                        <tr class="first last">
                                                            <td class="a-right last" colspan="7"><a href="{{ route('home') }}"><button class="button btn-continue" title="Continue Shopping" type="button"><span><span>Continue Shopping</span></span></button></a>
-                                                               <button class="button btn-update" title="Update Cart" value="update_qty" name="update_cart_action" type="submit"><span><span>Update Cart</span></span></button>
+
                                                                <a href="{{ route('cart.destroy') }}"><button id="empty_cart_button" class="button btn-empty" title="Clear Cart"><span><span>Clear Cart</span></span></button></a>
                                                                </td>
                                                        </tr>
@@ -121,7 +121,7 @@
                                                     </li>
                                                     {!! Form::close() !!}
 
-                                                    <li><a href="shopping_cart.html#" title="Checkout with Multiple Addresses">Checkout with Multiple Addresses</a> </li>
+                                                    {{--<li><a href="shopping_cart.html#" title="Checkout with Multiple Addresses">Checkout with Multiple Addresses</a> </li>--}}
                                                     <br>
                                                 </ul>
                                             </div>

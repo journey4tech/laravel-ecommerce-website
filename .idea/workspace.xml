@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="eb721d99-aaa5-47cc-8e3d-1130431ebcd5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontEnd/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontEnd/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontEnd/CheckOutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontEnd/CheckOutController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/pages/checkoutMe.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/pages/cart-item.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/pages/cart-item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/pages/cart-item.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/partials/header.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,16 +27,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="header.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/front/partials/header.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1380">
-              <caret line="92" column="157" selection-start-line="92" selection-start-column="157" selection-end-line="92" selection-end-column="227" />
+            <state relative-caret-position="387">
+              <caret line="96" column="108" selection-start-line="96" selection-start-column="108" selection-end-line="96" selection-end-column="108" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CartController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cart-item.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/front/pages/cart-item.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="78" column="294" selection-start-line="78" selection-start-column="250" selection-end-line="78" selection-end-column="294" />
+              <folding>
+                <element signature="e#5328#5361#0#HTML" expanded="true" />
+                <element signature="e#5108#5133#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CartController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FrontEnd/CartController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="487">
@@ -105,19 +115,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cart-item.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/front/pages/cart-item.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="641">
-              <caret line="78" column="276" selection-start-line="78" selection-start-column="260" selection-end-line="78" selection-end-column="276" />
-              <folding>
-                <element signature="e#5328#5361#0#HTML" expanded="true" />
-                <element signature="e#5108#5133#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -157,8 +154,8 @@
       <find>productOrderConfirm</find>
       <find>search</find>
       <find>clear_cart</find>
-      <find>conti</find>
       <find>updateCart</find>
+      <find>conti</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -208,7 +205,6 @@
         <option value="$PROJECT_DIR$/resources/views/front/partials/mostly-viewed-product.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/pages/category-wise-product.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/pages/searchProduct.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/front/partials/header.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FrontEnd/HomeController.php" />
         <option value="$PROJECT_DIR$/resources/views/front/pages/checkoutMe.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/orders/index.blade.php" />
@@ -216,8 +212,9 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FrontEnd/CheckOutController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/front/pages/cart-item.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FrontEnd/CartController.php" />
+        <option value="$PROJECT_DIR$/resources/views/front/pages/cart-item.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/front/partials/header.blade.php" />
       </list>
     </option>
   </component>
@@ -596,12 +593,12 @@
       <workItem from="1592892839284" duration="6814000" />
       <workItem from="1593064928512" duration="12149000" />
       <workItem from="1593089613951" duration="9833000" />
-      <workItem from="1593105619842" duration="3531000" />
+      <workItem from="1593105619842" duration="4483000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118516000" />
+    <option name="totallyTimeSpent" value="119468000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -613,7 +610,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.21816169" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.21816169" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18017058" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
@@ -926,13 +923,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/partials/header.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
-          <caret line="92" column="157" selection-start-line="92" selection-start-column="157" selection-end-line="92" selection-end-column="227" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Customer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -978,17 +968,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/pages/cart-item.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="78" column="276" selection-start-line="78" selection-start-column="260" selection-end-line="78" selection-end-column="276" />
-          <folding>
-            <element signature="e#5328#5361#0#HTML" expanded="true" />
-            <element signature="e#5108#5133#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
@@ -1003,6 +982,24 @@
           <folding>
             <element signature="e#48#71#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/front/pages/cart-item.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="78" column="294" selection-start-line="78" selection-start-column="250" selection-end-line="78" selection-end-column="294" />
+          <folding>
+            <element signature="e#5328#5361#0#HTML" expanded="true" />
+            <element signature="e#5108#5133#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/front/partials/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="96" column="108" selection-start-line="96" selection-start-column="108" selection-end-line="96" selection-end-column="108" />
         </state>
       </provider>
     </entry>
