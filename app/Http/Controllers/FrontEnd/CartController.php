@@ -35,7 +35,9 @@ class CartController extends Controller
              'weight' => 550,
              'options' => [
                  //'size' => 'large',
-                 'color'=>$product_color
+                 'color'=>$product_color,
+                 'size' => $product->discount,
+                 'images' =>json_decode($product->multiple)[0]
              ]
          ]
          // ['id' => '5566', 'name' => 'Product 3', 'qty' => 1, 'price' => 10.00, 'weight' => 550, 'options' => ['size' => 'large']]

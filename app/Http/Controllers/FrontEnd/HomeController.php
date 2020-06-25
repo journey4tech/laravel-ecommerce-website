@@ -47,6 +47,10 @@ class HomeController extends Controller
             $data['ads'] = Ads::all();
           
             $data['carts_count'] = Cart::count();
+            //return $data['carts_count'];
+            $data['carts'] =Cart::content();
+
+
              return view('front.home.home',$data);
            //return $latest_products;
         } catch (\Exception $e) {
@@ -133,6 +137,9 @@ class HomeController extends Controller
 //            }
           $data['menus'] = Menu::with('categories')->get();
           $data['category'] =  Category::with('products')->where('name', $name)->first();
+          $data['carts_count'] = Cart::count();
+          //return $data['carts_count'];
+          $data['carts'] =Cart::content();
           //return $category;
 
             return View('front.partials.category_wise_product',$data);
@@ -150,6 +157,10 @@ class HomeController extends Controller
      {
        try {
          $data['product']= Product::where('slug',$slug)->firstOrFail();
+           $data['carts_count'] = Cart::count();
+           //return $data['carts_count'];
+           $data['carts'] =Cart::content();
+
           $data['related_products'] = Product::where('sub_category_id',$data['product']->sub_category_id)->latest()->get();
          //return $product;
          $data['menus']=Menu::with('categories')->get();

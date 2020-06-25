@@ -56,7 +56,10 @@ class CheckOutController extends Controller
         $data = [];
         $data['today'] = date("y-m-d");
         $data['menus'] = Menu::with('categories')->get();
-        $data['cartcontent']= Cart::content();
+
+        $data['carts_count'] = Cart::count();
+        //return $data['carts_count'];
+        $data['carts'] =Cart::content();
 
 
         $data['carts_count'] = Cart::count();

@@ -55,7 +55,7 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            @foreach($cartcontent as $data)
+                                            @foreach($carts as $data)
                                                 <tr class="cart_item">
                                                     <td class="product-name">{{$data->name}}
                                                         <strong class="product-quantity">× {{$data->qty}}</strong>
@@ -82,7 +82,7 @@
 
                                             <tr class="order-total">
                                                 <th>Total</th>
-                                                <td><strong><span class="amount">Tk. {{$total = str_replace(',', '', Cart::subtotal()) +50}}</span></strong> </td>
+                                                <td><strong><span class="amount">Tk. {{$total = str_replace(',', '', Cart::subtotal())}}</span></strong> </td>
                                             </tr>
                                             </tfoot>
                                         </table>
