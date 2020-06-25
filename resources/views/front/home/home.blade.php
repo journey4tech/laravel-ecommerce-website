@@ -12,9 +12,10 @@
 
 
 @include('front/partials/latest-product')
-@include('front/partials/offer-banner-section')
+{{--@include('front/partials/offer-banner-section')--}}
 @include('front/partials/special-product-section')
 @include('front/partials/featured-product')
+@include('front.partials.mostly-viewed-product')
 
 
 

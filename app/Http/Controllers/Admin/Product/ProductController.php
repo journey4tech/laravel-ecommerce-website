@@ -98,7 +98,7 @@ class ProductController extends Controller {
                 $product->type = $request->type;
                 $product->slug = str_slug($request->title) . "-" . rand(255, 999);
                 $product->product_price = $request->product_price;
-                $product->special_price = $request->special_price;
+                $product->discount = $request->discount;
                 $product->start_date = $request->start_date;
                 $product->end_date = $request->end_date;
                 $product->product_quantity = $request->product_quantity;
@@ -207,7 +207,7 @@ class ProductController extends Controller {
                     $product->type = $request->type;
                     $product->slug = str_slug($request->title) . "-" . rand(255, 999);
                     $product->product_price = $request->product_price;
-                    $product->special_price = $request->special_price;
+                    $product->discount = $request->discount;
                     $product->start_date = $request->start_date;
                     $product->end_date = $request->end_date;
                     $product->product_quantity = $request->product_quantity;

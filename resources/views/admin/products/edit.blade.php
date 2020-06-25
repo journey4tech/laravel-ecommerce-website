@@ -98,8 +98,8 @@
                                                                     <input class="form-control form-white" value="{{$product->product_price}}" placeholder="Enter name" type="number" name="product_price" />
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label class="control-label">Special Price</label>
-                                                                    <input class="form-control form-white" value="{{$product->special_price}}" placeholder="Enter name" type="number" name="special_price" />
+                                                                    <label class="control-label">Discount</label>
+                                                                    <input class="form-control form-white" value="{{$product->discount}}" placeholder="Enter name" type="number" name="discount" />
                                                                 </div>
 
                                                                 <div class="form-group">

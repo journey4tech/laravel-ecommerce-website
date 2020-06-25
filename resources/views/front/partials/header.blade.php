@@ -290,20 +290,20 @@
         <ul id="nav" class="hidden-xs">
 
         @foreach ($menus as $menu)
-          <li class="level0 parent drop-menu"><a href="{{route('menu',$menu->id)}}"><span>{{ $menu->name }} </span>
+          <li class="level0 parent drop-menu"><a href="{{route('home')}}"><span>{{ $menu->name }} </span>
             <!--<span class="category-label-hot">Hot</span> --> 
             </a>
             @if (count($menu->categories) > 0)
             <ul class="level1">
                 @foreach ($menu->categories as $category)
-                <li class="level1 first parent"><a href="{{ route('category',$category->name) }}"><span>{{ $category->name }}</span></a>
-                  {{--@if (count($category->sub_category) > 0)--}}
-                  {{--<ul class="level2">--}}
-                    {{--@foreach ($category->sub_category as $sub_category)--}}
-                    {{--<li class="level2 first"><a href="{{ route('sub_category',$sub_category->slug) }}"><span>{{ $sub_category->name }}</span></a></li>--}}
-                    {{--@endforeach--}}
-                  {{--</ul>--}}
-                  {{--@endif--}}
+                <li class="level1 first parent"><a href="{{route('home')}}"><span>{{ $category->name }}</span></a>
+                  @if (count($category->sub_category) > 0)
+                  <ul class="level2">
+                    @foreach ($category->sub_category as $sub_category)
+                    <li class="level2 first"><a href="{{ route('sub_category',$sub_category->slug) }}"><span>{{ $sub_category->name }}</span></a></li>
+                    @endforeach
+                  </ul>
+                  @endif
                 </li>
                 @endforeach
 

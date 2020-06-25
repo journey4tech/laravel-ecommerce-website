@@ -28,6 +28,7 @@ class HomeController extends Controller
             $data = [];
             $data['today'] = date("y-m-d");
             $data['menus'] = Menu::with('categories')->get();
+            //return $data['menus'];
 
             $data['sliders'] = Slider::all();
             $data['dailyDeals'] = DailyDeals::with('product')->active()->orderBy('priority','DESC')->get();
@@ -36,7 +37,8 @@ class HomeController extends Controller
             }])->active()->orderBy('priority','DESC')->get();
             $data['recommended_products'] = $this->getRecommendedProducts();
             $data['latest_products'] = Product::where('status',1)->latest()->get();
-            $data['most_view'] = Product::where('status',1)->orderByUniqueViews()->take(3)->get();
+            $data['most_viewed_products'] = Product::where('status',1)->orderByUniqueViews()->latest()->take(20)->get();
+            //return $data['most_viewed_products'];
             $data['all_products'] = Product::where('status',1)->where('type', '=','Regular')->latest()->get();
             $data['special_products'] = Product::where('status',1)->where('type', '=',"Special")->latest()->get();
             $data['featured_products'] = Product::where('status',1)->where('type', '=',"Featured")->latest()->get();
@@ -57,6 +59,8 @@ class HomeController extends Controller
     public function sub_categories_product($slug)
     {
 
+
+
       try {
 
           $data = [];
@@ -72,7 +76,7 @@ class HomeController extends Controller
           $data['latest_products'] = Product::where('status',1)->latest()->get();
            $data['sub_wise_products'] = SubCategory::where('slug',$slug)->with('products')->firstOrFail();
         //return $data['sub_wise_products'];
-        return View('front.partials.category_wise_product',$data);
+        return View('front.pages.category-wise-product',$data);
 
       } catch (\Exception $e) {
         return $e->getMessage();
@@ -145,13 +149,13 @@ class HomeController extends Controller
     public function show_product($slug)
      {
        try {
-         $product=Product::where('slug',$slug)->firstOrFail();
-         $latest_products = Product::where('status',1)->where('type', '=','Regular')->latest()->get();
+         $data['product']= Product::where('slug',$slug)->firstOrFail();
+          $data['related_products'] = Product::where('sub_category_id',$data['product']->sub_category_id)->latest()->get();
          //return $product;
-         $menus=Menu::with('categories')->get();
-         views($product)->record(); //Record Visitor
+         $data['menus']=Menu::with('categories')->get();
+         views($data['product'])->record(); //Record Visitor
 
-         return view('front.product.product-details',compact('product','menus','latest_products'));
+         return view('front.product.product-details',$data);
        } catch (\Exception $e) {
          abort(404);
        }

@@ -118,23 +118,23 @@
                                                             <div id="price" class="tab-pane fade">
                                                                 <div class="form-group">
                                                                     <label class="control-label">Product Price</label>
-                                                                    <input class="form-control form-white" placeholder="Enter name" type="number" name="product_price" value="{{ old('product_price') }}"/>
+                                                                    <input class="form-control form-white" placeholder="Enter product price" type="number" name="product_price" value="{{ old('product_price') }}"/>
                                                                     @if ($errors->has('product_price')) <p class="text-danger">{{ $errors->first('product_price') }}</p> @endif
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label class="control-label">Special Price</label>
-                                                                    <input class="form-control form-white" placeholder="Enter name" type="number" name="special_price" value="{{ old('special_price') }}"/>
-                                                                    @if ($errors->has('special_price')) <p class="text-danger">{{ $errors->first('special_price') }}</p> @endif
+                                                                    <label class="control-label">Discount</label>
+                                                                    <input class="form-control form-white" placeholder="Enter discount" type="number" name="discount" value="{{ old('discount') }}"/>
+                                                                    @if ($errors->has('discount')) <p class="text-danger">{{ $errors->first('discount') }}</p> @endif
                                                                 </div>
 
                                                                 <div class="form-group">
-                                                                    <label for="inputPassword4" class="col-form-label">Special Price Start</label>
+                                                                    <label for="inputPassword4" class="col-form-label">Discount  Start</label>
                                                                     <input type="text" class="form-control" name="start_date" data-provide="datepicker"  value="{{ old('start_date') }}">
 
                                                                     @if ($errors->has('datepicker')) <p class="text-danger">{{ $errors->first('datepicker') }}</p> @endif
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="inputPassword4" class="col-form-label">Special Price End</label>
+                                                                    <label for="inputPassword4" class="col-form-label">Discount End</label>
                                                                     <input type="text" name="end_date" class="form-control" data-provide="datepicker" value="{{ old('end_date') }}">
 
                                                                     @if ($errors->has('end_date')) <p class="text-danger">{{ $errors->first('end_date') }}</p> @endif
