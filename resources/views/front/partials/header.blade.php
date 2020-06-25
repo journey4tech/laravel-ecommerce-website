@@ -115,8 +115,9 @@
                   </ul>
                   <div class="top-subtotal">Subtotal: <span class="price">Tk. {{Cart::subtotal()}}</span></div>
                   <div class="actions">
-                    <button class="btn-checkout" type="button"><span>Checkout</span></button>
-                    <button class="view-cart" type="button"><span>View Cart</span></button>
+                    <a href=""><button class="btn-checkout" type="button"><span>Checkout</span></button></a>
+                    <a href="{{route('cart.item')}}"><button class="view-cart" type="button"><span>View Cart</span></button></a>
+
                   </div>
                 </div>
               </div>

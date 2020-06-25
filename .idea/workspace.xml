@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb721d99-aaa5-47cc-8e3d-1130431ebcd5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/pages/cart-item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/pages/cart-item.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/partials/header.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,8 +28,8 @@
       <file leaf-file-name="header.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/front/partials/header.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="96" column="108" selection-start-line="96" selection-start-column="108" selection-end-line="96" selection-end-column="108" />
+            <state relative-caret-position="211">
+              <caret line="118" column="108" selection-start-line="118" selection-start-column="108" selection-end-line="118" selection-end-column="108" />
             </state>
           </provider>
         </entry>
@@ -593,12 +591,12 @@
       <workItem from="1592892839284" duration="6814000" />
       <workItem from="1593064928512" duration="12149000" />
       <workItem from="1593089613951" duration="9833000" />
-      <workItem from="1593105619842" duration="4483000" />
+      <workItem from="1593105619842" duration="4804000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119468000" />
+    <option name="totallyTimeSpent" value="119789000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -998,8 +996,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/front/partials/header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="96" column="108" selection-start-line="96" selection-start-column="108" selection-end-line="96" selection-end-column="108" />
+        <state relative-caret-position="211">
+          <caret line="118" column="108" selection-start-line="118" selection-start-column="108" selection-end-line="118" selection-end-column="108" />
         </state>
       </provider>
     </entry>
