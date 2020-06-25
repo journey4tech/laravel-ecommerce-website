@@ -7,13 +7,14 @@ use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Slider;
+use Intervention\Image\Facades\Image;
 
 class SliderController extends Controller
 {
-  public function __construct ()
-  {
-    $this->middleware('auth:admin');
-  }
+    public function __construct ()
+    {
+        $this->middleware('auth:admin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -22,6 +23,7 @@ class SliderController extends Controller
     public function index()
     {
         $sliders=Slider::all();
+        //return $sliders;
         return  view('admin.sliders.manage', compact('sliders'));
     }
 
@@ -45,17 +47,22 @@ class SliderController extends Controller
     {
         try {
             $validator = Validator::make($request->all(), [
-              'title' => 'required',
-              'images' => 'required|image|mimes:jpeg,png|max:2048:',
+                'title' => 'required',
+                'images' => 'required|image|mimes:jpeg,png',
             ]);
             if ($validator->fails()) {
                 return back()
-                        ->withErrors($validator)
-                        ->withInput();
+                    ->withErrors($validator)
+                    ->withInput();
             }
-            if ($request->file('images')->isValid()) {
-                $image_name= $request->images->getClientOriginalName();
-                $request->images->move(public_path('uploads/documents').'/sliderimages/', $image_name);
+            if ($request->file('images')) {
+                $image_name= time().$request->images->getClientOriginalName();
+
+
+                //$request->images->move(public_path('uploads/documents').'/sliderimages/', $image_name);
+
+                Image::make($request->images)->resize(1300,740)
+                    ->save('uploads/documents/sliderimages/'.$image_name, 100);
 
                 $slider=new Slider();
                 $slider->title=$request->title;
@@ -108,31 +115,33 @@ class SliderController extends Controller
     {
         try {
             $validator = Validator::make($request->all(), [
-              'title' => 'required',
-              'images' => 'max:2048:',
+                'title' => 'required',
+                'images' => 'required',
             ]);
             if ($validator->fails()) {
                 return back()
-                        ->withErrors($validator)
-                        ->withInput();
+                    ->withErrors($validator)
+                    ->withInput();
             }
             $slider=Slider::findOrFail($id);
             $slider->update($request->all());
 
-            if ($request->hasFile('images')) {
-              if ($request->file('images')->isValid()) {
-                $image_name= $request->images->getClientOriginalName();
+
+            if ($request->file('images')) {
+                $image_name= time().$request->images->getClientOriginalName();
+                Image::make($request->images)->resize(1300,740)
+                    ->save('uploads/documents/sliderimages/'.$image_name, 100);
                 $slider->images=$image_name;
-                $request->images->move(public_path('uploads/documents').'/sliderimages/', $image_name);
+                //$request->images->move(public_path('uploads/documents').'/sliderimages/', $image_name);
                 $slider->save();
-              }
             }
 
-          Helper::notifySuccess('Slider Updated successfully');
-          return redirect(route('admin.sliders.index'));
+
+            Helper::notifySuccess('Slider Updated successfully');
+            return redirect(route('admin.sliders.index'));
         } catch (\Exception $e) {
-          Helper::notifyError($e->getMessage());
-          return back();
+            Helper::notifyError($e->getMessage());
+            return back();
         }
     }
 
@@ -148,12 +157,12 @@ class SliderController extends Controller
             $slider=Slider::findOrFail($id);
             $slider->delete();
             return redirect('admin/sliders')->with([
-          'message'=>'Slider Deleted Successfully',
-        ]);
+                'message'=>'Slider Deleted Successfully',
+            ]);
         } catch (\Exception $e) {
             return redirect('admin/sliders')->with([
-          'message'=>$e->getMessage()
-        ]);
+                'message'=>$e->getMessage()
+            ]);
         }
     }
 }
