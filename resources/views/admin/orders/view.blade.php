@@ -23,28 +23,25 @@
                                         <td> Customer Phone Number :</td>
                                         <td>{{$customer->phone}}</td>
                                     </tr>
-                                    {{--<tr>--}}
-                                        {{--<td> Order Amount :</td>--}}
-                                        {{--<td>{{$order->total_order}}</td>--}}
-                                    {{--</tr>--}}
-                                    {{--<tr>--}}
+
+                                    <tr>
                                         <td> Delievery Location </td>
                                         <td>{{$customer->address}}</td>
                                     </tr>
                                     <tr>
                                         <td> Order Status </td>
                                         <td>
-                                            {{--<form action="{{ route('status.change') }}" method="post">--}}
-                                                {{--@csrf--}}
-                                                {{--<input type="hidden" name="order_id" value="{{$order->id}}">--}}
-                                                {{--<select name="status">--}}
-                                                    {{--<option {{ $order->status == 'Pending' ? " Selected": ''}}>Pending</option>--}}
-                                                     {{--<option {{ $order->status == 'Completed' ? " Selected": ''}}>Completed</option>--}}
+                                            <form action="{{ route('status.change') }}" method="post">
+                                                @csrf
+                                                <input type="hidden" name="customer_id" value="{{$customer->id}}">
+                                                <select name="status">
+                                                    <option {{ $customer->status == 'Pending' ? " Selected": ''}}>Pending</option>
+                                                     <option {{ $customer->status == 'Completed' ? " Selected": ''}}>Completed</option>
 
-                                                {{--</select>--}}
+                                                </select>
 
-                                                {{--<input type="submit"  value="Change">--}}
-                                            {{--</form>--}}
+                                                <input type="submit"  value="Change">
+                                            </form>
 
                                         </td>
                                     </tr>
@@ -54,13 +51,14 @@
 
                             <div class="table-responsive">
                                 <h4 class="text-center"> Order Information</h4>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-bordered">
                                     <tr>
                                         <th>Order No.</th>
                                         <th>Product Name</th>
                                         <th>Category</th>
                                         <th>Type</th>
                                         <th>Color</th>
+                                        <th>Total Order</th>
 
                                         <th>Regular Price</th>
                                         <th>Discount</th>
@@ -77,6 +75,7 @@
                                             <td>{{$order->product->sub_category->name}}</td>
                                             <td>{{$order->product->type}}</td>
                                             <td>{{$order->color}}</td>
+                                            <td>{{$order->total_order}}</td>
                                             <td>{{$order->product->product_price}}</td>
                                             <td>{{$order->product->discount}}%</td>
                                             <td>{{ $total_cost += 200 }}</td>
@@ -91,10 +90,12 @@
                                         <td></td>
                                         <td></td>
                                         <td></td>
+                                        <td></td>
                                         <td>Service Charge:</td>
                                         <td></td>
                                     </tr>
                                     <tr>
+                                        <td></td>
                                         <td></td>
                                         <td></td>
                                         <td></td>

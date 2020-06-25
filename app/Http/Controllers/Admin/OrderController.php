@@ -152,36 +152,44 @@ class OrderController extends Controller
 
       try {
           $status = $request->status;
-          $order_id = $request->order_id;
+          $customer_id = $request->customer_id;
 
           if($status == 'Pending'){
 
-              $productOrder = ProductOrder::findOrFail($order_id);
-              $productOrder->status = $status;
-              $productOrder->save();
+              $customer = Customer::findOrFail($customer_id);
+              $customer->status = $status;
+              $customer->save();
 
-              $remaining_quantity =  $productOrder->product->product_quantity + $productOrder->total_order;
+                foreach($customer->productOrders as $productOrder){
+                    $remaining_quantity =  $productOrder->product->product_quantity + $productOrder->total_order;
+                    $product = Product::findOrfail($productOrder->product_id);
+                    $product->product_quantity = $remaining_quantity;
+                    $product->save();
+                }
 
 
-              $product = Product::findOrfail($productOrder->product_id);
-              $product->product_quantity = $remaining_quantity;
-              $product->save();
+
+
+
+
 
               Helper::notifySuccess(' Order sent to completion ');
           }
 
 
           if($status == 'Completed'){
-              $productOrder = ProductOrder::findOrFail($order_id);
-              $productOrder->status = $status;
-              $productOrder->save();
+              $customer = Customer::findOrFail($customer_id);
+              $customer->status = $status;
+              $customer->save();
 
-              $remaining_quantity =  $productOrder->product->product_quantity - $productOrder->total_order;
+              foreach($customer->productOrders as $productOrder){
+                  $remaining_quantity =  $productOrder->product->product_quantity - $productOrder->total_order;
+                  $product = Product::findOrfail($productOrder->product_id);
+                  $product->product_quantity = $remaining_quantity;
+                  $product->save();
+              }
 
 
-              $product = Product::findOrfail($productOrder->product_id);
-              $product->product_quantity = $remaining_quantity;
-              $product->save();
 
               Helper::notifySuccess(' Order Completed !! ');
           }
