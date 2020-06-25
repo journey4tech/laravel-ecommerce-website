@@ -26,9 +26,10 @@ class Product extends Model implements ViewableContract
 
    public function category()
    {
-     //return $this->hasMany('App\Models\SubCategory','sub_category_id','id');
+     return $this->hasMany('App\Models\Category');
+     //return $this->belongsTo('App\Models\Category','category_id','id');
 
-       return $this->belongsTo(Category::class);
+       //return $this->belongsTo(Category::class);
    }
 
 

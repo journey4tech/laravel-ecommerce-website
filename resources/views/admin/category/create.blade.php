@@ -32,7 +32,7 @@
 
                             <a href="{{route('admin.menus.index')}}" class="btn btn-danger btn-block waves-effect waves-light">Manage Menu</a>
                             <a href="{{route('admin.categories.index')}}" class="btn btn-primary btn-block waves-effect waves-light">Manage Category</a>
-                            {{--<a href="{{route('admin.sub-categories.index')}}" class="btn btn-danger btn-block waves-effect waves-light">Manage Sub-Category</a>--}}
+                            <a href="{{route('admin.sub-categories.index')}}" class="btn btn-danger btn-block waves-effect waves-light">Manage Sub-Category</a>
 
                         </div>
                         <!-- End Left sidebar -->
@@ -54,9 +54,9 @@
                                                             <i class="mdi mdi-plus-circle-outline"></i> Create Category
                                                         </a>
 
-                                                        {{--<a href="#" data-toggle="modal" data-target="#add-SubCategory" class="btn btn-lg font-16 btn-danger btn-block  ">--}}
-                                                            {{--<i class="mdi mdi-plus-circle-outline"></i> Create SubCategory--}}
-                                                        {{--</a>--}}
+                                                        <a href="#" data-toggle="modal" data-target="#add-SubCategory" class="btn btn-lg font-16 btn-danger btn-block  ">
+                                                            <i class="mdi mdi-plus-circle-outline"></i> Create SubCategory
+                                                        </a>
 
                                                     </div>
 

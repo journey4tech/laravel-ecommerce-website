@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Menu;
 use App\Models\Category;
 use App\Models\SubCategory;
+use Illuminate\Support\Str;
 
 
 class SubcategoryController extends Controller
@@ -50,27 +51,21 @@ class SubcategoryController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request->all());
 
       try   {
 
         $this->validate($request, [
-        'name' => 'required | unique:subcategories',
+        'name' => 'required | unique:sub_categories,name',
         ]);
 
-//        if($request->hasfile('icon'))
-//        {
-//          $file = $request->file('icon');
-//          $name=time().$file->getClientOriginalName();
-//          $file->move(public_path('uploads').'/SubCategory/', $name);
-//        }
 
         $sub_category= new SubCategory();
         $sub_category->name=$request->name;
         $sub_category->menu_id=$request->menu_id;
         $sub_category->category_id=$request->category_id;
         $sub_category->description=$request->description;
-        $sub_category->slug =str_slug($request->name)."=".rand(255,999);
-        //$sub_category->icon=$name;
+        $sub_category->slug =Str::slug($request->name)."=".rand(255,999);
         $sub_category->status=1;
         $sub_category->save();
 

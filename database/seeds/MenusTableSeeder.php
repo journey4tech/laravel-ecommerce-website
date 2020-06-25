@@ -19,147 +19,121 @@ class MenusTableSeeder extends Seeder
     {
         $menus = Menu::insert([
           [
-            'name' => 'Desktop',
+            'name' => 'PC',
             'description' => 'None',
-            'slug' => Str::slug('Desktop'),
+            'slug' => Str::slug('pc'),
             'status' => 1
           ],
           [
-            'name' => 'Laptop',
+            'name' => 'Technology',
             'description' => 'None',
-             'slug' => Str::slug('Laptop'),
+             'slug' => Str::slug('technology'),
             'status' => 1
           ],
 
-            [
-            'name' => 'Monitor',
-            'description' => 'None',
-             'slug' => Str::slug('Monitor'),
-            'status' => 1
-          ]
+
         ]);
 
 
         $categories = Category::insert([
           [
-            'name' => 'Budget Desktop',
+            'name' => 'Desktop',
             'menu_id' => 1,
             'description' => 'None',
             'status' => 1
           ],
           [
-            'name' => 'High Configuration Desktop',
+            'name' => 'Laptop',
             'menu_id' => 1,
             'description' => 'None',
             'status' => 1
           ],
-          [
-            'name' => 'Asus Laptop',
+            [
+            'name' => 'Excessories',
             'menu_id' => 2,
             'description' => 'None',
             'status' => 1
           ],
-          [
-            'name' => 'Lenovo Laptop',
+            [
+            'name' => 'Simple Item',
             'menu_id' => 2,
             'description' => 'None',
             'status' => 1
           ],
-          [
-            'name' => 'Asus',
-            'menu_id' => 3,
-            'description' => 'None',
-            'status' => 1
-          ],
-          [
-            'name' => 'Lenovo',
-            'menu_id' => 3,
-            'description' => 'None',
-            'status' => 1
-          ],
+
 
         ]);
 
-//        $sub_categories = SubCategory::insert([
-//          [
-//            'menu_id' => 1,
-//            'category_id' => 1,
-//            'name' => 'PC1',
-//            'description' => 'None',
-//            'slug' => Str::slug('PC1'),
-//
-//            'status' => 1,
-//          ],
-//            [
-//            'menu_id' => 1,
-//            'category_id' => 2,
-//            'name' => 'PC2',
-//            'description' => 'None',
-//            'slug' => Str::slug('PC2'),
-//
-//            'status' => 1,
-//          ],
-//
-//            [
-//            'menu_id' => 1,
-//            'category_id' => 3,
-//            'name' => 'HightConguration1',
-//            'description' => 'None',
-//            'slug' => Str::slug('HightConguration1'),
-//
-//            'status' => 1,
-//          ],
-//            [
-//            'menu_id' => 2,
-//            'category_id' => 2,
-//            'name' => 'HightConguration2',
-//            'description' => 'None',
-//            'slug' => Str::slug('HightConguration2'),
-//
-//            'status' => 1,
-//          ],
-//            [
-//            'menu_id' => 2,
-//            'category_id' => 1,
-//            'name' => 'Leonovo1',
-//            'description' => 'None',
-//            'slug' => Str::slug('Leonovo1'),
-//            'status' => 1,
-//          ],
-//            [
-//            'menu_id' => 2,
-//            'category_id' => 3,
-//            'name' => 'Leonovo2',
-//            'description' => 'None',
-//            'slug' => Str::slug('Leonovo2'),
-//            'status' => 1,
-//          ],
-//
-//            [
-//            'menu_id' => 2,
-//            'category_id' => 2,
-//            'name' => 'HP1',
-//            'description' => 'None',
-//            'slug' => Str::slug('HP1'),
-//            'status' => 1,
-//          ],
-//            [
-//            'menu_id' => 2,
-//            'category_id' => 2,
-//            'name' => 'HP2',
-//            'description' => 'None',
-//            'slug' => Str::slug('HP2'),
-//            'status' => 1,
-//          ],
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//        ]);
+        $sub_categories = SubCategory::insert([
+          [
+            'menu_id' => 1,
+            'category_id' => 1,
+            'name' => 'Budget PC',
+            'description' => 'None',
+            'slug' => Str::slug('budget pc'),
+
+            'status' => 1,
+          ],
+            [
+            'menu_id' => 1,
+            'category_id' => 2,
+            'name' => 'Dell',
+            'description' => 'None',
+            'slug' => Str::slug('dell'),
+
+            'status' => 1,
+          ],
+            [
+            'menu_id' => 1,
+            'category_id' => 2,
+            'name' => 'Lenovo',
+            'description' => 'None',
+            'slug' => Str::slug('Lenovo'),
+
+            'status' => 1,
+          ],
+
+            [
+            'menu_id' => 2,
+            'category_id' => 3,
+            'name' => 'Wifi',
+            'description' => 'None',
+            'slug' => Str::slug('wifi'),
+
+            'status' => 1,
+          ],
+            [
+            'menu_id' => 2,
+            'category_id' => 3,
+            'name' => 'Bluetooth',
+            'description' => 'None',
+            'slug' => Str::slug('Bluetooth'),
+
+            'status' => 1,
+          ],
+            [
+            'menu_id' => 2,
+            'category_id' => 4,
+            'name' => 'Speaker',
+            'description' => 'None',
+            'slug' => Str::slug('Speaker'),
+
+            'status' => 1,
+          ],
+            [
+            'menu_id' => 2,
+            'category_id' => 4,
+            'name' => 'LoudSpeaker',
+            'description' => 'None',
+            'slug' => Str::slug('LoudSpeaker'),
+
+            'status' => 1,
+          ],
+
+
+
+
+
+        ]);
     }
 }

@@ -91,8 +91,8 @@
 
                                                                 <div class="form-group">
                                                                     <label class="control-label">Choose Category</label>
-                                                                    <select class="form-control form-white" data-placeholder="Choose a color..." name="category_id">
-                                                                        @foreach($categories as $item)
+                                                                    <select class="form-control form-white" data-placeholder="Choose a color..." name="sub_category_id">
+                                                                        @foreach($subcategories as $item)
                                                                         <option value="{{$item->id}}">{{$item->name}}</option>
                                                                         @endforeach
 
@@ -110,7 +110,7 @@
                                                                         <option>Featured</option>
 
                                                                     </select>
-                                                                    @if ($errors->has('sub_category_id')) <p class="text-danger">{{ $errors->first('sub_category_id') }}</p> @endif
+                                                                    @if ($errors->has('type')) <p class="text-danger">{{ $errors->first('type') }}</p> @endif
                                                                 </div>
 
                                                             </div>

@@ -71,9 +71,9 @@
 
                                                                 <div class="form-group">
                                                                     <label class="control-label">Choose Category</label>
-                                                                    <select class="form-control form-white" data-placeholder="Choose a color..." name="category_id">
-                                                                        @foreach($categories as $category)
-                                                                        <option value="{{$category->id}}"  {{$product->category->id == $category->id ? " Selected": ""}} >{{$category->name}}</option>
+                                                                    <select class="form-control form-white" data-placeholder="Choose a color..." name="sub_category_id">
+                                                                        @foreach($subcategories as $subcategory)
+                                                                        <option value="{{$subcategory->id}}"  {{$product->sub_category_id== $subcategory->id ? " Selected": ""}} >{{$subcategory->name}}</option>
                                                                         @endforeach
 
                                                                     </select>

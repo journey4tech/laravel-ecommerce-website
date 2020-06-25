@@ -49,8 +49,8 @@ class ProductController extends Controller {
      */
     public function create() {
         try {
-            $categories = Category::all();
-            return view('admin.products.create', compact('categories'));
+            $subcategories = SubCategory::all();
+            return view('admin.products.create', compact('subcategories'));
         }
         catch(\Exception $e) {
             return $e->getMessage();
@@ -67,7 +67,7 @@ class ProductController extends Controller {
             $validator = Validator::make($request->all(), ['multiple' => 'required',
                             'name' => 'required',
                             'title' => 'required',
-                            'category_id' => 'required',
+                            'sub_category_id' => 'required',
                             'product_price' => 'required',
                             'product_quantity' => 'required',
                             'sku' => 'required',
@@ -94,7 +94,7 @@ class ProductController extends Controller {
                 $product = New Product();
                 $product->product_name = $request->name;
                 $product->product_title = $request->title;
-                $product->category_id = $request->category_id;
+                $product->sub_category_id = $request->sub_category_id;
                 $product->type = $request->type;
                 $product->slug = str_slug($request->title) . "-" . rand(255, 999);
                 $product->product_price = $request->product_price;
@@ -142,11 +142,11 @@ class ProductController extends Controller {
          */
         public function edit($id) {
             try {
-                $categories = Category::all();
+                $subcategories = SubCategory::all();
                 
                 $product = Product::where('id', $id)->first();
                 //return $product->category->name;
-                return view('admin.products.edit', compact('product', 'categories'));
+                return view('admin.products.edit', compact('product', 'subcategories'));
             }
             catch(\Exception $e) {
                 Helper::notifyError($e->getMessage());
@@ -161,6 +161,7 @@ class ProductController extends Controller {
          * @return \Illuminate\Http\Response
          */
         public function update(Request $request, $id) {
+            //dd($request->all());
             // try {
             //     $product = Product::findOrFail($id);
             //     // $product->size = json_encode(request('size'));
@@ -202,7 +203,7 @@ class ProductController extends Controller {
 
                     $product->product_name = $request->product_name;
                     $product->product_title = $request->product_title;
-                    $product->category_id = $request->category_id;
+                    $product->sub_category_id = $request->sub_category_id;
                     $product->type = $request->type;
                     $product->slug = str_slug($request->title) . "-" . rand(255, 999);
                     $product->product_price = $request->product_price;

@@ -15,7 +15,7 @@ $factory->define(\App\Models\Product::class, function (Faker $faker) {
     return [
         'product_name' => $faker->name,
         'product_title' => $faker->text,
-        'category_id' => \App\Models\Category::all()->random()->id,
+        'sub_category_id' => \App\Models\SubCategory::all()->random()->id,
         'type' => $faker->randomElement(['Regular','Featured','Special']),
         'slug' => Str::slug($faker->firstName),
         'product_price' => $faker->numberBetween(100,1000),
