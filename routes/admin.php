@@ -41,6 +41,9 @@ Route::group(['prefix'=>'admin','as'=>'admin.', 'namespace' => 'Admin'],function
   //Orders
   Route::get('delivered-orders','OrderController@delivered_order')->name('delivered_order');
   Route::get('confirmed-orders','OrderController@confrimed_order')->name('confrimed_order');
+
+  Route::get('completed-orders','OrderController@completed_order')->name('completed.order');
+
   Route::post('orders/{id}','OrderController@updateStatus')->name('updateStatus');
   Route::resource('orders','OrderController');
   Route::resource('payment-methods','PaymentMethodController');

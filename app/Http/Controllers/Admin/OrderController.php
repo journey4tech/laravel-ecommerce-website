@@ -216,6 +216,31 @@ class OrderController extends Controller
 
       }
 
+//      public function delivered_order(){
+//        try {
+//          $delivered_orders=Order::where('status','Deliverd')->get();
+//          return view('admin.orders.delivered',compact('delivered_orders'));
+//
+//        } catch (\Exception $e) {
+//
+//        }
+//
+//
+//      }
+
+      public function completed_order(){
+        try {
+            $completedCustomers = Customer::where('status','Completed')->latest()->get();
+           // return $customers;
+
+          return view('admin.orders.index-completed',compact('completedCustomers'));
+
+        } catch (\Exception $e) {
+
+        }
+
+      }
+
       public function delivered_order(){
         try {
           $delivered_orders=Order::where('status','Deliverd')->get();
@@ -227,4 +252,7 @@ class OrderController extends Controller
 
 
       }
+
+
+
 }

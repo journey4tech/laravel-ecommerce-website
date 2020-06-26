@@ -12,7 +12,7 @@
         @endif
         <div class="product-image-area"> <a class="product-image" title="{{ $product->name }}" href="{{route('product',$product->slug)}}"> <img src="{{ asset('uploads/documents/productimages/'.$images) }}" style="width:173px;height:210px;" class="img-responsive" alt="a" /> </a>
             <div class="actions-links"><span class="add-to-links">
-                      <a title="magik-btn-quickview" class="magik-btn-quickview" href="{{route('product',$product->slug)}}">
+                      <a title="magik-btn-quickview" class="magik-btn-quickview" href="{{route('quick.view',$product->slug)}}">
                         <span>quickview</span>
                       </a>
                       <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html">
