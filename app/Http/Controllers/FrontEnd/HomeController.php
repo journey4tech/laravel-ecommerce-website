@@ -308,4 +308,22 @@ class HomeController extends Controller
 
     }
 
+    public function quickView($slug)
+    {
+
+        $data['product']= Product::where('slug',$slug)->firstOrFail();
+
+
+
+        $data['carts_count'] = Cart::count();
+        //return $data['carts_count'];
+        $data['carts'] =Cart::content();
+
+
+        //return $product;
+        $data['menus']=Menu::with('categories')->get();
+        views($data['product'])->record(); //Record Visitor
+        return view('front.pages.quick-view',$data);
+    }
+
 }

@@ -108,17 +108,7 @@
                       {{--</div>--}}
                     </div>
                   </div>
-                  {{--<div class="social">--}}
-                    {{--<ul>--}}
-                      {{--<li class="fb"><a href="product_detail.html#"></a></li>--}}
-                      {{--<li class="tw"><a href="product_detail.html#"></a></li>--}}
-                      {{--<li class="googleplus"><a href="product_detail.html#"></a></li>--}}
-                      {{--<li class="rss"><a href="product_detail.html#"></a></li>--}}
-                      {{--<li class="pintrest"><a href="product_detail.html#"></a></li>--}}
-                      {{--<li class="linkedin"><a href="product_detail.html#"></a></li>--}}
-                      {{--<li class="youtube"><a href="product_detail.html#"></a></li>--}}
-                    {{--</ul>--}}
-                  {{--</div>--}}
+
                 </div>
               </form>
             </div>

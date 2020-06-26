@@ -15,7 +15,8 @@
                 <a class="exclusive ajax_add_to_cart_button" href="{{route('product',$product->slug)}}" title="Add to cart">
                     <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
                 </a>
-                <a class="quick-view" href="{{route('product',$product->slug)}}">
+
+                <a class="quick-view" href="{{route('quick.view', $product->slug)}}">
                     <div><i class="icon-eye-open"></i><span>Quick view</span></div>
                 </a>
                 {{--<a class="add_to_compare" href="compare.html">--}}
