@@ -268,6 +268,7 @@ class HomeController extends Controller
     public function search(Request $request)
     {
 
+
         $data = [];
         $data['today'] = date("y-m-d");
         $data['menus'] = Menu::with('categories')->get();
@@ -291,16 +292,39 @@ class HomeController extends Controller
 
         $data['carts_count'] = Cart::count();
 
+
         $search = $request->get('term');
         $sub_category_id = $request->get('sub_category_id');
         //return $search .$category_id;
 
-        $data['results'] = Product::where('product_name', 'LIKE', '%'. $search. '%')
-                            ->OrWhere('product_title','LIKE', '%'. $search. '%')
-                            ->OrWhere('product_title','LIKE', '%'. $search. '%')
-                            ->OrWhere('description','LIKE', '%'. $search. '%')
-                            ->latest()
-                            ->get();
+        if($search != null && $sub_category_id !=0){
+            $data['results'] = Product::where('sub_category_id', $sub_category_id)
+                ->Where(function($q) use($search){
+                    $q->where('product_name', 'LIKE', '%'. $search. '%')
+                        ->orWhere('product_title','LIKE', '%'. $search. '%')
+                        ->OrWhere('description','LIKE', '%'. $search. '%');
+                })
+                ->latest()
+                ->get();
+
+
+        }
+
+
+
+
+        if($search && $sub_category_id == 0 ){
+            $data['results'] = Product::where('product_name', 'LIKE', '%'. $search. '%')
+                ->OrWhere('product_title','LIKE', '%'. $search. '%')
+                ->OrWhere('product_title','LIKE', '%'. $search. '%')
+                ->OrWhere('description','LIKE', '%'. $search. '%')
+                ->latest()
+                ->get();
+
+
+        }
+
+
 
         //return $data['results'];
 

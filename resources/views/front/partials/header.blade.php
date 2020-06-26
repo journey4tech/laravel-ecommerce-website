@@ -5,43 +5,43 @@
         <div class="row"> 
           <!-- Header Language -->
           <div class="col-xs-6">
-            <div class="dropdown block-language-wrapper"> <a role="button" data-toggle="dropdown" data-target="#" class="block-language dropdown-toggle" href="index.html#"> <img src="{{asset('frontEnd/assets/images/english.png')}}" alt="language"> English <span class="caret"></span> </a>
+            <div class="dropdown block-language-wrapper"> <a role="button" data-toggle="dropdown" data-target="#" class="block-language dropdown-toggle" href="index.html#"> <img src="{{asset('frontEnd/assets/images/english.png')}}" alt="language"> Bangla </a>
               <ul class="dropdown-menu" role="menu">
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="index.html#"><img src="{{asset('frontEnd/assets/images/english.png')}}" alt="language"> English </a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="index.html#"><img src="{{asset('frontEnd/assets/images/francais.png')}}" alt="language"> French </a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="index.html#"><img src="{{asset('frontEnd/assets/images/german.png')}}" alt="language"> German </a></li>
+                {{--<li role="presentation"><a role="menuitem" tabindex="-1" href="index.html#"><img src="{{asset('frontEnd/assets/images/francais.png')}}" alt="language"> French </a></li>--}}
+                {{--<li role="presentation"><a role="menuitem" tabindex="-1" href="index.html#"><img src="{{asset('frontEnd/assets/images/german.png')}}" alt="language"> German </a></li>--}}
               </ul>
             </div>
             
-            <!-- End Header Language --> 
-            
+            <!-- End Header Language -->
+
             <!-- Header Currency -->
-            {{--<div class="dropdown block-currency-wrapper"> <a role="button" data-toggle="dropdown" data-target="#" class="block-currency dropdown-toggle" href="index.html#"> USD <span class="caret"></span></a>--}}
+            <div class="dropdown block-currency-wrapper"> <a role="button" data-toggle="dropdown" data-target="#" class="block-currency dropdown-toggle" href="index.html#"> Taka </a>
               {{--<ul class="dropdown-menu" role="menu">--}}
                 {{--<li role="presentation"><a role="menuitem" tabindex="-1" href="index.html#"> $ - Dollar </a></li>--}}
                 {{--<li role="presentation"><a role="menuitem" tabindex="-1" href="index.html#"> £ - Pound </a></li>--}}
                 {{--<li role="presentation"><a role="menuitem" tabindex="-1" href="index.html#"> € - Euro </a></li>--}}
               {{--</ul>--}}
-            {{--</div>--}}
-            {{----}}
-            {{--<!-- End Header Currency -->--}}
-            {{----}}
-            {{--<div class="welcome-msg hidden-xs"> Default welcome msg! </div>--}}
-          {{--</div>--}}
-          {{--<div class="col-xs-6"> --}}
-            {{----}}
-            {{--<!-- Header Top Links -->--}}
-            {{--<div class="toplinks">--}}
-              {{--<div class="links">--}}
+            </div>
+
+            <!-- End Header Currency -->
+
+            <div class="welcome-msg hidden-xs"> Welcome, Our Valuable Customer </div>
+          </div>
+          <div class="col-xs-6">
+
+            <!-- Header Top Links -->
+            <div class="toplinks">
+              <div class="links">
                 {{--<div class="myaccount"><a title="My Account" href="login.html"><span class="hidden-xs">My Account</span></a></div>--}}
                 {{--<div class="wishlist"><a title="My Wishlist"  href="wishlist.html"><span class="hidden-xs">Wishlist</span></a></div>--}}
                 {{--<div class="check"><a title="Checkout" href="checkout.html"><span class="hidden-xs">Checkout</span></a></div>--}}
                 {{--<div class="login"><a title="Login" href="login.html"><span  class="hidden-xs">Log In</span></a></div>--}}
-              {{--</div>--}}
-            {{--</div>--}}
-            {{--<!-- End Header Top Links --> --}}
-          {{--</div>--}}
-        {{--</div>--}}
+              </div>
+            </div>
+            <!-- End Header Top Links -->
+          </div>
+        </div>
       </div>
     </div>
     <div class="header container">
@@ -56,7 +56,7 @@
           <div class="search-box">
             <form action="{{ route('search') }}" method="POST" >
               @csrf
-              <select style="visibility:hidden" name="sub_category_id" class="cate-dropdown hidden-xs">
+              <select  name="sub_category_id" class="cate-dropdown hidden-xs">
                 <option value="0">Choose Category</option>
                 @foreach(\App\Models\SubCategory::all() as $subcategory)
                   <option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
