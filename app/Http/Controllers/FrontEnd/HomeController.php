@@ -59,6 +59,43 @@ class HomeController extends Controller
         }
     }
 
+    public function displayShop()
+    {
+        try {
+
+            $data = [];
+            $data['today'] = date("y-m-d");
+            $data['menus'] = Menu::with('categories')->get();
+            //return $data['menus'];
+
+            //$data['sliders'] = Slider::all();
+            //$data['dailyDeals'] = DailyDeals::with('product')->active()->orderBy('priority','DESC')->get();
+           //)->active()->orderBy('priority','DESC')->get();
+            //$data['recommended_products'] = $this->getRecommendedProducts();
+            $data['latest_products'] = Product::where('status',1)->latest()->get();
+            //$data['most_viewed_products'] = Product::where('status',1)->orderByUniqueViews()->latest()->take(20)->get();
+            //return $data['most_viewed_products'];
+            $data['products'] = Product::latest()->paginate(20);
+
+//            $data['special_products'] = Product::where('status',1)->where('type', '=',"Special")->latest()->get();
+//            $data['featured_products'] = Product::where('status',1)->where('type', '=',"Featured")->latest()->get();
+//            $data['categories'] = SubCategory::with('products')->get();
+//            $data['feature_c'] = SubCategory::where('status',1)->limit(4)->get();
+//            $data['ads'] = Ads::all();
+
+            $data['carts_count'] = Cart::count();
+            //return $data['carts_count'];
+            $data['carts'] =Cart::content();
+
+
+            return view('front.pages.shop',$data);
+            //return $latest_products;
+        } catch (\Exception $e) {
+            return $e->getMessage();
+
+        }
+    }
+
 
     public function sub_categories_product($slug)
     {

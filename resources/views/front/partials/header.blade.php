@@ -26,7 +26,7 @@
 
             <!-- End Header Currency -->
 
-            <div class="welcome-msg hidden-xs"> Welcome, Our Valuable Customer </div>
+            <div class="welcome-msg hidden-xs"> Welcome, Our Valuable Customer ! </div>
           </div>
           <div class="col-xs-6">
 

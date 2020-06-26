@@ -15,6 +15,7 @@
 
 
  Route::get('/', 'FrontEnd\HomeController@index')->name('home');
+ Route::get('/display-shop', 'FrontEnd\HomeController@displayShop')->name('display.shop');
  Route::get('/products/recommended', 'FrontEnd\HomeController@viewRecommendedProducts')->name('products.json');
  Route::get('/cat/{name}', 'FrontEnd\HomeController@category_products')->name('category');
  Route::get('/category/{slug}', 'FrontEnd\HomeController@sub_categories_product')->name('sub_category');

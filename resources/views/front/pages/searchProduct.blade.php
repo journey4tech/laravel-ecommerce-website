@@ -13,7 +13,7 @@
                             <div class="slider-items slider-width-col3">
                                 @foreach ($results as $product)
                                     @include('front.partials.product-view-template-latest')
-                            @endforeach
+                                @endforeach
                             <!-- Item -->
                             </div>
                                 @else
