@@ -25,8 +25,8 @@ class OrderController extends Controller
     {
        //$pending_orders=Order::where('status','pending')->get();
         //$customers = Customer::latest()->get();
-        $productOrders = ProductOrder::latest()->get();
-        $customers = Customer::latest()->get();
+        //$productOrders = ProductOrder::latest()->get();
+        $customers = Customer::where('status','Pending')->latest()->get();
 
 
        return view('admin.orders.index',compact('customers'));
