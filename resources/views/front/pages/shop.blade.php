@@ -35,7 +35,7 @@
                             <ul class="products-grid">
 
                                 @foreach($products as $product)
-                                    <div class="col-md-3">
+                                    <div class="col-md-3" style="margin-bottom: 20px;">
                                         @include('front.partials.product-view-template-latest')
                                     </div>
 
