@@ -7,39 +7,48 @@
                     <div class="page-title">
                         <h2>Product Shipping Address</h2>
                     </div>
+                    {!! Form::open(['url' => route('product.order.confirm'),'method'=>'post']) !!}
+                    @csrf
                     <div class="static-contain">
                         <div class="form-group">
                             <label for="">Name</label>
-                            <input class="form-control" type="text" name="name" id="">
+                            <input class="form-control" type="text" name="name" id="name" value="{{ old('name') }}"/>
+                            @if ($errors->has('name')) <p class="text-danger">{{ $errors->first('name') }}</p> @endif
                         </div>
                         <div class="form-group">
                             <label for="">Phone No.</label>
-                            <input class="form-control" type="text" name="phone" id="">
+                            <input class="form-control" type="text" name="phone" id="phone" value="{{ old('phone') }}">
+                            @if ($errors->has('phone')) <p class="text-danger">{{ $errors->first('phone') }}</p> @endif
                         </div>
                         <div class="form-group">
                             <label for="">District</label>
-                            <select name="" id="" class="form-control">
+                            <select name="district" id="district" class="form-control">
                                 <option value="0">Choose District</option>
                                 @foreach($districts as $district)
                                     <option>{{ $district->name }}</option>
                                 @endforeach
                             </select>
+                            @if ($errors->has('district')) <p class="text-danger">{{ $errors->first('district') }}</p> @endif
                         </div>
                         <div class="form-group">
                             <label for="">Full Address</label>
-                            <textarea class="form-control" name="address" id="" cols="30" rows="10"></textarea>
+                            <textarea class="form-control" name="address" id="address" cols="30" rows="10">{{ old('address') }}</textarea>
+                            @if ($errors->has('address')) <p class="text-danger">{{ $errors->first('address') }}</p> @endif
                         </div>
                         <div class="form-group">
                             <label for="">Payment Type</label>
-                            <input  style="margin:0px 5px 0px 30px;"  type="radio"  name="payment_type"  value="Cash On Delevery">Cash On Delevery
+                            <input  style="margin:0px 5px 0px 30px;"  type="radio"  name="payment_type"  value="Cash On Delivery">Cash On Delivery
                             <input  style="margin:0px 5px 0px 30px;"  type="radio" name="payment_type" value="Bkash">Bkash
                         </div>
                         <div class="form-group" id="bkashPhone">
 
                         </div>
+
                         <div class="form-group">
-                            <button disabled type="submit" title="Confirm Order" class="button btn-proceed-checkout"><span>Confirm Order</span></button>
+                            <button  type="submit" title="Confirm Order" class="button btn-proceed-checkout"><span>Confirm Order</span></button>
                         </div>
+
+                        {!! Form::close() !!}
                     </div>
                 </section>
                 <aside class="col-right sidebar col-sm-3 wow bounceInUp animated">
@@ -82,6 +91,16 @@
 
                     }
                 })
+
+            if( "{{ $carts_count == 0 }}" ){
+                $(".btn-proceed-checkout").prop("disabled",true);
+            }
+
+            // if(!$('#name').val()  ||
+            //         !$('#phone').val() ||
+            //         !$('#district').val() || !$('#address').val()){
+            //     $(".btn-proceed-checkout").prop("disabled",true);
+            // }
         });
     </script>
 @endpush

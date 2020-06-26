@@ -114,12 +114,12 @@
                                                     </tbody>
                                                 </table>
                                                 <ul class="checkout">
-                                                    {!! Form::open(['url' => route('product.order.confirm'),'method'=>'post']) !!}
+
                                                     <li>
 
-                                                        <button type="submit" title="Proceed to Checkout" class="button btn-proceed-checkout" onclick="#"><span>Proceed to Checkout</span></button>
+                                                        <a href="{{ route('checkout.product') }}"><button  title="Proceed to Checkout" class="button btn-proceed-checkout"><span>Proceed to Checkout</span></button></a>
                                                     </li>
-                                                    {!! Form::close() !!}
+
 
                                                     {{--<li><a href="shopping_cart.html#" title="Checkout with Multiple Addresses">Checkout with Multiple Addresses</a> </li>--}}
                                                     <br>

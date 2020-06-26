@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Http\Controllers\Controller;
 Use Auth;
+use Validator;
 use Session;
 Use App\Models\Order;
 use App\PaymentMethod;
@@ -73,6 +74,17 @@ class CheckOutController extends Controller
     {
         try {
 
+            $rules = [
+                'name' => 'required',
+                'phone' => 'required',
+                'district' => 'required',
+                'address' => 'required',
+            ];
+
+            $validator = Validator::make($request->all(), $rules);
+            if ($validator->fails()) {
+                return redirect()->back()->withInput()->withErrors($validator);
+            }
 
 
             $carts = Cart::content();
@@ -83,9 +95,12 @@ class CheckOutController extends Controller
 
             if(! empty($carts)){
                 $customer = new Customer();
-                $customer->customer_name = 'Sabuz';
-                $customer->phone = '01754165234';
-                $customer->address = 'Thanapara';
+                $customer->name = $request->name;
+                $customer->phone = $request->phone;
+                $customer->district = $request->district;
+                $customer->address = $request->address;
+                $customer->payment_type = $request->payment_type ?? 'Cash On Delivery';
+                $customer->bkash_phone = $request->bkash_phone ?? null;
                 $customer->status = 'Pending';
                 $customer->save();
                 $data = [];
@@ -109,7 +124,7 @@ class CheckOutController extends Controller
 
             Cart::destroy();
 
-            Helper::notifySuccess(' We will contact you soon !!! ');
+            Helper::notifySuccess('Order Taken, We will contact you soon !!! ');
             return redirect()->back();
 //                ->with([
 //                'alert-type' => 'success',

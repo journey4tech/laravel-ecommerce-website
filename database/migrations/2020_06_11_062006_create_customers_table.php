@@ -15,9 +15,12 @@ class CreateCustomersTable extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('customer_name',100);
+            $table->string('name',100);
             $table->string('phone',15);
+            $table->string('district',100);
             $table->text('address');
+            $table->string('payment_type',100)->nullable();
+            $table->string('bkash_phone',15)->nullable();
             $table->string('status');
             $table->timestamps();
         });
