@@ -109,7 +109,7 @@
           <div class="contacts-info">
             <address>
             <i class="add-icon">&nbsp;</i>Shatabdi Bhaban (1st Floor) 92.N.S. Road, Thana More
-              Kushtia-7000, Khulna, Bangladesh
+                Kushtia-7000, <span style="margin-left: 45px;">Khulna, Bangladesh</span>
             </address>
             <div class="phone-footer"><i class="phone-icon">&nbsp;</i> 01778-903844</div>
             <div class="email-footer"><i class="email-icon">&nbsp;</i> <a href="index.html#">support@magikcommerce.com</a> </div>
