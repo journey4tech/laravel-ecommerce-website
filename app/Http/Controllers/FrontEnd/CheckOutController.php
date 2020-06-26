@@ -194,4 +194,21 @@ class CheckOutController extends Controller
       }
 
 }
+
+
+
+    public function checkoutProduct(){
+        $data['districts'] = json_decode(file_get_contents(public_path('/data/').'district.json'));
+
+
+
+        $data['menus'] = Menu::with('categories')->get();
+
+        $data['carts_count'] = Cart::count();
+        //return $data['carts_count'];
+        $data['carts'] =Cart::content();
+
+
+          return view('front.pages.checkout',$data);
+    }
 }

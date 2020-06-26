@@ -45,7 +45,9 @@ Route::get('/provide-information', 'FrontEnd\HomeController@provideInformation')
  Route::get('/getCartSubtotal', 'FrontEnd\CartController@getCartSubtotal')->name('cart_subtotal');
  Route::get('/cart-item-remove/{rowId}', 'FrontEnd\CartController@destroy')->name('cart.item.remove');
  Route::get('/clear-cartx', 'FrontEnd\CartController@clear_cart')->name('cart.destroy');
- Route::post('/checkout', 'FrontEnd\CheckOutController@checkout')->name('checkout');
+ Route::post('/checkout', 'FrontEnd\CheckOutController@checkout')->name('checkout');\
+
+ Route::get('/checkout-product', 'FrontEnd\CheckOutController@checkoutProduct')->name('checkout.product');
 
  Route::get('/cart-list', 'FrontEnd\CheckOutController@cartList')->name('cart.item');
  Route::post('/product-order-confirm', 'FrontEnd\CheckOutController@productOrderConfirm')->name('product.order.confirm');
