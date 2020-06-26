@@ -31,6 +31,7 @@
                                     <th>Id</th>
                                     <th>Customer Name</th>
                                     <th>Mobile</th>
+                                    <th>District</th>
                                     <th>Address</th>
                                     <th>Order Time</th>
                                     <th>Status</th>
@@ -43,8 +44,9 @@
                                 <tr>
 
                                     <th scope="row">{{$loop->iteration}}</th>
-                                    <td>{{$item->customer_name}}</td>
+                                    <td>{{$item->name}}</td>
                                     <td>{{$item->phone}}</td>
+                                    <td>{{$item->district}}</td>
                                     <td>{{$item->address}}</td>
 
 

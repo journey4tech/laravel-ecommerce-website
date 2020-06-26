@@ -40,7 +40,11 @@
                             <input  style="margin:0px 5px 0px 30px;"  type="radio"  name="payment_type"  value="Cash On Delivery">Cash On Delivery
                             <input  style="margin:0px 5px 0px 30px;"  type="radio" name="payment_type" value="Bkash">Bkash
                         </div>
-                        <div class="form-group" id="bkashPhone">
+                        <div class="form-group" id="ourBkash">
+
+                        </div>
+
+                        <div class="form-group" id="yourBkash">
 
                         </div>
 
@@ -79,14 +83,20 @@
                     if( $(this).is(":checked") ){ // check if the radio is checked
                         var val = $(this).val();
                         if(val == 'Bkash'){
-                            var template = '';
-                             template += '<label for="">Bkash Phone No.</label>';
-                             template += '<input class="form-control" type="text" name="bkash_phone" id="">';
+                            var template1 = '';
+                             template1 += '<label for="">Our Bkash Phone No. (Money will be Received)</label>';
+                             template1 += '<input class="form-control" type="text" name="our_bkash_no" id="" value="01754165234">';
+
+                             var template2 = '';
+                             template2 += '<label for="">Your Bkash Phone No. (Money will be Paid)</label>';
+                             template2 += '<input class="form-control" type="text" name="your_bkash_no" id="">';
 
                             console.log("Bkash selected");
-                            $('#bkashPhone').html(template);
+                            $('#ourBkash').html(template1);
+                            $('#yourBkash').html(template2);
                         }else{
-                            $('#bkashPhone').html('');
+                            $('#ourBkash').html('');
+                            $('#yourBkash').html('');
                         }
 
                     }

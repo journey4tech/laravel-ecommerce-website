@@ -100,7 +100,8 @@ class CheckOutController extends Controller
                 $customer->district = $request->district;
                 $customer->address = $request->address;
                 $customer->payment_type = $request->payment_type ?? 'Cash On Delivery';
-                $customer->bkash_phone = $request->bkash_phone ?? null;
+                $customer->our_bkash_no = $request->our_bkash_no ?? null;
+                $customer->your_bkash_no = $request->your_bkash_no ?? null;
                 $customer->status = 'Pending';
                 $customer->save();
                 $data = [];

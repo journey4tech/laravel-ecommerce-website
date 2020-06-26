@@ -43,7 +43,7 @@
                                 <tr>
 
                                     <th scope="row">{{$loop->iteration}}</th>
-                                    <td>{{$item->customer_name}}</td>
+                                    <td>{{$item->name}}</td>
                                     <td>{{$item->phone}}</td>
                                     <td>{{$item->address}}</td>
 

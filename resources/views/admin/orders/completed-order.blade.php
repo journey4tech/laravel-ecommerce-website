@@ -17,16 +17,28 @@
 
                                     <tr>
                                         <td> Customer Name:</td>
-                                        <td>{{ $customer->customer_name}}</td>
+                                        <td>{{ $customer->name}}</td>
                                     </tr>
                                     <tr>
                                         <td> Customer Phone Number :</td>
                                         <td>{{$customer->phone}}</td>
                                     </tr>
+                                    <tr>
+                                        <td> District</td>
+                                        <td>{{$customer->district}}</td>
+                                    </tr>
 
                                     <tr>
                                         <td> Delievery Location </td>
                                         <td>{{$customer->address}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Payment Type </td>
+                                        <td>{{$customer->payment_type}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Money Received From Mobile No. </td>
+                                        <td>{{$customer->your_bkash_no ?? 'Not Available'}}</td>
                                     </tr>
                                     <tr>
                                         <td> Order Status </td>

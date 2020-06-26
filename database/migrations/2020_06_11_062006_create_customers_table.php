@@ -20,7 +20,8 @@ class CreateCustomersTable extends Migration
             $table->string('district',100);
             $table->text('address');
             $table->string('payment_type',100)->nullable();
-            $table->string('bkash_phone',15)->nullable();
+            $table->string('our_bkash_no',15)->nullable();
+            $table->string('your_bkash_no',15)->nullable();
             $table->string('status');
             $table->timestamps();
         });
