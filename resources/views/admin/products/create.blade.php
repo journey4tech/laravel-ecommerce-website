@@ -123,7 +123,7 @@
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label class="control-label">Special Price</label>
-                                                                    <input class="form-control form-white" placeholder="Enter special amount" type="number" name="discount" value="{{ old('special_price') }}"/>
+                                                                    <input class="form-control form-white" placeholder="Enter special amount" type="number" name="special_price" value="{{ old('special_price') }}"/>
                                                                     @if ($errors->has('special_price')) <p class="text-danger">{{ $errors->first('special_price') }}</p> @endif
                                                                 </div>
 

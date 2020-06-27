@@ -102,15 +102,15 @@
                                                     </colgroup>
                                                     <tfoot>
                                                     <tr>
-                                                        <td class="a-left" colspan="1"><strong>Grand Total</strong></td>
+                                                        <td class="a-left" colspan="1"><strong>Total</strong></td>
                                                         <td class="a-right"><strong><span class="price">Tk. {{Cart::subtotal()}}</span></strong></td>
                                                     </tr>
                                                     </tfoot>
                                                     <tbody>
-                                                    <tr>
-                                                        <td class="a-left" colspan="1"> Subtotal </td>
-                                                        <td class="a-right"><span class="price">$649.00</span></td>
-                                                    </tr>
+                                                    {{--<tr>--}}
+                                                        {{--<td class="a-left" colspan="1"> Subtotal </td>--}}
+                                                        {{--<td class="a-right"><span class="price">$649.00</span></td>--}}
+                                                    {{--</tr>--}}
                                                     </tbody>
                                                 </table>
                                                 <ul class="checkout">

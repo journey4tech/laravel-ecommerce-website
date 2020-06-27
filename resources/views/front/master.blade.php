@@ -153,7 +153,7 @@
 
         @endif
 
-
+                {{ Session::put('message','') }}
 </script>
 @stack('scripts')
 </body>

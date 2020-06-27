@@ -69,6 +69,8 @@
         }
 
       @endif
+
+        {{ Session::put('message','') }}
     </script>
 
     @yield('after-script')
