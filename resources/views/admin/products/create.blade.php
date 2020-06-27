@@ -79,14 +79,14 @@
                                                             <div id="general" class="tab-pane fade active show">
                                                                 <div class="form-group">
                                                                     <label class="control-label">Product Name</label>
-                                                                    <input class="form-control form-white" placeholder="Enter name" type="text" name="name" value="{{ old('name') }}"/>
-                                                                    @if ($errors->has('name')) <p class="text-danger">{{ $errors->first('name') }}</p> @endif
+                                                                    <input class="form-control form-white" placeholder="Enter name" type="text" name="product_name" value="{{ old('product_name') }}"/>
+                                                                    @if ($errors->has('product_name')) <p class="text-danger">{{ $errors->first('product_name') }}</p> @endif
                                                                 </div>
 
                                                                 <div class="form-group">
                                                                     <label class="control-label">Product Title</label>
-                                                                    <input class="form-control form-white" placeholder="Enter name" type="text" name="title" value="{{ old('title') }}"/>
-                                                                    @if ($errors->has('title')) <p class="text-danger">{{ $errors->first('title') }}</p> @endif
+                                                                    <input class="form-control form-white" placeholder="Enter name" type="text" name="product_title" value="{{ old('product_title') }}"/>
+                                                                    @if ($errors->has('product_title')) <p class="text-danger">{{ $errors->first('product_title') }}</p> @endif
                                                                 </div>
 
                                                                 <div class="form-group">
@@ -129,15 +129,15 @@
 
                                                                 <div class="form-group">
                                                                     <label for="inputPassword4" class="col-form-label">Discount  Start</label>
-                                                                    <input type="text" class="form-control" name="start_date" data-provide="datepicker"  value="{{ old('start_date') }}">
+                                                                    <input type="text" class="form-control" name="start" data-provide="datepicker"  value="{{ old('start') }}">
 
-                                                                    @if ($errors->has('datepicker')) <p class="text-danger">{{ $errors->first('datepicker') }}</p> @endif
+                                                                    @if ($errors->has('start')) <p class="text-danger">{{ $errors->first('start') }}</p> @endif
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="inputPassword4" class="col-form-label">Discount End</label>
-                                                                    <input type="text" name="end_date" class="form-control" data-provide="datepicker" value="{{ old('end_date') }}">
+                                                                    <input type="text" name="end" class="form-control" data-provide="datepicker"  value="{{ old('end') }}">
 
-                                                                    @if ($errors->has('end_date')) <p class="text-danger">{{ $errors->first('end_date') }}</p> @endif
+                                                                    @if ($errors->has('end')) <p class="text-danger">{{ $errors->first('end') }}</p> @endif
                                                                 </div>
 
                                                             </div>
@@ -291,5 +291,7 @@
         <!-- datepicker -->
 
         <script src="{{asset('admin/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js')}}"></script>
+
         <!-- end script -->
+
         @endsection

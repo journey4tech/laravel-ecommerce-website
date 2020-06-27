@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\FrontEnd;
 
 use App\Models\Category;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -23,6 +24,8 @@ class HomeController extends Controller
 
     public function index()
     {
+
+
         try {
 
             $data = [];
@@ -194,8 +197,33 @@ class HomeController extends Controller
 
     public function show_product($slug)
      {
+
        try {
          $data['product']= Product::where('slug',$slug)->firstOrFail();
+
+//           if($data['product']->end_data < Carbon::now()){
+//
+//               return Carbon::now();
+//           }else{
+//               return 'Future';
+//           }
+
+//           if (Carbon::now()->isSameDay($data['product']->end_data)) {
+//               return "same day";
+//           }else{
+//               return 'different day';
+//           }
+
+           if(Carbon::now()->between(Carbon::parse($data['product']->start), Carbon::parse($data['product']->end))){
+                return 'found';
+           }else{
+               return 'not found';
+           }
+
+
+
+
+
            $data['carts_count'] = Cart::count();
            //return $data['carts_count'];
            $data['carts'] =Cart::content();

@@ -103,13 +103,13 @@
                                                                 </div>
 
                                                                 <div class="form-group">
-                                                                    <label for="inputPassword4" class="col-form-label">Special Price Start</label>
-                                                                    <input type="text" value="{{$product->start_date}}" class="form-control" name="start_date" data-provide="datepicker">
+                                                                    <label for="inputPassword4" class="col-form-label">Discount Start</label>
+                                                                    <input type="text" value="{{$product->start}}" class="form-control" name="start" data-provide="datepicker">
 
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="inputPassword4" class="col-form-label">Special Price End</label>
-                                                                    <input type="text" value="{{$product->end_date}}" name="end_date" class="form-control" data-provide="datepicker">
+                                                                    <label for="inputPassword4" class="col-form-label">Discount End</label>
+                                                                    <input type="text" value="{{$product->end}}" name="end" class="form-control" data-provide="datepicker">
 
                                                                 </div>
 

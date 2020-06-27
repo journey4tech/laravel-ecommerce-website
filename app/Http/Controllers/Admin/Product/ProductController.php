@@ -3,7 +3,9 @@ namespace App\Http\Controllers\Admin\Product;
 
 use App\Models\Category;
 use Auth;
+use Carbon\Carbon;
 use Helper;
+use Illuminate\Support\Str;
 use Validator;
 use App\ProductSize;
 use App\Models\Product;
@@ -63,18 +65,18 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
+
+        //dd($request->all());
         try {
-            $validator = Validator::make($request->all(), ['multiple' => 'required',
-                            'name' => 'required',
-                            'title' => 'required',
+            $validator = Validator::make($request->all(), [
+                            'product_name' => 'required',
+                            'product_title' => 'required',
                             'sub_category_id' => 'required',
                             'product_price' => 'required',
                             'product_quantity' => 'required',
                             'sku' => 'required',
                             'stock' => 'required',
                             'description' => 'required',
-                            'color' => 'required',
-                            'size' => 'required',
                             'multiple' => 'required',
                             //'multiple.*' => 'image|mimes:jpeg,png,jpg,gif,svg',
                         ]);
@@ -91,27 +93,48 @@ class ProductController extends Controller {
                         ->save('uploads/documents/productimages/'.$name, 100);
                     $image_name[] = $name;
                 }
-                $product = New Product();
-                $product->product_name = $request->name;
-                $product->product_title = $request->title;
-                $product->sub_category_id = $request->sub_category_id;
-                $product->type = $request->type;
-                $product->slug = str_slug($request->title) . "-" . rand(255, 999);
-                $product->product_price = $request->product_price;
-                $product->discount = $request->discount;
-                $product->start_date = $request->start_date;
-                $product->end_date = $request->end_date;
-                $product->product_quantity = $request->product_quantity;
-                $product->sku = $request->sku;
-                $product->stock = $request->stock;
-                $product->video_link = $request->video_link;
-                $product->multiple = json_encode($image_name);
-                $product->description = $request->description;
-                $product->color = json_encode(request('color'));
-                $product->size = json_encode(request('size'));
-                // $product->warrantly=$request->warrantly;
-                $product->status = 1;
-                $product->save();
+//                $product = New Product();
+//                $product->product_name = $request->name;
+//                $product->product_title = $request->title;
+//                $product->sub_category_id = $request->sub_category_id;
+//                $product->type = $request->type;
+//                $product->slug = Str::slug($request->title);
+//                $product->product_price = $request->product_price;
+//                $product->discount = $request->discount;
+//                $product->start = Carbon::parse($request->start);
+//                $product->end = Carbon::parse($request->end);
+//                $product->product_quantity = $request->product_quantity;
+//                $product->sku = $request->sku;
+//                $product->stock = $request->stock;
+//                $product->video_link = $request->video_link;
+//                $product->multiple = json_encode($image_name);
+//                $product->description = $request->description;
+//                $product->color = json_encode(request('color'));
+//                $product->size = json_encode(request('size'));
+//                // $product->warrantly=$request->warrantly;
+//                $product->status = 1;
+//                $product->save();
+
+                Product::create([
+                    'product_name' => $request->product_name,
+                    'product_title' => $request->product_title,
+                    'sub_category_id' => $request->sub_category_id,
+                    'type' => $request->type,
+                    'slug' => Str::slug($request->product_name),
+                    'product_price' => $request->product_price,
+                    'discount' => $request->discount,
+                    'start' =>$request->start,
+                    'end' => $request->end,
+                    'product_quantity' => $request->product_quantity,
+                    'sku' => $request->sku,
+                    'stock' => $request->stock,
+                    'video_link' => $request->video_link,
+                    'multiple' => json_encode($image_name),
+                    'description' => $request->description,
+                    'color' => json_encode(request('color')),
+                    'size' => json_encode(request('size')),
+                    'status' => 1,
+                ]);
               }
 
           Helper::notifySuccess('Product Added successfully');
@@ -161,28 +184,6 @@ class ProductController extends Controller {
          * @return \Illuminate\Http\Response
          */
         public function update(Request $request, $id) {
-            //dd($request->all());
-            // try {
-            //     $product = Product::findOrFail($id);
-            //     // $product->size = json_encode(request('size'));
-            //     // $product->color = json_encode(request('color'));
-            //     $product->update($request->all());
-            //     if ($request->hasfile('multiple')) {
-            //         foreach ($request->file('multiple') as $image) {
-            //             $name = $image->getClientOriginalName();
-            //             $image->move(public_path('uploads/documents') . '/productimages/', $name);
-            //             $data[] = $name;
-            //             $product->multiple = json_encode($data);
-            //             $product->save();
-            //         }
-            //     }
-            //     Helper::notifySuccess('Product Updated successfully');
-            //     return redirect(route('admin.products.index'));
-            // }
-            // catch(\Exception $e) {
-            //     Helper::notifyError($e->getMessage());
-            //     return back();
-            // }
 
             try {
                 //return $request->all();
@@ -205,22 +206,23 @@ class ProductController extends Controller {
                     $product->product_title = $request->product_title;
                     $product->sub_category_id = $request->sub_category_id;
                     $product->type = $request->type;
-                    $product->slug = str_slug($request->title) . "-" . rand(255, 999);
+                    $product->slug = Str::slug($request->product_name);
                     $product->product_price = $request->product_price;
                     $product->discount = $request->discount;
-                    $product->start_date = $request->start_date;
-                    $product->end_date = $request->end_date;
+                    $product->start = $request->start;
+                    $product->end = $request->end;
                     $product->product_quantity = $request->product_quantity;
                     $product->sku = $request->sku;
                     $product->stock = $request->stock;
                     $product->video_link = $request->video_link;
-                    //$product->multiple = json_encode($image_name);
                     $product->description = $request->description;
                     $product->color = json_encode(request('color'));
                     $product->size = json_encode(request('size'));
                     // $product->warrantly=$request->warrantly;
                     $product->status = 1;
                     $product->save();
+
+
                   
                 //return 'success';
                 Helper::notifySuccess('Product Updated successfully');
