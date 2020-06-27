@@ -72,15 +72,20 @@
                                         <th>Color</th>
                                         <th>Total Order</th>
 
-                                        <th>Regular Price</th>
-                                        <th>Discount</th>
-                                        <th>Discounted Price</th>
+                                        <th>Product Price</th>
+                                        <th>Price</th>
+
+
                                     </tr>
                                     @php
+                                        $subtotal = 0;
                                         $total_cost = 0;
                                     @endphp
                                     @foreach($orders as $order)
-
+                                        @php
+                                            $subtotal =  $order->total_order * ($order->product->special_price ?? $order->product->product_price);
+                                            $total_cost +=$subtotal;
+                                        @endphp
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{$order->product->product_name}}</td>
@@ -88,9 +93,10 @@
                                             <td>{{$order->product->type}}</td>
                                             <td>{{$order->color}}</td>
                                             <td>{{$order->total_order}}</td>
-                                            <td>{{$order->product->product_price}}</td>
-                                            <td>{{$order->product->discount}}%</td>
-                                            <td>{{ $total_cost += 200 }}</td>
+                                            <td>{{$order->product->special_price ?? $order->product->product_price}}</td>
+                                            <td>{{$subtotal}}</td>
+
+
 
                                         </tr>
 
@@ -102,9 +108,9 @@
                                         <td></td>
                                         <td></td>
                                         <td></td>
-                                        <td></td>
                                         <td>Service Charge:</td>
                                         <td></td>
+
                                     </tr>
                                     <tr>
                                         <td></td>
@@ -112,7 +118,7 @@
                                         <td></td>
                                         <td></td>
                                         <td></td>
-                                        <td></td>
+
                                         <td></td>
                                         <td style="background: green;color:white"><b>Total Cost:</b> </td>
                                         <td style="background: green;color:white">{{ $total_cost }}</td>

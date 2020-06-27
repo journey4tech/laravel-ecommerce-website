@@ -70,7 +70,7 @@ class Product extends Model implements ViewableContract
     public function discount(){
         if(Carbon::now()->between(Carbon::parse($this->start), Carbon::parse($this->end))){
             if($this->special_price){
-                $discount =  round($this->special_price/$this->product_price)/100;
+                $discount = round((($this->product_price-$this->special_price)*100)/$this->product_price );
                 return $discount;
             }
 

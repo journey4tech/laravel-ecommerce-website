@@ -28,22 +28,24 @@ class CartController extends Controller
 
 
         $product=Product::findOrFail($request->product_id);
+
      Cart::add([
          ['id' => $product->id,
              'name' =>$product->product_name,
              'qty' =>$product_qty,
-             'price' =>$product->product_price,
+             'price' =>$product->special_price ?? $product->product_price,
              'weight' => 550,
              'options' => [
                  //'size' => 'large',
                  'color'=>$product_color,
-                 'size' => $product->discount,
+                 //'size' => $product->discount,
                  'images' =>json_decode($product->multiple)[0]
              ]
          ]
          // ['id' => '5566', 'name' => 'Product 3', 'qty' => 1, 'price' => 10.00, 'weight' => 550, 'options' => ['size' => 'large']]
 
      ]);
+
       return redirect()->route('cart.item');
 
     } catch (\Exception $e) {
