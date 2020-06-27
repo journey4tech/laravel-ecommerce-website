@@ -122,7 +122,7 @@ class ProductController extends Controller {
                     'type' => $request->type,
                     'slug' => Str::slug($request->product_name),
                     'product_price' => $request->product_price,
-                    'discount' => $request->discount,
+                    'special_price' => $request->special_price,
                     'start' =>$request->start,
                     'end' => $request->end,
                     'product_quantity' => $request->product_quantity,
@@ -208,7 +208,7 @@ class ProductController extends Controller {
                     $product->type = $request->type;
                     $product->slug = Str::slug($request->product_name);
                     $product->product_price = $request->product_price;
-                    $product->discount = $request->discount;
+                    $product->special_price = $request->special_price;
                     $product->start = $request->start;
                     $product->end = $request->end;
                     $product->product_quantity = $request->product_quantity;

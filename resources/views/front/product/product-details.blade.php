@@ -32,15 +32,25 @@
                   </div>
                   <div class="ratings">
                     <div class="rating-box">
-                      <div class="rating"></div>
+                      <div class="rating">
+
+                      </div>
                     </div>
+
+                    @if($product->hasDiscountTime())
+                     <h4>  <span style="color:red;font-weight: bold;">Discount: {{ $product->discount }} % </span> ( <span style="font-size: 12px;color:green">{{ $product->start }} to {{ $product->end  }}</span> )</h4>
+                    @endif
                     {{--<p class="rating-links"> <a href="product_detail.html#">1 Review(s)</a> <span class="separator">|</span> <a href="product_detail.html#">Add Your Review</a> </p>--}}
                   </div>
                   <p class="availability in-stock">Availability: <span>{{ $product->stock >= 1 ? 'In Stock' : 'Out Stock'}}</span></p>
                   <div class="price-block">
                     <div class="price-box">
-                      <p class="old-price"> <span class="price-label">Regular Price:</span> <span class="price"> Tk.  {{ $product->product_price }} </span> </p>
-                      <p class="special-price"> <span class="price-label">Special Price</span> <span class="price">Tk.  {{ $product->special_price }} </span> </p>
+                      @if($product->hasDiscountTime())
+                        <p class="special-price"> <span class="price"> Tk. {{ $product->discountedAmount() }} </span> </p>
+                        <p class="old-price"> <span class="price-sep">-</span> <span class="price"> Tk. {{ $product->product_price}}</span> </p>
+                      @else
+                        <p class="special-price"> <span class="price"></span> <span class="price"> Tk. {{ $product->product_price}}</span> </p>
+                      @endif
                     </div>
                   </div>
                   <div class="short-description">

@@ -22,6 +22,8 @@ class Product extends Model implements ViewableContract
         return strtoupper($value);
     }
 
+
+
     public function setStartAttribute($value){
         $this->attributes['start']  = Carbon::parse($value);
     }
@@ -51,6 +53,40 @@ class Product extends Model implements ViewableContract
    }
 
 
+    public  function discountedAmount(){
+        if(Carbon::now()->between(Carbon::parse($this->start), Carbon::parse($this->end))){
+            if($this->discount){
+                $discounted_price =  $this->product_price - round(($this->product_price*$this->discount)/100);
+                return $discounted_price;
+            }
+
+            return $this->product_price;
+        }else{
+            return $this->product_price;
+        }
+
+    }
+
+    public function discount(){
+        if(Carbon::now()->between(Carbon::parse($this->start), Carbon::parse($this->end))){
+            if($this->special_price){
+                $discount =  round($this->special_price/$this->product_price)/100;
+                return $discount;
+            }
+
+            return false;
+        }else{
+            return false;
+        }
+    }
+
+    public  function hasDiscount(){
+        if(!$this->discount()){
+            return false;
+        }
+
+        return true;
+    }
 
 
 

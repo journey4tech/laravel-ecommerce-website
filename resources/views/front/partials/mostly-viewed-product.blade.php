@@ -11,7 +11,7 @@
             <div id="best-seller-slider" class="product-flexslider hidden-buttons">
                 <div class="slider-items slider-width-col3"> 
                     @foreach ($most_viewed_products as $product)
-                        @include('front.partials.product-view-template-general')
+                        @include('front.partials.product-view-template-latest')
                     @endforeach
                     <!-- Item -->
                  </div>

@@ -122,9 +122,9 @@
                                                                     @if ($errors->has('product_price')) <p class="text-danger">{{ $errors->first('product_price') }}</p> @endif
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label class="control-label">Discount</label>
-                                                                    <input class="form-control form-white" placeholder="Enter discount" type="number" name="discount" value="{{ old('discount') }}"/>
-                                                                    @if ($errors->has('discount')) <p class="text-danger">{{ $errors->first('discount') }}</p> @endif
+                                                                    <label class="control-label">Special Price</label>
+                                                                    <input class="form-control form-white" placeholder="Enter special amount" type="number" name="discount" value="{{ old('special_price') }}"/>
+                                                                    @if ($errors->has('special_price')) <p class="text-danger">{{ $errors->first('special_price') }}</p> @endif
                                                                 </div>
 
                                                                 <div class="form-group">

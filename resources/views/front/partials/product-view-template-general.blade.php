@@ -4,9 +4,9 @@
 
 <div class="item">
     <div class="col-item">
-        @if($product->discount)
+        @if($product->hasDiscount())
             <div class="sale-label sale-top-right">
-                {{ $product->discount }} %
+                {{ $product->discount() }} %
                 {{--{{ round(($product->product_price*$product->discount) /100 )}} %--}}
             </div>
         @endif
@@ -34,11 +34,11 @@
                             <div class="rating"></div>
                         </div>
                     </div>
-                    @php
-                        $discount_price =  $product->product_price - round(($product->product_price*$product->discount)/100)
+                    {{--@php--}}
+                        {{--$discount_price =  $product->product_price - round(($product->product_price*$product->discount)/100)--}}
 
-                    @endphp
-                    <div class="price-box"> <span class="regular-price"> <span class="price"> Tk. {{ $product->discount ? $discount_price   : $product->product_price }}</span> </span> </div>
+                    {{--@endphp--}}
+                    <div class="price-box"> <span class="regular-price"> <span class="price"> Tk. {{ $product->special_price ?? $product->product_price  }}</span> </span> </div>
                 </div>
                 <!--item-content-->
             </div>

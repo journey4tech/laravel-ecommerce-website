@@ -43,11 +43,19 @@
                                             {{--</div>--}}
                                             {{--<p class="rating-links"> <a href="quick_view.html#">1 Review(s)</a> <span class="separator">|</span> <a href="quick_view.html#">Add Your Review</a> </p>--}}
                                         {{--</div>--}}
+
+                                        @if($product->hasDiscountTime())
+                                            <h4>  <span style="color:red;font-weight: bold;">Discount: {{ $product->discount }} % </span> ( <span style="font-size: 12px;color:green">{{ $product->start }} to {{ $product->end  }}</span> )</h4>
+                                        @endif
                                         <p class="availability in-stock">Availability: <span>{{ $product->stock >= 1 ? 'In Stock' : 'Out Stock'}}</span></p>
                                         <div class="price-block">
                                             <div class="price-box">
-                                                <p class="old-price"> <span class="price-label">Regular Price:</span> <span class="price">  Tk.  {{ $product->product_price }} </span> </p>
-                                                <p class="special-price"> <span class="price-label">Special Price</span> <span class="price"> $309.99 </span> </p>
+                                                @if($product->hasDiscountTime())
+                                                    <p class="special-price"> <span class="price"> Tk. {{ $product->discountedAmount() }} </span> </p>
+                                                    <p class="old-price"> <span class="price-sep">-</span> <span class="price"> Tk. {{ $product->product_price}}</span> </p>
+                                                @else
+                                                    <p class="special-price"> <span class="price"></span> <span class="price"> Tk. {{ $product->product_price}}</span> </p>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="short-description">
@@ -81,7 +89,7 @@
                                                         <button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;" class="increase items-count" type="button"><i class="icon-plus">&nbsp;</i></button>
                                                     </div>
                                                 </div>
-                                                <button  class="button btn-cart" title="Add to Cart" type="submit"><span><i class="icon-basket"></i> Order</span></button>
+                                                <button  class="button btn-cart" title="Add to Cart" type="submit"><span><i class="icon-basket"></i> Add to Cart</span></button>
 
                                                 {{--<div class="email-addto-box">--}}
                                                     {{--<ul class="add-to-links">--}}

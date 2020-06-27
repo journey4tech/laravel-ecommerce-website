@@ -1,9 +1,9 @@
 <div class="item">
     <div class="col-item">
 
-        @if($product->discount)
+        @if($product->hasDiscount())
             <div class="new-label new-top-right">
-                {{ $product->discount }} %
+                {{ $product->discount() }} %
             </div>
 
 
@@ -28,7 +28,7 @@
         </div>
         <div class="info">
             <div class="info-inner">
-                <div class="item-title"> <a title=" {{ $product->product_name }}t" href="{{route('product',$product->slug)}}"> {{ $product->product_name }} </a> </div>
+                <div class="item-title"> <a title=" {{ $product->product_name }}" href="{{route('product',$product->slug)}}"> {{ $product->product_name }} </a> </div>
                 <!--item-title-->
                 <div class="item-content">
                     <div class="ratings">
@@ -37,14 +37,16 @@
                         </div>
                     </div>
                     <div class="price-box">
-                        @php
-                            $discount_price =  $product->product_price - round(($product->product_price*$product->discount)/100)
+                        {{--@php--}}
+                            {{--$discount_price =  $product->product_price - round(($product->product_price*$product->discount)/100)--}}
 
-                        @endphp
-
-                        <p class="special-price"> <span class="price"> Tk. {{ $product->discount ? $discount_price : $product->product_price }} </span> </p>
-
-                        <p class="old-price"> <span class="price-sep">-</span> <span class="price"> Tk. {{ $product->product_price}}</span> </p>
+                        {{--@endphp--}}
+                        @if($product->hasDiscount())
+                            <p class="special-price"> <span class="price"> Tk. {{ $product->special_price}} </span> </p>
+                            <p class="old-price"> <span class="price-sep">-</span> <span class="price"> Tk. {{ $product->product_price}}</span> </p>
+                        @else
+                        <p class="special-price"> <span class="price"></span> <span class="price"> Tk. {{ $product->product_price}}</span> </p>
+                        @endif
                     </div>
                 </div>
                 <!--item-content-->
