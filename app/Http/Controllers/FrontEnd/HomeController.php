@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\FrontEnd;
 
 use App\Models\Category;
+use App\Review;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -17,6 +18,7 @@ use App\Models\Product;
 use App\Models\DailyDeals;
 use App\Models\PopularCategory;
 use Illuminate\Support\Facades\Session;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class HomeController extends Controller
 {
@@ -394,4 +396,39 @@ class HomeController extends Controller
         return view('front.pages.quick-view',$data);
     }
 
+
+    public function quickReview($slug)
+    {
+        $data['product']= Product::where('slug',$slug)->firstOrFail();
+        return view('front.pages.quick-review',$data);
+    }
+
+    public function storeReview(Request $request)
+    {
+        $request->validate([
+            'product_id' => 'required',
+            'visitor_name' => 'required',
+            'review' => 'required'
+        ]);
+        try {
+
+            Review::create([
+                'product_id' => $request->product_id,
+                'visitor_name' => $request->visitor_name,
+                'review' => $request->review
+            ]);
+
+
+            //Alert::success('Success', 'Your Review is waiting under moderation !!');
+            Helper::notifySuccess('Your Review is waiting under moderation !!');
+            return redirect()->back();
+        } catch (\Exception $e) {
+
+            //Alert::error('You did not provide data properly !!');
+            return response()->json($e->getMessage(), 502);
+        }
+
+
+
+    }
 }

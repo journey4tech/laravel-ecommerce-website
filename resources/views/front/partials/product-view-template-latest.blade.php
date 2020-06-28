@@ -22,8 +22,8 @@
                 {{--<a class="add_to_compare" href="compare.html">--}}
                 {{--<div><i class="icon-random"></i><span>Add to compare</span></div>--}}
                 {{--</a> --}}
-                <a class="addToWishlist wishlistProd_5" href="wishlist.html" >
-                    <div><i class="icon-heart"></i><span>Add to Wishlist</span></div>
+                <a class="addToWishlist wishlistProd_5" href="{{route('quick.review',$product->slug)}}" >
+                    <div><i class="icon-heart"></i><span>Add Review</span></div>
                 </a> </div>
         </div>
         <div class="info">

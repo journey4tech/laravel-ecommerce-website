@@ -15,8 +15,8 @@
                       <a title="magik-btn-quickview" class="magik-btn-quickview" href="{{route('quick.view',$product->slug)}}">
                         <span>quickview</span>
                       </a>
-                      <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html">
-                        <span>Add to Wishlist</span>
+                      <a title="Add Review" class="link-wishlist magik-btn-quickview" href="{{route('quick.review',$product->slug)}}">
+                        <span>Add Review</span>
                       </a>
                     {{--<a title="Add to Compare" class="link-compare" href="compare.html">--}}
                     {{--<span>Add to Compare</span>--}}

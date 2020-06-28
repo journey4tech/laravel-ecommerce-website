@@ -21,6 +21,10 @@
  Route::get('/category/{slug}', 'FrontEnd\HomeController@sub_categories_product')->name('sub_category');
  Route::get('/menu/{id}', 'FrontEnd\HomeController@menus_product')->name('menu');
  Route::get('/quick-view/{slug}', 'FrontEnd\HomeController@quickView')->name('quick.view');
+
+ Route::get('/quick-review/{slug}', 'FrontEnd\HomeController@quickReview')->name('quick.review');
+ Route::post('/quick-review', 'FrontEnd\HomeController@storeReview')->name('store.review');
+
  Route::post('/category/search/', 'FrontEnd\HomeController@search')->name('search');
 // Route::get('/', 'FrontEnd\WelcomeController@menu');
 Route::get('/product/{slug}','FrontEnd\HomeController@show_product')->name('product');

@@ -53,6 +53,7 @@ class Product extends Model implements ViewableContract
    }
 
 
+
     public  function discountedAmount(){
         if(Carbon::now()->between(Carbon::parse($this->start), Carbon::parse($this->end))){
             if($this->discount){

@@ -75,5 +75,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.', 'namespace' => 'Admin'],function
  });
 
 Route::post('product/change-status','Admin\OrderController@statusChange')->name('status.change');
+Route::get('admin/product/reviews','Admin\Product\ReviewController@index')->name('admin.reviews.index');
+
 
 ?>

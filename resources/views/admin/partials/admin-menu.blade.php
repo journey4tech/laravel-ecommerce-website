@@ -62,6 +62,9 @@
             <li>
                 <a href="{{route('admin.products.index')}}">Manage Product</a>
             </li>
+            <li>
+                <a href="{{route('admin.reviews.index')}}">Manage Review</a>
+            </li>
 
         </ul>
     </li>
