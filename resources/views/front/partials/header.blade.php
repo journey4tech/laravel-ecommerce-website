@@ -98,13 +98,13 @@
 
                     @foreach($carts as $cart)
 
-                      <li class="item even"> <a class="product-image" href="index.html#" title="Downloadable Product "><img alt="Downloadable Product " src="{{ asset('uploads/documents/productimages/'.$cart->options->images) }}" width="80"></a>
+                      <li class="item even"> <a class="product-image" href="{{route('cart.item')}}" title="Downloadable Product "><img alt="Downloadable Product " src="{{ asset('uploads/documents/productimages/'.$cart->options->images) }}" width="80"></a>
                         <div class="detail-item">
                           <div class="product-details">
 
                             <a href="{{ route('cart.item.remove',$cart->rowId) }}" title="Remove This Item"  class="glyphicon glyphicon-remove">&nbsp;</a>
 
-                            <p class="product-name"> <a href="product_detail.html" title="Downloadable Product">{{ $cart->name }}</a> </p>
+                            <p class="product-name"> <a href="{{route('cart.item')}}" title="Downloadable Product">{{ $cart->name }}</a> </p>
                           </div>
                           <div class="product-details-bottom"> <span class="price">$100.00</span> <span class="title-desc">Qty:</span> <strong>{{ $cart->qty }}</strong> </div>
                         </div>

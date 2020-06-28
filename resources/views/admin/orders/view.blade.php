@@ -67,6 +67,7 @@
                                     <tr>
                                         <th>Order No.</th>
                                         <th>Product Name</th>
+                                        <th>Product Image</th>
                                         <th>Category</th>
                                         <th>Type</th>
                                         <th>Color</th>
@@ -83,12 +84,14 @@
                                     @endphp
                                     @foreach($orders as $order)
                                         @php
-                                            $subtotal =  $order->total_order * ($order->product->special_price ?? $order->product->product_price);
-                                            $total_cost +=$subtotal;
+                                             $images=collect(json_decode($order->product->multiple))->first();
+                                                $subtotal =  $order->total_order * ($order->product->special_price ?? $order->product->product_price);
+                                                $total_cost +=$subtotal;
                                         @endphp
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{$order->product->product_name}}</td>
+                                            <td><img style="width:100px;height:100px;" src="{{ asset('uploads/documents/productimages/'.$images) }}" /></td>
                                             <td>{{$order->product->sub_category->name}}</td>
                                             <td>{{$order->product->type}}</td>
                                             <td>{{$order->color}}</td>
@@ -108,11 +111,13 @@
                                         <td></td>
                                         <td></td>
                                         <td></td>
+                                        <td></td>
                                         <td>Service Charge:</td>
                                         <td></td>
 
                                     </tr>
                                     <tr>
+                                        <td></td>
                                         <td></td>
                                         <td></td>
                                         <td></td>
