@@ -117,7 +117,7 @@
 
                                                     <li>
 
-                                                        <a href="{{ route('checkout.product') }}"><button  title="Proceed to Checkout" class="button btn-proceed-checkout"><span>Proceed to Checkout</span></button></a>
+                                                        <a href="{{ route('checkout.product') }}"><button id="checkoutButton" title="Proceed to Checkout" class="button btn-proceed-checkout"><span>Proceed to Checkout</span></button></a>
                                                     </li>
 
 
@@ -143,3 +143,16 @@
 
 
 @endsection
+
+@push('scripts')
+    <script>
+        $(document).ready(function(){
+
+            if( "{{ \Gloudemans\Shoppingcart\Facades\Cart::count() == 0 }}" ){
+                $("#checkoutButton").css("display", "none");
+            }
+
+
+        });
+    </script>
+@endpush

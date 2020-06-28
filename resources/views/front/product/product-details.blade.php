@@ -107,7 +107,7 @@
                           </div>
                         </div>
 
-                        <button  class="button btn-cart" title="order" type="submit"><span><i class="icon-basket"></i> Add To Cart</span></button>
+                        <button  class="button btn-cart" title="Add To Cart" type="submit"><span><i class="icon-basket"></i> Add To Cart</span></button>
 
                       {{--<div class="email-addto-box">--}}
                         {{--<ul class="add-to-links">--}}

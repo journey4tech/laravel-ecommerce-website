@@ -39,7 +39,8 @@
 </head>
 
 <body>
-<div class="page"> 
+<div class="page">
+        @include('sweetalert::alert')
     @include('front/partials/header')
     @yield('content')
     @include('front/partials/footer')
@@ -131,30 +132,7 @@
         </script>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-<script type="text/javascript">
-                @if(Session::has('message'))
-    var type="{{Session::get('alert-type')}}"
-
-
-    switch(type){
-
-        case 'success':
-            toastr.info("{{ Session::get('message') }}");
-
-            break;
-
-        case 'error':
-            toastr.error("{{ Session::get('message') }}");
-
-            break;
-    }
-
-        @endif
-
-                {{ Session::put('message','') }}
-</script>
 @stack('scripts')
 </body>
 </html>

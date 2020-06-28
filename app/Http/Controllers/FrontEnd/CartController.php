@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Http\Controllers\Controller;
 
+use RealRashid\SweetAlert\Facades\Alert;
 use Session;
 use Auth;
 
@@ -45,8 +46,9 @@ class CartController extends Controller
          // ['id' => '5566', 'name' => 'Product 3', 'qty' => 1, 'price' => 10.00, 'weight' => 550, 'options' => ['size' => 'large']]
 
      ]);
+     $carts_count = Cart::count();
 
-      return redirect()->route('cart.item');
+      return redirect()->route('cart.item',compact('carts_count'));
 
     } catch (\Exception $e) {
        return $e->getMessage();
@@ -144,7 +146,14 @@ class CartController extends Controller
       $cart = Cart::update($request->rowId, $request->qty); // Will update the quantity
 
       //return response()->json($cart);
-        Helper::notifySuccess('Cart Quantity Updated');
+        //Helper::notifySuccess('Cart Quantity Updated');
+        //toast('Cart Quantity Updated','success')->autoClose(5000);
+
+
+        Alert::success('Success', 'Cart Quantity Updated !!');
+
+
+
         return redirect(route('cart.item'));
     } catch (\Exception $e) {
       return response()->json($e->getMessage(), 502);
@@ -155,7 +164,8 @@ class CartController extends Controller
   {
 
       Cart::remove($rowId);
-      Helper::notifySuccess('Cart item removed !!');
+
+      Alert::success('Success', 'Cart item removed !!');
       return redirect(route('cart.item'));
   }
 
@@ -164,7 +174,7 @@ public function clear_cart( Request $request)
     {
 
       Cart::destroy();
-      Helper::notifySuccess('Cart clear !!');
+      Alert::success('Success', 'Cart has been cleared !!');
       return redirect(route('cart.item'));
 
     }

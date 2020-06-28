@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Http\Controllers\Controller;
 Use Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 use Validator;
 use Session;
 Use App\Models\Order;
@@ -125,7 +126,8 @@ class CheckOutController extends Controller
 
             Cart::destroy();
 
-            Helper::notifySuccess('Order Taken, We will contact you soon !!! ');
+            //Helper::notifySuccess('Order Taken, We will contact you soon !!! ');
+            Alert::success('Success', 'Order Taken, We will contact you soon !!');
             return redirect()->back();
 //                ->with([
 //                'alert-type' => 'success',
