@@ -1,4 +1,10 @@
-  <!-- Header -->
+@php
+  $carts = \Gloudemans\Shoppingcart\Facades\Cart::content() ;
+  $carts_count = \Gloudemans\Shoppingcart\Facades\Cart::count() ;
+  $menus = \App\Models\Menu::with('categories')->get();
+@endphp
+
+<!-- Header -->
   <header class="header-container">
     <div class="header-top">
       <div class="container">
@@ -74,6 +80,7 @@
             <div class="mini-cart">
               <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"> <a href="index.html#"> <i class="glyphicon glyphicon-shopping-cart"></i>
                 <div class="cart-box"><span class="title">cart</span><span id="cart-total">
+
                    @if($carts_count>1)
                       {{ $carts_count }} Items
                      @elseif ($carts_count==1)
@@ -88,6 +95,7 @@
                 <div class="top-cart-content arrow_box">
                   <div class="block-subtitle">Recently added item(s)</div>
                   <ul id="cart-sidebar" class="mini-products-list">
+
                     @foreach($carts as $cart)
 
                       <li class="item even"> <a class="product-image" href="index.html#" title="Downloadable Product "><img alt="Downloadable Product " src="{{ asset('uploads/documents/productimages/'.$cart->options->images) }}" width="80"></a>
