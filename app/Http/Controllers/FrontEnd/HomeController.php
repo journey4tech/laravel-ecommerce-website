@@ -203,11 +203,9 @@ class HomeController extends Controller
        try {
          $data['product']= Product::where('slug',$slug)->firstOrFail();
 
-           //dd ($data['product']->hasDiscount());
+         $data['reviews']= Review::where('status','Approved')->latest()->get();
+         $data['reviews_count']= $data['reviews']->count();
 
-//           $data['carts_count'] = Cart::count();
-//           //return $data['carts_count'];
-//           $data['carts'] =Cart::content();
 
           $data['related_products'] = Product::where('sub_category_id',$data['product']->sub_category_id)->latest()->get()->except($data['product']->id);
          //return $product;

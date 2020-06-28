@@ -31,7 +31,7 @@
                             @if ($errors->has('district')) <p class="text-danger">{{ $errors->first('district') }}</p> @endif
                         </div>
                         <div class="form-group">
-                            <label for="">Full Address</label>
+                            <label for="">Product Delievery Location</label>
                             <textarea class="form-control" name="address" id="address" cols="30" rows="10">{{ old('address') }}</textarea>
                             @if ($errors->has('address')) <p class="text-danger">{{ $errors->first('address') }}</p> @endif
                         </div>

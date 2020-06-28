@@ -40,7 +40,7 @@
                     @if($product->hasDiscount())
                      <h4>  <span style="color:red;font-weight: bold;">Discount: {{ $product->discount() }} % </span> ( <span style="font-size: 12px;color:green">{{ $product->start }} to {{ $product->end  }}</span> )</h4>
                     @endif
-                    <p class="rating-links"> <a>1 Review(s)</a> <span class="separator">|</span> <a href="{{route('quick.review',$product->slug)}}">Add Your Review</a> </p>
+                    <p class="rating-links"> <a>{{ $reviews_count }} Review(s)</a> <span class="separator">|</span> <a href="{{ route('quick.review', $product->slug) }}">Add Your Review</a> </p>
                   </div>
                   <p class="availability in-stock">Availability: <span>{{ $product->stock >= 1 ? 'In Stock' : 'Out Stock'}}</span></p>
                   <div class="price-block">
@@ -168,99 +168,23 @@
                         <h3>Customer Reviews</h3>
                         <div class="box visible">
                           <ul>
-                            <li>
-                              <table class="ratings-table">
+                            @forelse($reviews as $item)
+                              <li>
+                                <div class="review">
+                                  <h6>{{ $product->product_name }}</h6>
+                                  <small>Review by <span>{{ $item->visitor_name }} </span>on {{ $item->created_at->format('m/d/Y') }} </small>
+                                  <div class="review-txt">{{ $item->review }}</div>
+                                </div>
+                              </li>
+                            @empty
+                              <p>No reviews Yet !!</p>
+                            @endforelse
 
-                                <tbody>
-                                  <tr>
-                                    <th>Value</th>
-                                    <td><div class="rating-box">
-                                        <div class="rating"></div>
-                                      </div></td>
-                                  </tr>
-                                  <tr>
-                                    <th>Quality</th>
-                                    <td><div class="rating-box">
-                                        <div class="rating"></div>
-                                      </div></td>
-                                  </tr>
-                                  <tr>
-                                    <th>Price</th>
-                                    <td><div class="rating-box">
-                                        <div class="rating"></div>
-                                      </div></td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                              <div class="review">
-                                <h6><a href="product_detail.html#/catalog/product/view/id/61/">Excellent</a></h6>
-                                <small>Review by <span>Leslie Prichard </span>on 1/3/2014 </small>
-                                <div class="review-txt"> I have purchased shirts from Minimalism a few times and am never disappointed. The quality is excellent and the shipping is amazing. It seems like it's at your front door the minute you get off your pc. I have received my purchases within two days - amazing.</div>
-                              </div>
-                            </li>
-                            <li class="even">
-                              <table class="ratings-table">
 
-                                <tbody>
-                                  <tr>
-                                    <th>Value</th>
-                                    <td><div class="rating-box">
-                                        <div class="rating"></div>
-                                      </div></td>
-                                  </tr>
-                                  <tr>
-                                    <th>Quality</th>
-                                    <td><div class="rating-box">
-                                        <div class="rating"></div>
-                                      </div></td>
-                                  </tr>
-                                  <tr>
-                                    <th>Price</th>
-                                    <td><div class="rating-box">
-                                        <div class="rating"></div>
-                                      </div></td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                              <div class="review">
-                                <h6><a href="product_detail.html#/catalog/product/view/id/60/">Amazing</a></h6>
-                                <small>Review by <span>Sandra Parker</span>on 1/3/2014 </small>
-                                <div class="review-txt"> Minimalism is the online ! </div>
-                              </div>
-                            </li>
-                            <li>
-                              <table class="ratings-table">
 
-                                <tbody>
-                                  <tr>
-                                    <th>Value</th>
-                                    <td><div class="rating-box">
-                                        <div class="rating"></div>
-                                      </div></td>
-                                  </tr>
-                                  <tr>
-                                    <th>Quality</th>
-                                    <td><div class="rating-box">
-                                        <div class="rating"></div>
-                                      </div></td>
-                                  </tr>
-                                  <tr>
-                                    <th>Price</th>
-                                    <td><div class="rating-box">
-                                        <div class="rating"></div>
-                                      </div></td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                              <div class="review">
-                                <h6><a href="product_detail.html#/catalog/product/view/id/59/">Nicely</a></h6>
-                                <small>Review by <span>Anthony  Lewis</span>on 1/3/2014 </small>
-                                <div class="review-txt"> Unbeatable service and selection. This store has the best business model I have seen on the net. They are true to their word, and go the extra mile for their customers. I felt like a purchasing partner more than a customer. You have a lifetime client in me. </div>
-                              </div>
-                            </li>
                           </ul>
                         </div>
-                        <div class="actions"> <a class="button view-all" id="revies-button"><span><span>View all</span></span></a> </div>
+                        {{--<div class="actions"> <a class="button view-all" id="revies-button"><span><span>View all</span></span></a> </div>--}}
                       </div>
                       <div class="clear"></div>
                     </div>
