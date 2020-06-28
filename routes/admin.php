@@ -76,6 +76,10 @@ Route::group(['prefix'=>'admin','as'=>'admin.', 'namespace' => 'Admin'],function
 
 Route::post('product/change-status','Admin\OrderController@statusChange')->name('status.change');
 Route::get('admin/product/reviews','Admin\Product\ReviewController@index')->name('admin.reviews.index');
+Route::get('admin/product/reviews/{id}','Admin\Product\ReviewController@edit')->name('admin.reviews.edit');
+Route::get('admin/product/reviews/{id}/show','Admin\Product\ReviewController@show')->name('admin.reviews.show');
+Route::post('admin/product/reviews/change-status','Admin\Product\ReviewController@changeStatus')->name('admin.reviews.status');
+Route::get('admin/product/reviews-delete/{id}','Admin\Product\ReviewController@destroy')->name('admin.reviews.destroy');
 
 
 ?>

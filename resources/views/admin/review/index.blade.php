@@ -37,7 +37,7 @@
 
 
 
-                                        {!! Form::open(['url' => route('admin.products.destroy',$item->id),'method'=>'DELETE']) !!}
+                                        {!! Form::open(['url' => route('admin.reviews.destroy',$item->id),'method'=>'get']) !!}
 
                                         <td>
 
@@ -45,10 +45,10 @@
                                             {{--<a href="{{route('admin.products.show',$product->id)}}" class="btn btn-info" title="Product View">--}}
                                             {{--<span class="fas fa-eye"></span>--}}
                                             {{--</a>--}}
-                                            <a href="{{route('admin.products.edit',$item->id)}}" class="btn btn-success" title="Product Edit">
+                                            <a href="{{route('admin.reviews.show',$item->id)}}" class="btn btn-success" title="Review show">
                                                 <span class="fas fa-pen"></span>
                                             </a>
-                                            <button type="submit" title="Product Delete" class="btn btn-danger" onclick="return confirm('Are you sure to delete this'); ">
+                                            <button type="submit" title="Review Delete" class="btn btn-danger" onclick="return confirm('Are you sure to delete this'); ">
                                                 <span class="fas fa-trash-alt"></span>
                                             </button>
                                         </td>
