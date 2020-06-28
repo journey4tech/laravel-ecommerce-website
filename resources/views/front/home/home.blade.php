@@ -11,6 +11,7 @@
 {{--@endif--}}
 
 
+@include('front/partials/free-shipping-info')
 @include('front/partials/latest-product')
 {{--@include('front/partials/offer-banner-section')--}}
 @include('front/partials/special-product-section')
