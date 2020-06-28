@@ -147,7 +147,7 @@
   <nav  style="margin-bottom: 50px;">
     <div class="container">
       <div class="nav-inner">
-        <div class="logo-small"> <a class="logo" title="Magento Commerce" href="index.html"><img alt="Magento Commerce" src="{{asset('frontEnd/assets/images/logo.png')}}"></a> </div>
+        <div class="logo-small"> <a class="logo" title="Home" href="{{route('home')}}"><img alt="Magento Commerce" src="{{asset('frontEnd/assets/images/logo.png')}}"></a> </div>
         <!-- mobile-menu -->
         <div class="hidden-desktop" id="mobile-menu">
           <ul class="navmenu">

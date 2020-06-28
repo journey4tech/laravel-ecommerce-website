@@ -30,7 +30,7 @@
         </div>
         <aside class="col-xs-12 col-sm-12 col-md-4 wow bounceInUp animated">
           <div class="RHS-banner">
-            <div class="add"><a href="index.html#"><img alt="banner-img" src="{{asset('frontEnd/assets/images/rhs-banner.jpg')}}"></a>
+            <div class="add"><a href="index.html#"><img alt="banner-img"  style="width:360px;height:460px" src="{{asset('frontEnd/assets/images/rhs-banner.jpg')}}"></a>
               <div class="overlay"><a class="info" href="index.html#">Learn More</a></div>
             </div>
           </div>
