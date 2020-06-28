@@ -33,7 +33,7 @@
                                         <td>{{$item->visitor_name}}</td>
                                         <td> {{$item->product->product_name}}</td>
                                         <td> {{$item->review}}</td>
-                                        <td>{{$item->status ? 'Approved': 'Pending'}}</td>
+                                        <td>{{$item->status }}</td>
 
 
 

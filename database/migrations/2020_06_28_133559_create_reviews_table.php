@@ -18,6 +18,7 @@ class CreateReviewsTable extends Migration
             $table->integer('product_id')->unsigned();
             $table->string('visitor_name');
             $table->text('review');
+            $table->string('status')->default('Pending');
             $table->timestamps();
         });
     }

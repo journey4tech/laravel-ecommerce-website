@@ -37,7 +37,7 @@
                                             <td>
                                                 <form action="{{ route('admin.reviews.status') }}" method="post">
                                                     @csrf
-                                                    <input type="hidden" name="customer_id" value="{{$review->review_id}}">
+                                                    <input type="hidden" name="review_id" value="{{$review->id}}">
                                                     <select name="status">
                                                         <option {{ $review->status == 'Pending' ? " Selected": ''}}>Pending</option>
                                                         <option {{ $review->status == 'Approved' ? " Selected": ''}}>Approved</option>
