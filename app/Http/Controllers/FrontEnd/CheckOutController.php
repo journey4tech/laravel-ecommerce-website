@@ -5,6 +5,7 @@ namespace App\Http\Controllers\FrontEnd;
 use App\Customer;
 
 use App\ProductOrder;
+use http\Url;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Http\Controllers\Controller;
@@ -216,7 +217,9 @@ class CheckOutController extends Controller
 
 
     public function checkoutProduct(){
+        //$data['districts'] = json_decode( file_get_contents(base_path().'/data/district.json'));
         $data['districts'] = json_decode(file_get_contents(public_path('/data/').'district.json'));
+        //$data['districts'] = json_decode(file_get_contents(Url::to('/data/').'district.json'));
 
 
 

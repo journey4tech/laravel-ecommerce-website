@@ -14,12 +14,12 @@
                 <div class="slider-items slider-width-col4">
 
 
-                @foreach($sub_wise_products->products as $product)
-                    <?php $images=collect(json_decode($product->multiple))->first(); ?>
-                    <!-- Item -->
+
+                    @forelse($sub_wise_products->products as $product)
                         @include('front.partials.product-view-template-general')
-                @endforeach
-                <!-- End Item -->
+                    @empty
+                        <h3 style="margin-left: 10px;">No Related Item Found !</h3>
+                    @endforelse
 
 
                 </div>

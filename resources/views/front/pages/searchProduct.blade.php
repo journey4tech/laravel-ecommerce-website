@@ -9,16 +9,16 @@
                             <h2>Searched Products</h2>
                         </div>
                         <div id="best-seller-slider" class="product-flexslider hidden-buttons">
-                            @if( !$results->isEmpty())
+
                             <div class="slider-items slider-width-col3">
-                                @foreach ($results as $product)
-                                    @include('front.partials.product-view-template-latest')
-                                @endforeach
+                                   @forelse($results as $product)
+                                        @include('front.partials.product-view-template-latest')
+                                    @empty
+                                        <h3 style="margin-left: 10px;">No Related Item Found !</h3>
+                                    @endforelse
                             <!-- Item -->
                             </div>
-                                @else
-                                <h2>Oops ! No item found.</h2>
-                            @endif
+
                         </div>
 
                     </div>
