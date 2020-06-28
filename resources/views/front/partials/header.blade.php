@@ -144,7 +144,7 @@
   </header>
   <!-- end header --> 
    <!-- Navbar -->
-  <nav>
+  <nav  style="margin-bottom: 50px;">
     <div class="container">
       <div class="nav-inner">
         <div class="logo-small"> <a class="logo" title="Magento Commerce" href="index.html"><img alt="Magento Commerce" src="{{asset('frontEnd/assets/images/logo.png')}}"></a> </div>

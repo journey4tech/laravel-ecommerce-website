@@ -121,14 +121,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-5 col-xs-12 coppyright"> &copy;  All Rights Reserved. Designed  and Developed by Md. Firoz Rahman Sabuz </div>
-          <div class="col-sm-7 col-xs-12 company-links">
-            <ul class="links">
-              <li><a href="index.html#" title="Magento Themes">Magento Themes</a></li>
-              <li><a href="index.html#" title="Premium Themes">Premium Themes</a></li>
-              <li><a href="index.html#" title="Responsive Themes">Responsive Themes</a></li>
-              <li class="last"><a href="index.html#" title="Magento Extensions">Magento Extensions</a></li>
-            </ul>
-          </div>
+
         </div>
       </div>
     </div>

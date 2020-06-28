@@ -203,13 +203,13 @@ class HomeController extends Controller
 
            //dd ($data['product']->hasDiscount());
 
-           $data['carts_count'] = Cart::count();
-           //return $data['carts_count'];
-           $data['carts'] =Cart::content();
+//           $data['carts_count'] = Cart::count();
+//           //return $data['carts_count'];
+//           $data['carts'] =Cart::content();
 
-          $data['related_products'] = Product::where('sub_category_id',$data['product']->sub_category_id)->latest()->get();
+          $data['related_products'] = Product::where('sub_category_id',$data['product']->sub_category_id)->latest()->get()->except($data['product']->id);
          //return $product;
-         $data['menus']=Menu::with('categories')->get();
+         //$data['menus']=Menu::with('categories')->get();
          views($data['product'])->record(); //Record Visitor
 
          return view('front.product.product-details',$data);

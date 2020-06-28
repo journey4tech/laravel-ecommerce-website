@@ -306,10 +306,17 @@
                       <div id="related-products-slider" class="product-flexslider hidden-buttons">
                         <div class="slider-items slider-width-col4">
 
-                          @foreach($related_products as $product)
 
-                            @include('front.partials.product-view-template-latest')
-                          @endforeach
+                          {{--@foreach($related_products as $product)--}}
+
+                            {{--@include('front.partials.product-view-template-latest')--}}
+                          {{--@endforeach--}}
+
+                            @forelse($related_products as $product)
+                              @include('front.partials.product-view-template-latest')
+                            @empty
+                              <h3 style="margin-left: 10px;">No Related Item Found !</h3>
+                            @endforelse
 
 
                         </div>
