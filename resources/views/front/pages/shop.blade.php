@@ -1,6 +1,6 @@
 @extends('front.master')
 @section('content')
-    <section class="main-container col1-layout home-content-container" style="margin-top:50px !important;">
+    <section class="main-container col1-layout home-content-container" >
         <div class="container">
             <div class="std">
                 <div class="best-seller-pro wow bounceInUp animated">
