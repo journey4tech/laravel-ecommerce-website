@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb721d99-aaa5-47cc-8e3d-1130431ebcd5" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/partials/footer.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -109,8 +110,8 @@
       <file leaf-file-name="footer.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/front/partials/footer.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="67" column="67" selection-start-line="62" selection-start-column="16" selection-end-line="67" selection-end-column="67" />
+            <state relative-caret-position="217">
+              <caret line="79" column="10" selection-start-line="79" selection-start-column="10" selection-end-line="79" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -330,9 +331,9 @@
       <path value="$PROJECT_DIR$/vendor/realrashid/sweet-alert" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-135" />
-    <option name="y" value="52" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-139" />
+    <option name="y" value="149" />
     <option name="width" value="1940" />
     <option name="height" value="1009" />
   </component>
@@ -611,15 +612,15 @@
       <workItem from="1593259566859" duration="8421000" />
       <workItem from="1593279512516" duration="4239000" />
       <workItem from="1593326084881" duration="27137000" />
-      <workItem from="1593408484611" duration="3452000" />
+      <workItem from="1593408484611" duration="4156000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197045000" />
+    <option name="totallyTimeSpent" value="197749000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-135" y="52" width="1940" height="1009" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -628,8 +629,8 @@
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.33983928" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20159574" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.18845315" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20202559" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1035,8 +1036,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/front/partials/footer.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="67" column="67" selection-start-line="62" selection-start-column="16" selection-end-line="67" selection-end-column="67" />
+        <state relative-caret-position="217">
+          <caret line="79" column="10" selection-start-line="79" selection-start-column="10" selection-end-line="79" selection-end-column="10" />
         </state>
       </provider>
     </entry>
