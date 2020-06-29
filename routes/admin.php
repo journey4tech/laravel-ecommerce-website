@@ -81,5 +81,7 @@ Route::get('admin/product/reviews/{id}/show','Admin\Product\ReviewController@sho
 Route::post('admin/product/reviews/change-status','Admin\Product\ReviewController@changeStatus')->name('admin.reviews.status');
 Route::get('admin/product/reviews-delete/{id}','Admin\Product\ReviewController@destroy')->name('admin.reviews.destroy');
 
+//ajax request
+Route::post('admin/get-subcategory-with-category','Admin\Product\ProductController@getSubcategory')->name('admin.category.wise.subcategory');
 
 ?>

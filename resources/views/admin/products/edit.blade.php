@@ -71,7 +71,16 @@
 
                                                                 <div class="form-group">
                                                                     <label class="control-label">Choose Category</label>
-                                                                    <select class="form-control form-white" data-placeholder="Choose a color..." name="sub_category_id">
+                                                                    <select class="form-control form-white" data-placeholder="Choose a color..." name="category_id" id="category_id">
+                                                                        @foreach($categories as $category)
+                                                                        <option value="{{$category->id}}"  {{$product->sub_category->category->id== $category->id ? " Selected": ""}} >{{$category->name}}</option>
+                                                                        @endforeach
+
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label">Choose Subcategory</label>
+                                                                    <select class="form-control form-white" data-placeholder="Choose a color..." name="sub_category_id" id="sub_category_id">
                                                                         @foreach($subcategories as $subcategory)
                                                                         <option value="{{$subcategory->id}}"  {{$product->sub_category_id== $subcategory->id ? " Selected": ""}} >{{$subcategory->name}}</option>
                                                                         @endforeach
@@ -316,3 +325,35 @@
 
             <!-- end script -->
             @endsection
+            @push('scripts')
+                <script>
+                    $('#category_id').on('change', function() {
+                        if( this.value == 0 ){
+                            alert("Please select a Category");
+                        }else{
+
+                            var data = {
+                                _token : "{{ csrf_token() }}",  //CSRF field will generate token automatically
+                                category_id: this.value
+                            };
+
+                            $.post("{{route('admin.category.wise.subcategory')}}", data, function(res, status){  // passing data to the server
+                                console.log(res[0].sub_category);
+
+                                var data = '';
+                                res[0].sub_category.forEach(function(item) {
+                                    data += `<option value="${item.id}">${item.name}</option>`;
+                                });
+
+                                $('#sub_category_id').html(data);
+                            });
+
+                        }
+
+
+
+
+                    });
+                </script>
+
+@endpush

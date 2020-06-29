@@ -51,8 +51,9 @@ class ProductController extends Controller {
      */
     public function create() {
         try {
+            $categories = Category::all();
             $subcategories = SubCategory::all();
-            return view('admin.products.create', compact('subcategories'));
+            return view('admin.products.create', compact('subcategories','categories'));
         }
         catch(\Exception $e) {
             return $e->getMessage();
@@ -165,11 +166,13 @@ class ProductController extends Controller {
          */
         public function edit($id) {
             try {
+                $categories = Category::all();
                 $subcategories = SubCategory::all();
-                
+
                 $product = Product::where('id', $id)->first();
+                $subcategories = SubCategory::where('category_id',$product->sub_category->category->id)->get();
                 //return $product->category->name;
-                return view('admin.products.edit', compact('product', 'subcategories'));
+                return view('admin.products.edit', compact('product', 'subcategories','categories'));
             }
             catch(\Exception $e) {
                 Helper::notifyError($e->getMessage());
@@ -259,5 +262,10 @@ class ProductController extends Controller {
                         return ['id'=>$product->id,'product_name'=>$product->product_name,'product_images' => $product->multiple];
                 })
             ]);
+        }
+
+        public function getSubcategory(Request $request)
+        {
+            return Category::where('id',$request->category_id)->get();
         }
     }

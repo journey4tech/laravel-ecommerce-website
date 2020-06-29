@@ -91,10 +91,21 @@
 
                                                                 <div class="form-group">
                                                                     <label class="control-label">Choose Category</label>
-                                                                    <select class="form-control form-white" data-placeholder="Choose a color..." name="sub_category_id">
-                                                                        @foreach($subcategories as $item)
+                                                                    <select class="form-control form-white" data-placeholder="Choose a color..." name="category_id" id="category_id">
+                                                                        <option value="0">Choose a Category</option>
+                                                                        @foreach($categories as $item)
                                                                         <option value="{{$item->id}}">{{$item->name}}</option>
                                                                         @endforeach
+
+                                                                    </select>
+                                                                    @if ($errors->has('category_id')) <p class="text-danger">{{ $errors->first('category_id') }}</p> @endif
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label">Choose Subcategory</label>
+                                                                    <select class="form-control form-white" data-placeholder="Choose a color..." name="sub_category_id" id="sub_category_id">
+                                                                        {{--@foreach($subcategories as $item)--}}
+                                                                        {{--<option value="{{$item->id}}">{{$item->name}}</option>--}}
+                                                                        {{--@endforeach--}}
 
                                                                     </select>
                                                                     @if ($errors->has('sub_category_id')) <p class="text-danger">{{ $errors->first('sub_category_id') }}</p> @endif
@@ -295,3 +306,35 @@
         <!-- end script -->
 
         @endsection
+        @push('scripts')
+            <script>
+                $('#category_id').on('change', function() {
+                    if( this.value == 0 ){
+                        alert("Please select a Category");
+                    }else{
+
+                        var data = {
+                            _token : "{{ csrf_token() }}",  //CSRF field will generate token automatically
+                            category_id: this.value
+                        };
+
+                        $.post("{{route('admin.category.wise.subcategory')}}", data, function(res, status){  // passing data to the server
+                            console.log(res[0].sub_category);
+
+                            var data = '';
+                            res[0].sub_category.forEach(function(item) {
+                                data += `<option value="${item.id}">${item.name}</option>`;
+                            });
+
+                            $('#sub_category_id').html(data);
+                        });
+
+                    }
+
+
+
+
+                });
+            </script>
+
+        @endpush
