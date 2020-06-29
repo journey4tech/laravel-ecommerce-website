@@ -175,6 +175,18 @@
                                                                     </select>
                                                                     @if ($errors->has('stock')) <p class="text-danger">{{ $errors->first('stock') }}</p> @endif
                                                                 </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label">Size Unit</label>
+                                                                    <select class="form-control form-white"  name="size_unit">
+                                                                        <option>Choose a Unit</option>
+                                                                        <option>Inch</option>
+                                                                        <option>Feet</option>
+                                                                        <option>Gauge</option>
+
+
+                                                                    </select>
+
+                                                                </div>
 
                                                             </div>
                                                             <div id="option" class="tab-pane fade">
@@ -206,7 +218,11 @@
                                                                     <div class="add-new-row-btn-wrappw mt-2">
                                                                         <button type="button" class="btn btn-secondary waves-effect add-new-row-btn-1">Add New Row</button>
                                                                     </div>
+
+
                                                                 </div>
+
+
                                                                 <div class="from-group" style="margin-top:10px;">
                                                                     <div class="table-responsive">
                                                                         <table class="table table-borderless dynamic-table-2 text-center mb-0">

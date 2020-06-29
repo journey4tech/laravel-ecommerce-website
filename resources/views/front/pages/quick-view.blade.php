@@ -78,6 +78,35 @@
                                             @endif
 
                                         </div>
+
+                                        <div class="short-description">
+                                            <h2>Size</h2>
+                                            @php
+                                                $sizes = json_decode($product->size)
+                                            @endphp
+
+                                            {{--@forelse($sizes as $size)--}}
+                                                {{--<span >{{ $size }}</span>{{ ' '.$product->size_unit }}--}}
+                                                {{--@if(!$loop->last)--}}
+                                                    {{--,--}}
+                                                {{--@endif--}}
+                                            {{--@empty--}}
+                                                {{--Not Available--}}
+                                            {{--@endforelse--}}
+
+                                            @if(! empty($sizes))
+                                                @foreach($sizes as $size)
+                                                    <span >{{ $size }}</span>{{ ' '.$product->size_unit }}
+                                                    @if(!$loop->last)
+                                                        ,
+                                                    @endif
+                                                @endforeach
+                                            @else
+                                                Not Available
+                                            @endif
+
+
+                                        </div>
                                         <div class="add-to-box">
                                             <div class="add-to-cart">
                                                 <label for="qty">Quantity:</label>

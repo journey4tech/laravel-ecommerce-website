@@ -31,6 +31,7 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->text('color')->nullable();
             $table->text('size')->nullable();
+            $table->text('size_unit')->nullable();
             $table->text('video_link')->nullable();
             $table->string('warranty')->nullable();
             $table->tinyInteger('status');

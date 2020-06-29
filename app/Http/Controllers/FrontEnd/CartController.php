@@ -37,7 +37,7 @@ class CartController extends Controller
              'price' =>$product->special_price ?? $product->product_price,
              'weight' => 550,
              'options' => [
-                 //'size' => 'large',
+                 'size' => 'large',
                  'color'=>$product_color,
                  //'size' => $product->discount,
                  'images' =>json_decode($product->multiple)[0]

@@ -71,6 +71,7 @@
                                         <th>Category</th>
                                         <th>Type</th>
                                         <th>Color</th>
+                                        <th>Size</th>
                                         <th>Total Order</th>
 
                                         <th>Product Price</th>
@@ -85,6 +86,7 @@
                                     @foreach($orders as $order)
                                         @php
                                              $images=collect(json_decode($order->product->multiple))->first();
+                                             $sizes=collect(json_decode($order->product->size))->first();
                                                 $subtotal =  $order->total_order * ($order->product->special_price ?? $order->product->product_price);
                                                 $total_cost +=$subtotal;
                                         @endphp
@@ -95,6 +97,7 @@
                                             <td>{{$order->product->sub_category->name}}</td>
                                             <td>{{$order->product->type}}</td>
                                             <td>{{$order->color}}</td>
+                                            <td>{{$sizes ? $sizes. ' '.$order->product->size_unit : 'Not Available'}} </td>
                                             <td>{{$order->total_order}}</td>
                                             <td>{{$order->product->special_price ?? $order->product->product_price}}</td>
                                             <td>{{$subtotal}}</td>
@@ -112,11 +115,13 @@
                                         <td></td>
                                         <td></td>
                                         <td></td>
+                                        <td></td>
                                         <td>Service Charge:</td>
                                         <td></td>
 
                                     </tr>
                                     <tr>
+                                        <td></td>
                                         <td></td>
                                         <td></td>
                                         <td></td>

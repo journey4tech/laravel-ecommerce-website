@@ -144,6 +144,20 @@
                                                                     </select>
                                                                 </div>
 
+                                                                <div class="form-group">
+                                                                    <label class="control-label">Size Unit</label>
+                                                                    <select class="form-control form-white"  name="size_unit">
+                                                                        <option>Choose a Unit</option>
+                                                                        <option  {{ $product->size_unit == 'Inch' ? "Selected" :'' }}>Inch</option>
+                                                                        <option {{ $product->size_unit == 'Feet' ? "Selected" :'' }}>Feet</option>
+                                                                        <option {{ $product->size_unit == 'Gauge' ? "Selected" :'' }}>Gauge</option>
+
+
+
+                                                                    </select>
+
+                                                                </div>
+
                                                             </div>
                                                             <div id="option" class="tab-pane fade">
 
@@ -248,6 +262,8 @@
                                                                 </div>
 
                                                             </div>
+
+
 
                                                             <div id="image" class="tab-pane fade">
                                                                 

@@ -134,6 +134,7 @@ class ProductController extends Controller {
                     'description' => $request->description,
                     'color' => json_encode(request('color')),
                     'size' => json_encode(request('size')),
+                    'size_unit' => $request->size_unit,
                     'status' => 1,
                 ]);
               }
@@ -221,6 +222,7 @@ class ProductController extends Controller {
                     $product->description = $request->description;
                     $product->color = json_encode(request('color'));
                     $product->size = json_encode(request('size'));
+                    $product->size_unit = $request->size_unit;
                     // $product->warrantly=$request->warrantly;
                     $product->status = 1;
                     $product->save();
