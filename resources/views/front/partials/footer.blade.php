@@ -59,7 +59,7 @@
           <div class="col-xs-12 col-sm-6 col-md-5">
             <div class="social">
               <ul>
-                <li class="fb"><a href="index.html#"></a></li>
+                <li class="fb"><a target="_blank" href="https://www.facebook.com/samicomputerkushtia/"></a></li>
                 <li class="tw"><a href="index.html#"></a></li>
                 <li class="googleplus"><a href="index.html#"></a></li>
                 <li class="rss"><a href="index.html#"></a></li>
@@ -112,7 +112,7 @@
                 Kushtia-7000, <span style="margin-left: 45px;">Khulna, Bangladesh</span>
             </address>
             <div class="phone-footer"><i class="phone-icon">&nbsp;</i> 01778-903844</div>
-            <div class="email-footer"><i class="email-icon">&nbsp;</i> <a href="index.html#">support@magikcommerce.com</a> </div>
+            <div class="email-footer"><i class="email-icon">&nbsp;</i> <a href="">samicomkst@gmail.com</a> </div>
           </div>
         </div>
       </div>
