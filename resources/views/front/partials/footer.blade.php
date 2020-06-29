@@ -112,7 +112,7 @@
                 Kushtia-7000, <span style="margin-left: 45px;">Khulna, Bangladesh</span>
             </address>
             <div class="phone-footer"><i class="phone-icon">&nbsp;</i> 01778-903844</div>
-            <div class="email-footer"><i class="email-icon">&nbsp;</i> <a href="">samicomkst@gmail.com</a> </div>
+            <div class="email-footer"><i class="email-icon">&nbsp;</i> <a href="">info@u-goals.com</a> </div>
           </div>
         </div>
       </div>
