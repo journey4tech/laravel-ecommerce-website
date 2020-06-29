@@ -30,7 +30,7 @@
 
                                        <tr>
                                             <td>Date </td>
-                                            <td>{{$review->created_at->format('d/m/Y')}}</td>
+                                            <td>{{$review->getTime()}}</td>
                                         </tr>
                                         <tr>
                                             <td> Review Status </td>
