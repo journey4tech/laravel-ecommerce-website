@@ -192,7 +192,8 @@
 
                                                     <div class="form-group">
                                                         <label class="control-label">Choose Menu</label>
-                                                        <select class="form-control form-white" data-placeholder="Choose a color..." name="menu_id">
+                                                        <select class="form-control form-white" data-placeholder="Choose a color..." name="menu_id" id="menu_id">
+                                                            <option value="0">Choose Menu</option>
                                                             @foreach($menus as $menu)
                                                             <option value="{{$menu->id}}">{{$menu->name}}</option>
                                                             @endforeach
@@ -202,10 +203,10 @@
 
                                                     <div class="form-group">
                                                         <label class="control-label">Choose Category </label>
-                                                        <select class="form-control form-white" data-placeholder="Choose a color..." name="category_id">
-                                                            @foreach($categories as $category)
-                                                            <option value="{{$category->id}}">{{$category->name}}</option>
-                                                            @endforeach
+                                                        <select class="form-control form-white" data-placeholder="Choose a color..." name="category_id" id="category_id">
+                                                            {{--@foreach($categories as $category)--}}
+                                                            {{--<option value="{{$category->id}}">{{$category->name}}</option>--}}
+                                                            {{--@endforeach--}}
 
                                                         </select>
                                                     </div>
@@ -262,3 +263,36 @@
 <!-- content -->
 
 @endsection
+
+@push('scripts')
+    <script>
+        $('#menu_id').on('change', function() {
+            if( this.value == 0 ){
+                alert("Please select a Category");
+            }else{
+                    console.log(this.value);
+                var data = {
+                    _token : "{{ csrf_token() }}",  //CSRF field will generate token automatically
+                    menu_id: this.value
+                };
+
+                $.post("{{route('admin.menu.wise.category')}}", data, function(res, status){  // passing data to the server
+                    console.log(res);
+
+                    var data = '';
+                    res[0].categories.forEach(function(item) {
+                        data += `<option value="${item.id}">${item.name}</option>`;
+                    });
+
+                    $('#category_id').html(data);
+                });
+
+            }
+
+
+
+
+        });
+    </script>
+
+@endpush

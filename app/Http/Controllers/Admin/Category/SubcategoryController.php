@@ -98,9 +98,9 @@ class SubcategoryController extends Controller
     {
       try {
 
-        $sub_category = SubCategory::with('menu','category')->where('id', $id)->first();
+        $sub_category = SubCategory::where('id', $id)->first();
         $menus = Menu::all();
-        $categories = Category::all();
+        $categories = Category::where('menu_id',$sub_category->menu->id)->get();
 
         return view('admin.sub_category.edit',compact('sub_category','menus','categories'));
       } catch (\Exception $e) {

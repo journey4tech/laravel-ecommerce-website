@@ -175,5 +175,11 @@ class CategoryController extends Controller
         ]);
     }
 
+    public function getCategory(Request $request)
+    {
+        $menu = Menu::where('id',$request->menu_id)->with('categories')->get();
+        return $menu;
+    }
+
 
 }

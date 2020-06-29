@@ -83,5 +83,6 @@ Route::get('admin/product/reviews-delete/{id}','Admin\Product\ReviewController@d
 
 //ajax request
 Route::post('admin/get-subcategory-with-category','Admin\Product\ProductController@getSubcategory')->name('admin.category.wise.subcategory');
+Route::post('admin/get-category-with-menu','Admin\Category\CategoryController@getCategory')->name('admin.menu.wise.category');
 
 ?>
