@@ -32,7 +32,7 @@
 
                                         <td>{{$item->visitor_name}}</td>
                                         <td> {{$item->product->product_name}}</td>
-                                        <td> {{$item->review}}</td>
+                                        <td> {{ Str::limit($item->review, 100, '...') }}</td>
                                         <td>{{$item->status }}</td>
 
 

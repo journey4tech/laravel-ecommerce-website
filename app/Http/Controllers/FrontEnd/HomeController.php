@@ -203,7 +203,7 @@ class HomeController extends Controller
        try {
          $data['product']= Product::where('slug',$slug)->firstOrFail();
 
-         $data['reviews']= Review::where('status','Approved')->latest()->get();
+         $data['reviews']= Review::where('product_id',$data['product']->id)->where('status','Approved')->latest()->get();
          $data['reviews_count']= $data['reviews']->count();
 
 

@@ -150,6 +150,8 @@
 
             if( "{{ \Gloudemans\Shoppingcart\Facades\Cart::count() == 0 }}" ){
                 $("#checkoutButton").css("display", "none");
+
+
             }
 
 

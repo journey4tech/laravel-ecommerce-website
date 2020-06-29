@@ -156,14 +156,14 @@
                   </div>
                   <div class="tab-pane fade" id="reviews_tabs">
                     <div class="box-collateral box-reviews" id="customer-reviews">
-                      <div class="box-reviews1">
-                        <div class="form-add">
-                          <form id="review-form" method="post" action="product_detail.html#">
-                            <h3>Write Your Own Review</h3>
+                      {{--<div class="box-reviews1">--}}
+                        {{--<div class="form-add">--}}
+                          {{--<form id="review-form" method="post" action="product_detail.html#">--}}
+                            {{--<h3>Write Your Own Review</h3>--}}
 
-                          </form>
-                        </div>
-                      </div>
+                          {{--</form>--}}
+                        {{--</div>--}}
+                      {{--</div>--}}
                       <div class="box-reviews2">
                         <h3>Customer Reviews</h3>
                         <div class="box visible">

@@ -157,5 +157,19 @@
 
 
 @stack('scripts')
+
+<script>
+    $(document).ready(function(){
+
+        if( "{{ \Gloudemans\Shoppingcart\Facades\Cart::count() == 0 }}" ){
+            $("#checkoutButtonHeader").css("display", "none");
+            $("#cartButtonHeader").css("display", "none");
+
+
+        }
+
+
+    });
+</script>
 </body>
 </html>

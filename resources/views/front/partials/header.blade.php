@@ -106,7 +106,7 @@
 
                             <p class="product-name"> <a href="{{route('cart.item')}}" title="Downloadable Product">{{ $cart->name }}</a> </p>
                           </div>
-                          <div class="product-details-bottom"> <span class="price">$100.00</span> <span class="title-desc">Qty:</span> <strong>{{ $cart->qty }}</strong> </div>
+                          <div class="product-details-bottom"> <span class="price">Tk. {{ $cart->price }}</span> <span class="title-desc">Qty:</span> <strong>{{ $cart->qty }}</strong> </div>
                         </div>
                       </li>
 
@@ -123,8 +123,8 @@
                   </ul>
                   <div class="top-subtotal">Subtotal: <span class="price">Tk. {{Cart::subtotal()}}</span></div>
                   <div class="actions">
-                    <a href="{{route('checkout.product')}}"><button class="btn-checkout" type="button"><span>Checkout</span></button></a>
-                    <a href="{{route('cart.item')}}"><button class="view-cart" type="button"><span>View Cart</span></button></a>
+                    <a id="checkoutButtonHeader" href="{{route('checkout.product')}}"><button class="btn-checkout" type="button"><span>Checkout</span></button></a>
+                    <a  id="cartButtonHeader" href="{{route('cart.item')}}"><button class="view-cart" type="button"><span>View Cart</span></button></a>
 
                   </div>
                 </div>
