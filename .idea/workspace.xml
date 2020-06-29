@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb721d99-aaa5-47cc-8e3d-1130431ebcd5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Review.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Review.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/review/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/review/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontEnd/CheckOutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontEnd/CheckOutController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -74,13 +74,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Review.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Review.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Review.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="19" column="5" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="19" selection-end-column="5" />
+            <state relative-caret-position="378">
+              <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
               <folding>
                 <element signature="e#23#46#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CheckOutController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FrontEnd/CheckOutController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="217" lean-forward="true" selection-start-line="217" selection-end-line="217" />
+              <folding>
+                <element signature="e#49#66#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -168,7 +180,6 @@
         <option value="$PROJECT_DIR$/resources/views/front/home/home.blade.php" />
         <option value="$PROJECT_DIR$/app/Exceptions/Handler.php" />
         <option value="$PROJECT_DIR$/resources/views/404.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/FrontEnd/CheckOutController.php" />
         <option value="$PROJECT_DIR$/resources/views/front/pages/category-wise-product.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/partials/footer.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/partials/slider.blade.php" />
@@ -195,6 +206,7 @@
         <option value="$PROJECT_DIR$/resources/views/front/partials/header.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/review/view.blade.php" />
         <option value="$PROJECT_DIR$/app/Review.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/FrontEnd/CheckOutController.php" />
       </list>
     </option>
   </component>
@@ -522,7 +534,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="revi&#9;null&#9;null&#10;master&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/master.blade.php&#10;carite&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/pages/cart-item.blade.php&#10;header&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/partials/header.blade.php&#10;web&#9;FILE&#9;file://C:/laragon/www/rubelcom/routes/web.php&#10;product-de&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/product/product-details.blade.php&#10;homecon&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Http/Controllers/FrontEnd/HomeController.php&#10;cr_&#9;FILE&#9;file://C:/laragon/www/rubelcom/database/migrations/2020_06_28_133559_create_reviews_table.php&#10;cate&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Http/Controllers/Admin/Category/CategoryController.php&#10;product&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Models/Product.php&#10;admin&#9;FILE&#9;file://C:/laragon/www/rubelcom/routes/admin.php&#10;admin-me&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/admin/partials/admin-menu.blade.php&#10;product-de\&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/product/product-details.blade.php&#10;ma&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/admin/master.blade.php&#10;mast&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/master.blade.php&#10;revie&#9;null&#9;null&#10;carcon&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Http/Controllers/FrontEnd/CartController.php&#10;cr_rev&#9;FILE&#9;file://C:/laragon/www/rubelcom/database/migrations/2020_06_28_133559_create_reviews_table.php&#10;home&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Http/Controllers/FrontEnd/HomeController.php&#10;slider&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/partials/slider.blade.php&#10;footer&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/partials/footer.blade.php&#10;checkoucon&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Http/Controllers/FrontEnd/CheckOutController.php&#10;checkout&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/checkout/checkout.blade.php&#10;cart-&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/pages/cart-item.blade.php&#10;order&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Http/Controllers/Admin/OrderController.php&#10;car&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Http/Controllers/FrontEnd/CartController.php&#10;composer&#9;FILE&#9;file://C:/laragon/www/rubelcom/composer.json&#10;app.php&#9;FILE&#9;file://C:/laragon/www/rubelcom/config/app.php&#10;cart&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/pages/cart-item.blade.php&#10;edit&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/admin/products/edit.blade.php&#10;cre&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/admin/products/create.blade.php&#10;produccon&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Http/Controllers/Admin/Product/ProductController.php&#10;mas&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/master.blade.php&#10;cartcon&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Http/Controllers/FrontEnd/CartController.php&#10;cart-ite&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/pages/cart-item.blade.php&#10;create&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/admin/products/create.blade.php&#10;Product&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Http/Controllers/Admin/Product/ProductController.php&#10;index&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/customer/orders/index.blade.php&#10;admin-m&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/admin/partials/admin-menu.blade.php&#10;menu&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/admin/partials/menu.blade.php&#10;cart-i&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/pages/cart-item.blade.php&#10;view&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/customer/orders/view.blade.php&#10;custom&#9;null&#9;null&#10;checkoutme&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/pages/checkoutMe.blade.php&#10;check&#9;null&#9;null&#10;pr&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/partials/product-view-template-general.blade.php&#10;sear&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/pages/searchProduct.blade.php&#10;product.php&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Models/Product.php&#10;productco&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Http/Controllers/Admin/Product/ProductController.php&#10;we&#9;FILE&#9;file://C:/laragon/www/rubelcom/routes/web.php" />
+    <property name="SearchEverywhereHistoryKey" value="checkoucon&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Http/Controllers/FrontEnd/CheckOutController.php&#10;revi&#9;null&#9;null&#10;master&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/master.blade.php&#10;carite&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/pages/cart-item.blade.php&#10;header&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/partials/header.blade.php&#10;web&#9;FILE&#9;file://C:/laragon/www/rubelcom/routes/web.php&#10;product-de&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/product/product-details.blade.php&#10;homecon&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Http/Controllers/FrontEnd/HomeController.php&#10;cr_&#9;FILE&#9;file://C:/laragon/www/rubelcom/database/migrations/2020_06_28_133559_create_reviews_table.php&#10;cate&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Http/Controllers/Admin/Category/CategoryController.php&#10;product&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Models/Product.php&#10;admin&#9;FILE&#9;file://C:/laragon/www/rubelcom/routes/admin.php&#10;admin-me&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/admin/partials/admin-menu.blade.php&#10;product-de\&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/product/product-details.blade.php&#10;ma&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/admin/master.blade.php&#10;mast&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/master.blade.php&#10;revie&#9;null&#9;null&#10;carcon&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Http/Controllers/FrontEnd/CartController.php&#10;cr_rev&#9;FILE&#9;file://C:/laragon/www/rubelcom/database/migrations/2020_06_28_133559_create_reviews_table.php&#10;home&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Http/Controllers/FrontEnd/HomeController.php&#10;slider&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/partials/slider.blade.php&#10;footer&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/partials/footer.blade.php&#10;checkout&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/checkout/checkout.blade.php&#10;cart-&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/pages/cart-item.blade.php&#10;order&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Http/Controllers/Admin/OrderController.php&#10;car&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Http/Controllers/FrontEnd/CartController.php&#10;composer&#9;FILE&#9;file://C:/laragon/www/rubelcom/composer.json&#10;app.php&#9;FILE&#9;file://C:/laragon/www/rubelcom/config/app.php&#10;cart&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/pages/cart-item.blade.php&#10;edit&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/admin/products/edit.blade.php&#10;cre&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/admin/products/create.blade.php&#10;produccon&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Http/Controllers/Admin/Product/ProductController.php&#10;mas&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/master.blade.php&#10;cartcon&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Http/Controllers/FrontEnd/CartController.php&#10;cart-ite&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/pages/cart-item.blade.php&#10;create&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/admin/products/create.blade.php&#10;Product&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Http/Controllers/Admin/Product/ProductController.php&#10;index&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/customer/orders/index.blade.php&#10;admin-m&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/admin/partials/admin-menu.blade.php&#10;menu&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/admin/partials/menu.blade.php&#10;cart-i&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/pages/cart-item.blade.php&#10;view&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/customer/orders/view.blade.php&#10;custom&#9;null&#9;null&#10;checkoutme&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/pages/checkoutMe.blade.php&#10;check&#9;null&#9;null&#10;pr&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/partials/product-view-template-general.blade.php&#10;sear&#9;FILE&#9;file://C:/laragon/www/rubelcom/resources/views/front/pages/searchProduct.blade.php&#10;product.php&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Models/Product.php&#10;productco&#9;FILE&#9;file://C:/laragon/www/rubelcom/app/Http/Controllers/Admin/Product/ProductController.php&#10;we&#9;FILE&#9;file://C:/laragon/www/rubelcom/routes/web.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../reusable-code-snippets" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -591,12 +603,12 @@
       <workItem from="1593259566859" duration="8421000" />
       <workItem from="1593279512516" duration="4239000" />
       <workItem from="1593326084881" duration="27137000" />
-      <workItem from="1593408484611" duration="2462000" />
+      <workItem from="1593408484611" duration="2756000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="196055000" />
+    <option name="totallyTimeSpent" value="196349000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -608,8 +620,8 @@
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.20043573" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20202559" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3224401" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20202559" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -755,13 +767,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FrontEnd/CheckOutController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="226" lean-forward="true" selection-start-line="226" selection-end-line="226" />
         </state>
       </provider>
     </entry>
@@ -1009,10 +1014,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Review.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="19" selection-end-column="5" />
+        <state relative-caret-position="378">
+          <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
           <folding>
             <element signature="e#23#46#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FrontEnd/CheckOutController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="217" lean-forward="true" selection-start-line="217" selection-end-line="217" />
+          <folding>
+            <element signature="e#49#66#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

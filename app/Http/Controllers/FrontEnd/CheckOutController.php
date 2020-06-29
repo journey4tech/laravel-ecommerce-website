@@ -217,9 +217,9 @@ class CheckOutController extends Controller
 
 
     public function checkoutProduct(){
-        //$data['districts'] = json_decode( file_get_contents(base_path().'/data/district.json'));
+        // $data['districts'] = json_decode( file_get_contents(base_path().'/data/district.json'));
         $data['districts'] = json_decode(file_get_contents(public_path('/data/').'district.json'));
-        //$data['districts'] = json_decode(file_get_contents(Url::to('/data/').'district.json'));
+
 
 
 
